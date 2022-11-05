@@ -1,0 +1,17 @@
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\movieRentalApp.exe
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\movieRentalApp.deps.json
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\movieRentalApp.runtimeconfig.json
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\movieRentalApp.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\movieRentalApp.pdb
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.csproj.AssemblyReference.cache
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Form1.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.csproj.GenerateResource.cache
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.AssemblyInfoInputs.cache
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.AssemblyInfo.cs
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.csproj.CoreCompileInputs.cache
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\refint\movieRentalApp.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.pdb
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.genruntimeconfig.cache
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\ref\movieRentalApp.dll
