@@ -43,33 +43,32 @@
             this.startMenuHeader.TabIndex = 0;
             this.startMenuHeader.Text = "Welcome to ____ Video Rental Service ";
             this.startMenuHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.startMenuHeader.Click += new System.EventHandler(this.startMenuHeader_Click);
             // 
             // loginButton
             // 
             this.loginButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginButton.Location = new System.Drawing.Point(95, 202);
+            this.loginButton.Location = new System.Drawing.Point(97, 202);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(180, 51);
             this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Log In";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.button1_Click);
+            this.loginButton.Click += new System.EventHandler(this.loginClick);
             // 
             // signupButton
             // 
             this.signupButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.signupButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.signupButton.Location = new System.Drawing.Point(434, 202);
+            this.signupButton.Location = new System.Drawing.Point(436, 202);
             this.signupButton.Name = "signupButton";
             this.signupButton.Size = new System.Drawing.Size(180, 51);
             this.signupButton.TabIndex = 2;
             this.signupButton.Text = "Sign Up";
             this.signupButton.UseVisualStyleBackColor = true;
-            this.signupButton.Click += new System.EventHandler(this.button1_Click_1);
+            this.signupButton.Click += new System.EventHandler(this.signupClick);
             // 
             // startMenu
             // 

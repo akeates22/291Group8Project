@@ -12,17 +12,14 @@ namespace movieRentalApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void signupClick(object sender, EventArgs e)
         {
+            var signup = new signupForm();
+            signup.Show();
 
         }
 
-        private void startMenuHeader_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void loginClick(object sender, EventArgs e)
         {
 
         }
