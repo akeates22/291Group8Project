@@ -66,6 +66,9 @@ namespace movieRentalApp
                 // all inputs are valid
                 MessageBox.Show(String.Format("Successfully registered {0} {1} for a {2} subscription\n" +
                              "Return to start menu to login", fname, lname, accType), "Registration Complete");
+
+                
+                // still need to generate customer ID (display in above message box or display a new one)
                 
             }
             catch (FormatException) // raise error if CC is inputted as string
