@@ -7,11 +7,6 @@ namespace movieRentalApp
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void signupClick(object sender, EventArgs e)
         {
             var signup = new signupForm();
@@ -21,7 +16,8 @@ namespace movieRentalApp
 
         private void loginClick(object sender, EventArgs e)
         {
-
+            var login = new loginForm();
+            login.Show();
         }
     }
 }
