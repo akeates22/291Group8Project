@@ -67,9 +67,11 @@ namespace movieRentalApp
                 MessageBox.Show(String.Format("Successfully registered {0} {1} for a {2} subscription\n" +
                              "Return to start menu to login", fname, lname, accType), "Registration Complete");
 
-                
-                // still need to generate customer ID (display in above message box or display a new one)
-                
+
+                // generate & display customer ID
+                Random newID = new Random();
+                int CID = newID.Next(1, 1000);
+                MessageBox.Show(String.Format("Your Customer id is {0}\nDONT FORGET THIS!", CID));
             }
             catch (FormatException) // raise error if CC is inputted as string
             {
