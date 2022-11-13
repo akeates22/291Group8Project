@@ -33,8 +33,8 @@ namespace movieRentalApp
             try
             {
                 // get text inputs
-                string fname = fnameInput.Text;
-                string lname = lnameInput.Text;
+                string fname = signupFnameInput.Text;
+                string lname = signupLnameInput.Text;
                 string address = addressInput.Text;
                 string postalCode = postalCodeInput.Text;
                 string city = cityInput.Text;

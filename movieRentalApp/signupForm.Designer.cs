@@ -36,8 +36,8 @@
             this.cityLabel = new System.Windows.Forms.Label();
             this.ccLabel = new System.Windows.Forms.Label();
             this.subLabel = new System.Windows.Forms.Label();
-            this.fnameInput = new System.Windows.Forms.TextBox();
-            this.lnameInput = new System.Windows.Forms.TextBox();
+            this.signupFnameInput = new System.Windows.Forms.TextBox();
+            this.signupLnameInput = new System.Windows.Forms.TextBox();
             this.addressInput = new System.Windows.Forms.TextBox();
             this.postalCodeInput = new System.Windows.Forms.TextBox();
             this.ccNumberInput = new System.Windows.Forms.TextBox();
@@ -130,20 +130,20 @@
             this.subLabel.TabIndex = 7;
             this.subLabel.Text = "Subscription Plan:";
             // 
-            // fnameInput
+            // signupFnameInput
             // 
-            this.fnameInput.Location = new System.Drawing.Point(158, 32);
-            this.fnameInput.Name = "fnameInput";
-            this.fnameInput.Size = new System.Drawing.Size(125, 27);
-            this.fnameInput.TabIndex = 8;
-            this.fnameInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.signupFnameInput.Location = new System.Drawing.Point(158, 32);
+            this.signupFnameInput.Name = "signupFnameInput";
+            this.signupFnameInput.Size = new System.Drawing.Size(125, 27);
+            this.signupFnameInput.TabIndex = 8;
+            this.signupFnameInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // lnameInput
+            // signupLnameInput
             // 
-            this.lnameInput.Location = new System.Drawing.Point(523, 32);
-            this.lnameInput.Name = "lnameInput";
-            this.lnameInput.Size = new System.Drawing.Size(125, 27);
-            this.lnameInput.TabIndex = 9;
+            this.signupLnameInput.Location = new System.Drawing.Point(523, 32);
+            this.signupLnameInput.Name = "signupLnameInput";
+            this.signupLnameInput.Size = new System.Drawing.Size(125, 27);
+            this.signupLnameInput.TabIndex = 9;
             // 
             // addressInput
             // 
@@ -249,8 +249,8 @@
             this.Controls.Add(this.ccNumberInput);
             this.Controls.Add(this.postalCodeInput);
             this.Controls.Add(this.addressInput);
-            this.Controls.Add(this.lnameInput);
-            this.Controls.Add(this.fnameInput);
+            this.Controls.Add(this.signupLnameInput);
+            this.Controls.Add(this.signupFnameInput);
             this.Controls.Add(this.subLabel);
             this.Controls.Add(this.ccLabel);
             this.Controls.Add(this.cityLabel);
@@ -276,8 +276,8 @@
         private Label cityLabel;
         private Label ccLabel;
         private Label subLabel;
-        private TextBox fnameInput;
-        private TextBox lnameInput;
+        private TextBox signupFnameInput;
+        private TextBox signupLnameInput;
         private TextBox addressInput;
         private TextBox postalCodeInput;
         private TextBox ccNumberInput;
