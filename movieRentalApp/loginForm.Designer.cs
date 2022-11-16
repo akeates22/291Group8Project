@@ -33,7 +33,7 @@
             this.fnameLoginLabel = new System.Windows.Forms.Label();
             this.lnameLoginLabel = new System.Windows.Forms.Label();
             this.loginFnameInput = new System.Windows.Forms.TextBox();
-            this.custID = new System.Windows.Forms.TextBox();
+            this.IDinput = new System.Windows.Forms.TextBox();
             this.loginLnameInput = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -85,12 +85,12 @@
             this.loginFnameInput.Size = new System.Drawing.Size(218, 27);
             this.loginFnameInput.TabIndex = 4;
             // 
-            // custID
+            // IDinput
             // 
-            this.custID.Location = new System.Drawing.Point(440, 275);
-            this.custID.Name = "custID";
-            this.custID.Size = new System.Drawing.Size(218, 27);
-            this.custID.TabIndex = 5;
+            this.IDinput.Location = new System.Drawing.Point(440, 275);
+            this.IDinput.Name = "IDinput";
+            this.IDinput.Size = new System.Drawing.Size(218, 27);
+            this.IDinput.TabIndex = 5;
             // 
             // loginLnameInput
             // 
@@ -117,7 +117,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.loginLnameInput);
-            this.Controls.Add(this.custID);
+            this.Controls.Add(this.IDinput);
             this.Controls.Add(this.loginFnameInput);
             this.Controls.Add(this.lnameLoginLabel);
             this.Controls.Add(this.fnameLoginLabel);
@@ -137,7 +137,7 @@
         private Label fnameLoginLabel;
         private Label lnameLoginLabel;
         private TextBox loginFnameInput;
-        private TextBox custID;
+        private TextBox IDinput;
         private TextBox loginLnameInput;
         private Button loginButton;
     }
