@@ -36,12 +36,12 @@
             // startMenuHeader
             // 
             this.startMenuHeader.AutoSize = true;
-            this.startMenuHeader.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.startMenuHeader.Location = new System.Drawing.Point(19, 20);
+            this.startMenuHeader.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.startMenuHeader.Location = new System.Drawing.Point(4, 20);
             this.startMenuHeader.Name = "startMenuHeader";
-            this.startMenuHeader.Size = new System.Drawing.Size(694, 54);
+            this.startMenuHeader.Size = new System.Drawing.Size(704, 50);
             this.startMenuHeader.TabIndex = 0;
-            this.startMenuHeader.Text = "Welcome to ____ Video Rental Service ";
+            this.startMenuHeader.Text = "Welcome to Group8 Video Rental Service ";
             this.startMenuHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginButton

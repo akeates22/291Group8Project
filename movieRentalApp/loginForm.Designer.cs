@@ -42,27 +42,27 @@
             // 
             this.loginHeader.AutoSize = true;
             this.loginHeader.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginHeader.Location = new System.Drawing.Point(164, 21);
+            this.loginHeader.Location = new System.Drawing.Point(149, 21);
             this.loginHeader.Name = "loginHeader";
-            this.loginHeader.Size = new System.Drawing.Size(420, 54);
+            this.loginHeader.Size = new System.Drawing.Size(502, 54);
             this.loginHeader.TabIndex = 0;
-            this.loginHeader.Text = "___ Video Rental Login";
+            this.loginHeader.Text = "Group8 Video Rental Login";
             // 
             // custIDLoginLabel
             // 
             this.custIDLoginLabel.AutoSize = true;
             this.custIDLoginLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.custIDLoginLabel.Location = new System.Drawing.Point(153, 257);
+            this.custIDLoginLabel.Location = new System.Drawing.Point(142, 274);
             this.custIDLoginLabel.Name = "custIDLoginLabel";
-            this.custIDLoginLabel.Size = new System.Drawing.Size(145, 31);
+            this.custIDLoginLabel.Size = new System.Drawing.Size(292, 31);
             this.custIDLoginLabel.TabIndex = 1;
-            this.custIDLoginLabel.Text = "Customer ID:";
+            this.custIDLoginLabel.Text = "ID (Customer or Employee):";
             // 
             // fnameLoginLabel
             // 
             this.fnameLoginLabel.AutoSize = true;
             this.fnameLoginLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fnameLoginLabel.Location = new System.Drawing.Point(153, 129);
+            this.fnameLoginLabel.Location = new System.Drawing.Point(142, 146);
             this.fnameLoginLabel.Name = "fnameLoginLabel";
             this.fnameLoginLabel.Size = new System.Drawing.Size(135, 31);
             this.fnameLoginLabel.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.lnameLoginLabel.AutoSize = true;
             this.lnameLoginLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnameLoginLabel.Location = new System.Drawing.Point(153, 193);
+            this.lnameLoginLabel.Location = new System.Drawing.Point(142, 212);
             this.lnameLoginLabel.Name = "lnameLoginLabel";
             this.lnameLoginLabel.Size = new System.Drawing.Size(127, 31);
             this.lnameLoginLabel.TabIndex = 3;
@@ -80,21 +80,21 @@
             // 
             // loginFnameInput
             // 
-            this.loginFnameInput.Location = new System.Drawing.Point(366, 135);
+            this.loginFnameInput.Location = new System.Drawing.Point(440, 149);
             this.loginFnameInput.Name = "loginFnameInput";
             this.loginFnameInput.Size = new System.Drawing.Size(218, 27);
             this.loginFnameInput.TabIndex = 4;
             // 
             // custID
             // 
-            this.custID.Location = new System.Drawing.Point(366, 261);
+            this.custID.Location = new System.Drawing.Point(440, 275);
             this.custID.Name = "custID";
             this.custID.Size = new System.Drawing.Size(218, 27);
             this.custID.TabIndex = 5;
             // 
             // loginLnameInput
             // 
-            this.loginLnameInput.Location = new System.Drawing.Point(366, 199);
+            this.loginLnameInput.Location = new System.Drawing.Point(440, 213);
             this.loginLnameInput.Name = "loginLnameInput";
             this.loginLnameInput.Size = new System.Drawing.Size(218, 27);
             this.loginLnameInput.TabIndex = 6;
