@@ -98,7 +98,6 @@
             this.loginLnameInput.Name = "loginLnameInput";
             this.loginLnameInput.Size = new System.Drawing.Size(218, 27);
             this.loginLnameInput.TabIndex = 6;
-            this.loginLnameInput.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // loginButton
             // 

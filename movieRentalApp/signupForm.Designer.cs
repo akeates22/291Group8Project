@@ -136,7 +136,6 @@
             this.signupFnameInput.Name = "signupFnameInput";
             this.signupFnameInput.Size = new System.Drawing.Size(125, 27);
             this.signupFnameInput.TabIndex = 8;
-            this.signupFnameInput.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // signupLnameInput
             // 
@@ -158,7 +157,6 @@
             this.postalCodeInput.Name = "postalCodeInput";
             this.postalCodeInput.Size = new System.Drawing.Size(125, 27);
             this.postalCodeInput.TabIndex = 11;
-            this.postalCodeInput.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // ccNumberInput
             // 

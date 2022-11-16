@@ -18,72 +18,49 @@ namespace movieRentalApp
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void submitSignupForm(object sender, EventArgs e)
         {
-            try
+            // get text inputs
+            string fname = signupFnameInput.Text;
+            string lname = signupLnameInput.Text;
+            string address = addressInput.Text;
+            string postalCode = postalCodeInput.Text;
+            string city = cityInput.Text;
+            string province = provinceInput.Text;
+            int ccNumber = Int32.Parse(ccNumberInput.Text);
+
+            // get subscription plan
+            string accType = "";
+            if (basicSubButton.Checked)
+                accType = "Basic";
+            else if (premSubButton.Checked)
+                accType = "Premium";
+            else if (premPlusSubButton.Checked)
+                accType = "Premium Plus";
+
+            // make sure no inputs are blank
+            string[] inputs = { fname, lname, address, postalCode, city, province, accType };
+            foreach (var input in inputs)
             {
-                // get text inputs
-                string fname = signupFnameInput.Text;
-                string lname = signupLnameInput.Text;
-                string address = addressInput.Text;
-                string postalCode = postalCodeInput.Text;
-                string city = cityInput.Text;
-                string province = provinceInput.Text;
-                int ccNumber = Int32.Parse(ccNumberInput.Text);
-
-                // get subscription plan
-                string accType = "";
-                if (basicSubButton.Checked)
-                    accType = "Basic";
-                else if (premSubButton.Checked)
-                    accType = "Premium";
-                else if (premPlusSubButton.Checked)
-                    accType = "Premium Plus";
-
-                // make sure no inputs are blank
-                string[] inputs = { fname, lname, address, postalCode, city, province, accType };
-                foreach (var input in inputs)
+                if (string.IsNullOrWhiteSpace(input))
                 {
-                    if (string.IsNullOrWhiteSpace(input))
-                    {
-                        MessageBox.Show("Invalid entries, please fill out all fields", "Registration Failed");
-                        this.Close();
-                        return;
-                    }
-
+                    MessageBox.Show("Invalid entries, please fill out all fields", "Registration Failed");
+                    this.Close();
+                    return;
                 }
 
-                // all inputs are valid
-                MessageBox.Show(String.Format("Successfully registered {0} {1} for a {2} subscription\n" +
-                             "Return to start menu to login", fname, lname, accType), "Registration Complete");
-
-
-                // generate & display customer ID
-                Random newID = new Random();
-                int CID = newID.Next(1, 1000);
-                MessageBox.Show(String.Format("Your Customer id is {0}\nDONT FORGET THIS!", CID));
             }
-            catch (FormatException) // raise error if CC is inputted as string
-            {
-                MessageBox.Show("Invalid credit card number, please try again", "Registration Failed");
-            }
+
+            // all inputs are valid
+            MessageBox.Show(String.Format("Successfully registered {0} {1} for a {2} subscription\n" +
+                         "Return to start menu to login", fname, lname, accType), "Registration Complete");
+
+            // generate & display customer ID
+            Random newID = new Random();
+            int CID = newID.Next(1, 1000);
+            MessageBox.Show(String.Format("Your Customer id is {0}\nDONT FORGET THIS!", CID));
 
             this.Close();
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
 
         }
     }
