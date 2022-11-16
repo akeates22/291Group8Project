@@ -27,12 +27,14 @@ namespace movieRentalApp
 
             // check if user inputs are valid by looking at database
             // Customer IDs are 5 digits , Employee IDs are 9 (use SSN)
+            // ref: https://stackoverflow.com/questions/14051672/how-to-verify-datatype-before-entering-into-the-table
 
             // for now, these are the only valid logins for customer and employee
             if (fname == "admin" && lname == "test" && ID == "12345")
             {
                 var mainMenu = new customerHome();
                 mainMenu.Show();
+                this.Close();
             }
             else if (fname == "admin" && lname == "test" && ID == "123456789")
             {

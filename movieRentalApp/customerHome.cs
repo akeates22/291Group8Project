@@ -51,7 +51,8 @@ namespace movieRentalApp
 
         private void accountInfoClick(object sender, EventArgs e)
         {
-
+            var accInfo = new customerAccInfo();
+            accInfo.Show();
         }
     }
 }

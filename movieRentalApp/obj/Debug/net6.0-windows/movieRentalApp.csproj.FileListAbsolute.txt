@@ -18,3 +18,4 @@ C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\ob
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.signupForm.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.loginForm.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.customerHome.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.customerAccInfo.resources
