@@ -32,9 +32,9 @@
             this.custIDLoginLabel = new System.Windows.Forms.Label();
             this.fnameLoginLabel = new System.Windows.Forms.Label();
             this.lnameLoginLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.loginFnameInput = new System.Windows.Forms.TextBox();
+            this.custID = new System.Windows.Forms.TextBox();
+            this.loginLnameInput = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -78,27 +78,26 @@
             this.lnameLoginLabel.TabIndex = 3;
             this.lnameLoginLabel.Text = "Last Name:";
             // 
-            // textBox1
+            // loginFnameInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 27);
-            this.textBox1.TabIndex = 4;
+            this.loginFnameInput.Location = new System.Drawing.Point(366, 135);
+            this.loginFnameInput.Name = "loginFnameInput";
+            this.loginFnameInput.Size = new System.Drawing.Size(218, 27);
+            this.loginFnameInput.TabIndex = 4;
             // 
-            // textBox2
+            // custID
             // 
-            this.textBox2.Location = new System.Drawing.Point(366, 261);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 27);
-            this.textBox2.TabIndex = 5;
+            this.custID.Location = new System.Drawing.Point(366, 261);
+            this.custID.Name = "custID";
+            this.custID.Size = new System.Drawing.Size(218, 27);
+            this.custID.TabIndex = 5;
             // 
-            // textBox3
+            // loginLnameInput
             // 
-            this.textBox3.Location = new System.Drawing.Point(366, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 27);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.loginLnameInput.Location = new System.Drawing.Point(366, 199);
+            this.loginLnameInput.Name = "loginLnameInput";
+            this.loginLnameInput.Size = new System.Drawing.Size(218, 27);
+            this.loginLnameInput.TabIndex = 6;
             // 
             // loginButton
             // 
@@ -117,9 +116,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.loginLnameInput);
+            this.Controls.Add(this.custID);
+            this.Controls.Add(this.loginFnameInput);
             this.Controls.Add(this.lnameLoginLabel);
             this.Controls.Add(this.fnameLoginLabel);
             this.Controls.Add(this.custIDLoginLabel);
@@ -137,9 +136,9 @@
         private Label custIDLoginLabel;
         private Label fnameLoginLabel;
         private Label lnameLoginLabel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox loginFnameInput;
+        private TextBox custID;
+        private TextBox loginLnameInput;
         private Button loginButton;
     }
 }
