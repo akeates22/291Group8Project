@@ -15,6 +15,13 @@ namespace movieRentalApp
         public customerHome()
         {
             InitializeComponent();
+
+            // create function to display users name in header
+            // either check database with user's ID, or pass their name as a parameter
+            // from the login screen (probably a better option)
+            // ref: https://stackoverflow.com/questions/48778018/c-update-label-text-on-windows-forms-from-console-application
+
+
         }
 
         private void movieSearchClick(object sender, EventArgs e)
@@ -44,7 +51,8 @@ namespace movieRentalApp
 
         private void accountInfoClick(object sender, EventArgs e)
         {
-
+            var accInfo = new customerAccInfo();
+            accInfo.Show();
         }
     }
 }

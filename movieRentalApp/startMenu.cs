@@ -18,6 +18,7 @@ namespace movieRentalApp
         {
             var login = new loginForm();
             login.Show();
+            this.Close();
         }
 
     }

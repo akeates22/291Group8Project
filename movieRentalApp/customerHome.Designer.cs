@@ -34,6 +34,7 @@
             this.rateMovie = new System.Windows.Forms.Button();
             this.custSuggestions = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.custHomeHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // custMovieSearch
@@ -102,11 +103,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.rentalHistoryClick);
             // 
+            // custHomeHeader
+            // 
+            this.custHomeHeader.AutoSize = true;
+            this.custHomeHeader.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.custHomeHeader.Location = new System.Drawing.Point(265, 21);
+            this.custHomeHeader.Name = "custHomeHeader";
+            this.custHomeHeader.Size = new System.Drawing.Size(271, 50);
+            this.custHomeHeader.TabIndex = 8;
+            this.custHomeHeader.Text = "Welcome back!";
+            // 
             // customerHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.custHomeHeader);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.custSuggestions);
             this.Controls.Add(this.rateMovie);
@@ -116,6 +128,7 @@
             this.Name = "customerHome";
             this.Text = "customerHome";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +140,6 @@
         private Button rateMovie;
         private Button custSuggestions;
         private Button button1;
+        private Label custHomeHeader;
     }
 }

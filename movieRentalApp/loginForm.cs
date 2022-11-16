@@ -19,17 +19,26 @@ namespace movieRentalApp
 
         private void submitLoginForm(object sender, EventArgs e)
         {
+            // keep ID as string for now, check for valid data type inside sql query
             string fname = loginFnameInput.Text;
             string lname = loginLnameInput.Text;
-            int CID = Int32.Parse(custID.Text);
-            
+            string ID = IDinput.Text;
 
-            // check if user inputs are valid by looking at customers table in database
-            // for now, users can only login with pre-set admin credentials
-            if (fname == "admin" && lname == "test" && CID == 123)
+
+            // check if user inputs are valid by looking at database
+            // Customer IDs are 5 digits , Employee IDs are 9 (use SSN)
+            // ref: https://stackoverflow.com/questions/14051672/how-to-verify-datatype-before-entering-into-the-table
+
+            // for now, these are the only valid logins for customer and employee
+            if (fname == "admin" && lname == "test" && ID == "12345")
             {
                 var mainMenu = new customerHome();
                 mainMenu.Show();
+                this.Close();
+            }
+            else if (fname == "admin" && lname == "test" && ID == "123456789")
+            {
+                //show employee home screen
             }
             else
             {
