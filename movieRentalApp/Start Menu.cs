@@ -9,14 +9,14 @@ namespace movieRentalApp
 
         private void signupClick(object sender, EventArgs e)
         {
-            var signup = new signupForm();
+            var signup = new Signup();
             signup.Show();
 
         }
 
         private void loginClick(object sender, EventArgs e)
         {
-            var login = new loginForm();
+            var login = new Login();
             login.Show();
             this.Close();
         }

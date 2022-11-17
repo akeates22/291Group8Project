@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace movieRentalApp
 {
-    public partial class signupForm : Form
+    public partial class Signup : Form
     {
-        public signupForm()
+        public Signup()
         {
             InitializeComponent();
         }
@@ -59,6 +59,10 @@ namespace movieRentalApp
             Random newID = new Random();
             int CID = newID.Next(1, 1000);
             MessageBox.Show(String.Format("Your Customer id is {0}\nDONT FORGET THIS!", CID));
+
+            Login newLogin = new Login(Convert.ToString(CID));
+            newLogin.Show();
+
 
             this.Close();
 

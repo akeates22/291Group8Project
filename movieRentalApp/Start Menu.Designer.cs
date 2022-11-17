@@ -36,12 +36,13 @@
             // startMenuHeader
             // 
             this.startMenuHeader.AutoSize = true;
-            this.startMenuHeader.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.startMenuHeader.Location = new System.Drawing.Point(4, 20);
+            this.startMenuHeader.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.startMenuHeader.ForeColor = System.Drawing.Color.Yellow;
+            this.startMenuHeader.Location = new System.Drawing.Point(42, 33);
             this.startMenuHeader.Name = "startMenuHeader";
-            this.startMenuHeader.Size = new System.Drawing.Size(704, 50);
+            this.startMenuHeader.Size = new System.Drawing.Size(626, 41);
             this.startMenuHeader.TabIndex = 0;
-            this.startMenuHeader.Text = "Welcome to Group8 Video Rental Service ";
+            this.startMenuHeader.Text = "Welcome to Blockbuster Video Rental Service ";
             this.startMenuHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loginButton
@@ -49,9 +50,9 @@
             this.loginButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.loginButton.Location = new System.Drawing.Point(97, 202);
+            this.loginButton.Location = new System.Drawing.Point(85, 202);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(180, 51);
+            this.loginButton.Size = new System.Drawing.Size(202, 51);
             this.loginButton.TabIndex = 1;
             this.loginButton.Text = "Log In";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -62,9 +63,9 @@
             this.signupButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.signupButton.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.signupButton.Location = new System.Drawing.Point(436, 202);
+            this.signupButton.Location = new System.Drawing.Point(424, 202);
             this.signupButton.Name = "signupButton";
-            this.signupButton.Size = new System.Drawing.Size(180, 51);
+            this.signupButton.Size = new System.Drawing.Size(202, 51);
             this.signupButton.TabIndex = 2;
             this.signupButton.Text = "Sign Up";
             this.signupButton.UseVisualStyleBackColor = true;
@@ -74,7 +75,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 382);
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ClientSize = new System.Drawing.Size(710, 382);
             this.Controls.Add(this.signupButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.startMenuHeader);

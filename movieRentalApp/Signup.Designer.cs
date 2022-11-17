@@ -1,6 +1,6 @@
 ﻿namespace movieRentalApp
 {
-    partial class signupForm
+    partial class Signup
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,6 @@
             this.ccNumberInput = new System.Windows.Forms.TextBox();
             this.provinceInput = new System.Windows.Forms.TextBox();
             this.cityInput = new System.Windows.Forms.TextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.signupSubmit = new System.Windows.Forms.Button();
             this.premSubButton = new System.Windows.Forms.RadioButton();
             this.premPlusSubButton = new System.Windows.Forms.RadioButton();
@@ -54,6 +53,7 @@
             // 
             this.fnameLabel.AutoSize = true;
             this.fnameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.fnameLabel.ForeColor = System.Drawing.Color.Yellow;
             this.fnameLabel.Location = new System.Drawing.Point(23, 26);
             this.fnameLabel.Name = "fnameLabel";
             this.fnameLabel.Size = new System.Drawing.Size(129, 31);
@@ -64,6 +64,7 @@
             // 
             this.lnameLabel.AutoSize = true;
             this.lnameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lnameLabel.ForeColor = System.Drawing.Color.Yellow;
             this.lnameLabel.Location = new System.Drawing.Point(378, 26);
             this.lnameLabel.Name = "lnameLabel";
             this.lnameLabel.Size = new System.Drawing.Size(127, 31);
@@ -74,6 +75,7 @@
             // 
             this.addressLabel.AutoSize = true;
             this.addressLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addressLabel.ForeColor = System.Drawing.Color.Yellow;
             this.addressLabel.Location = new System.Drawing.Point(23, 98);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.Size = new System.Drawing.Size(102, 31);
@@ -84,6 +86,7 @@
             // 
             this.postalLabel.AutoSize = true;
             this.postalLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.postalLabel.ForeColor = System.Drawing.Color.Yellow;
             this.postalLabel.Location = new System.Drawing.Point(378, 98);
             this.postalLabel.Name = "postalLabel";
             this.postalLabel.Size = new System.Drawing.Size(139, 31);
@@ -94,6 +97,7 @@
             // 
             this.provinceLabel.AutoSize = true;
             this.provinceLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.provinceLabel.ForeColor = System.Drawing.Color.Yellow;
             this.provinceLabel.Location = new System.Drawing.Point(378, 171);
             this.provinceLabel.Name = "provinceLabel";
             this.provinceLabel.Size = new System.Drawing.Size(106, 31);
@@ -104,6 +108,7 @@
             // 
             this.cityLabel.AutoSize = true;
             this.cityLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityLabel.ForeColor = System.Drawing.Color.Yellow;
             this.cityLabel.Location = new System.Drawing.Point(23, 171);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(58, 31);
@@ -114,6 +119,7 @@
             // 
             this.ccLabel.AutoSize = true;
             this.ccLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ccLabel.ForeColor = System.Drawing.Color.Yellow;
             this.ccLabel.Location = new System.Drawing.Point(23, 252);
             this.ccLabel.Name = "ccLabel";
             this.ccLabel.Size = new System.Drawing.Size(225, 31);
@@ -124,6 +130,7 @@
             // 
             this.subLabel.AutoSize = true;
             this.subLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subLabel.ForeColor = System.Drawing.Color.Yellow;
             this.subLabel.Location = new System.Drawing.Point(23, 324);
             this.subLabel.Name = "subLabel";
             this.subLabel.Size = new System.Drawing.Size(197, 31);
@@ -179,15 +186,6 @@
             this.cityInput.Size = new System.Drawing.Size(125, 27);
             this.cityInput.TabIndex = 14;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 16;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // signupSubmit
             // 
             this.signupSubmit.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -202,6 +200,7 @@
             // premSubButton
             // 
             this.premSubButton.AutoSize = true;
+            this.premSubButton.ForeColor = System.Drawing.Color.Yellow;
             this.premSubButton.Location = new System.Drawing.Point(254, 361);
             this.premSubButton.Name = "premSubButton";
             this.premSubButton.Size = new System.Drawing.Size(391, 24);
@@ -213,6 +212,7 @@
             // premPlusSubButton
             // 
             this.premPlusSubButton.AutoSize = true;
+            this.premPlusSubButton.ForeColor = System.Drawing.Color.Yellow;
             this.premPlusSubButton.Location = new System.Drawing.Point(254, 391);
             this.premPlusSubButton.Name = "premPlusSubButton";
             this.premPlusSubButton.Size = new System.Drawing.Size(397, 24);
@@ -224,6 +224,7 @@
             // basicSubButton
             // 
             this.basicSubButton.AutoSize = true;
+            this.basicSubButton.ForeColor = System.Drawing.Color.Yellow;
             this.basicSubButton.Location = new System.Drawing.Point(254, 331);
             this.basicSubButton.Name = "basicSubButton";
             this.basicSubButton.Size = new System.Drawing.Size(350, 24);
@@ -232,16 +233,16 @@
             this.basicSubButton.Text = "Basic - cost: $5/month, limit 8 movies per month\r\n";
             this.basicSubButton.UseVisualStyleBackColor = true;
             // 
-            // signupForm
+            // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(800, 521);
             this.Controls.Add(this.basicSubButton);
             this.Controls.Add(this.premPlusSubButton);
             this.Controls.Add(this.premSubButton);
             this.Controls.Add(this.signupSubmit);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cityInput);
             this.Controls.Add(this.provinceInput);
             this.Controls.Add(this.ccNumberInput);
@@ -257,7 +258,7 @@
             this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.lnameLabel);
             this.Controls.Add(this.fnameLabel);
-            this.Name = "signupForm";
+            this.Name = "Signup";
             this.Text = "signup";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -281,7 +282,6 @@
         private TextBox ccNumberInput;
         private TextBox provinceInput;
         private TextBox cityInput;
-        private ToolStrip toolStrip1;
         private Button signupSubmit;
         private RadioButton premSubButton;
         private RadioButton premPlusSubButton;

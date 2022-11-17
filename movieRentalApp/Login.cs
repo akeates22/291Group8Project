@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace movieRentalApp
 {
-    public partial class loginForm : Form
+    public partial class Login : Form
     {
-        public loginForm()
+        public Login(string ID = "")
         {
             InitializeComponent();
+            IDinput.Text = ID;
         }
 
         private void submitLoginForm(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace movieRentalApp
             // for now, these are the only valid logins for customer and employee
             if (fname == "admin" && lname == "test" && ID == "12345")
             {
-                var mainMenu = new customerHome();
+                var mainMenu = new Customer_Home2();
                 mainMenu.Show();
                 this.Close();
             }
