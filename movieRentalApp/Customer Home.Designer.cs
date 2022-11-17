@@ -102,6 +102,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.orderButton = new System.Windows.Forms.RadioButton();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -114,6 +116,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.orderButton);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.movieSearchButton);
             this.panel1.Controls.Add(this.currRentalsButton);
@@ -123,7 +126,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(202, 409);
+            this.panel1.Size = new System.Drawing.Size(202, 460);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -146,7 +149,7 @@
             this.movieSearchButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.movieSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.movieSearchButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.movieSearchButton.Location = new System.Drawing.Point(0, 149);
+            this.movieSearchButton.Location = new System.Drawing.Point(10, 143);
             this.movieSearchButton.Name = "movieSearchButton";
             this.movieSearchButton.Size = new System.Drawing.Size(189, 45);
             this.movieSearchButton.TabIndex = 2;
@@ -164,7 +167,7 @@
             this.currRentalsButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.currRentalsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.currRentalsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.currRentalsButton.Location = new System.Drawing.Point(0, 201);
+            this.currRentalsButton.Location = new System.Drawing.Point(10, 247);
             this.currRentalsButton.Name = "currRentalsButton";
             this.currRentalsButton.Size = new System.Drawing.Size(189, 45);
             this.currRentalsButton.TabIndex = 3;
@@ -182,7 +185,7 @@
             this.prevRentalsButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.prevRentalsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prevRentalsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.prevRentalsButton.Location = new System.Drawing.Point(0, 253);
+            this.prevRentalsButton.Location = new System.Drawing.Point(10, 299);
             this.prevRentalsButton.Name = "prevRentalsButton";
             this.prevRentalsButton.Size = new System.Drawing.Size(189, 45);
             this.prevRentalsButton.TabIndex = 2;
@@ -200,7 +203,7 @@
             this.custRatingsButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.custRatingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custRatingsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.custRatingsButton.Location = new System.Drawing.Point(0, 305);
+            this.custRatingsButton.Location = new System.Drawing.Point(10, 351);
             this.custRatingsButton.Name = "custRatingsButton";
             this.custRatingsButton.Size = new System.Drawing.Size(189, 45);
             this.custRatingsButton.TabIndex = 3;
@@ -218,7 +221,7 @@
             this.accInfoButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.accInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accInfoButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.accInfoButton.Location = new System.Drawing.Point(0, 357);
+            this.accInfoButton.Location = new System.Drawing.Point(10, 403);
             this.accInfoButton.Name = "accInfoButton";
             this.accInfoButton.Size = new System.Drawing.Size(189, 45);
             this.accInfoButton.TabIndex = 1;
@@ -232,7 +235,7 @@
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Location = new System.Drawing.Point(208, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 409);
+            this.panel2.Size = new System.Drawing.Size(492, 448);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -242,10 +245,11 @@
             this.contentBox.Controls.Add(this.rentalHistory);
             this.contentBox.Controls.Add(this.ratings);
             this.contentBox.Controls.Add(this.accountInfo);
+            this.contentBox.Controls.Add(this.tabPage1);
             this.contentBox.Location = new System.Drawing.Point(3, 12);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(489, 394);
+            this.contentBox.Size = new System.Drawing.Size(489, 433);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
@@ -262,14 +266,14 @@
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
             this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.movieSearch.Size = new System.Drawing.Size(481, 361);
+            this.movieSearch.Size = new System.Drawing.Size(481, 400);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(124, 285);
+            this.searchButton.Location = new System.Drawing.Point(156, 319);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(168, 45);
             this.searchButton.TabIndex = 11;
@@ -288,7 +292,7 @@
             "Romance",
             "Sci-fi",
             "Thriller"});
-            this.comboBox1.Location = new System.Drawing.Point(229, 213);
+            this.comboBox1.Location = new System.Drawing.Point(257, 257);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
             this.comboBox1.TabIndex = 10;
@@ -297,7 +301,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(45, 212);
+            this.label11.Location = new System.Drawing.Point(73, 258);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 25);
             this.label11.TabIndex = 9;
@@ -307,7 +311,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(45, 141);
+            this.label9.Location = new System.Drawing.Point(73, 187);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 8;
@@ -317,7 +321,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(45, 71);
+            this.label10.Location = new System.Drawing.Point(73, 117);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 25);
             this.label10.TabIndex = 7;
@@ -327,7 +331,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchLabel.Location = new System.Drawing.Point(124, 3);
+            this.searchLabel.Location = new System.Drawing.Point(161, 37);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(158, 31);
             this.searchLabel.TabIndex = 6;
@@ -336,14 +340,14 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(229, 141);
+            this.textBox3.Location = new System.Drawing.Point(257, 185);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(229, 72);
+            this.textBox1.Location = new System.Drawing.Point(257, 116);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 27);
             this.textBox1.TabIndex = 0;
@@ -354,7 +358,7 @@
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
             this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.currentRentals.Size = new System.Drawing.Size(481, 361);
+            this.currentRentals.Size = new System.Drawing.Size(481, 400);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
             this.currentRentals.UseVisualStyleBackColor = true;
@@ -376,7 +380,7 @@
             listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(9, 6);
             this.currentRentalsList.Name = "currentRentalsList";
-            this.currentRentalsList.Size = new System.Drawing.Size(469, 358);
+            this.currentRentalsList.Size = new System.Drawing.Size(469, 388);
             this.currentRentalsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.currentRentalsList.TabIndex = 1;
             this.currentRentalsList.TileSize = new System.Drawing.Size(400, 44);
@@ -400,7 +404,7 @@
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
             this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistory.Size = new System.Drawing.Size(481, 361);
+            this.rentalHistory.Size = new System.Drawing.Size(481, 400);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
             this.rentalHistory.UseVisualStyleBackColor = true;
@@ -422,7 +426,7 @@
             listViewItem10});
             this.listView1.Location = new System.Drawing.Point(6, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(469, 359);
+            this.listView1.Size = new System.Drawing.Size(469, 394);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(400, 44);
@@ -446,7 +450,7 @@
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
             this.ratings.Padding = new System.Windows.Forms.Padding(3);
-            this.ratings.Size = new System.Drawing.Size(481, 361);
+            this.ratings.Size = new System.Drawing.Size(481, 400);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
             // 
@@ -471,7 +475,7 @@
             this.accountInfo.Location = new System.Drawing.Point(4, 29);
             this.accountInfo.Name = "accountInfo";
             this.accountInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.accountInfo.Size = new System.Drawing.Size(481, 361);
+            this.accountInfo.Size = new System.Drawing.Size(481, 400);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             // 
@@ -625,12 +629,40 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "First Name:";
             // 
+            // orderButton
+            // 
+            this.orderButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.orderButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.orderButton.FlatAppearance.BorderSize = 2;
+            this.orderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderButton.Location = new System.Drawing.Point(10, 195);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(189, 45);
+            this.orderButton.TabIndex = 5;
+            this.orderButton.TabStop = true;
+            this.orderButton.Text = "Place Order";
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.Click += new System.EventHandler(this.orderMenu);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(481, 400);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Place Order";
+            // 
             // Customer_Home2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(709, 409);
+            this.ClientSize = new System.Drawing.Size(709, 460);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Customer_Home2";
@@ -694,5 +726,7 @@
         private ComboBox comboBox1;
         private Label label11;
         private Label label9;
+        public RadioButton orderButton;
+        private TabPage tabPage1;
     }
 }
