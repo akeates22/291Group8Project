@@ -41,6 +41,11 @@ namespace movieRentalApp
             this.contentBox.SelectTab(4);
         }
 
+        private void orderMenu(object sender, EventArgs e)
+        {
+            this.contentBox.SelectTab(5);
+        }
+
 
         private void label9_Click(object sender, EventArgs e)
         {

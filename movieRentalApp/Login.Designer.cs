@@ -84,7 +84,7 @@
             // 
             // loginFnameInput
             // 
-            this.loginFnameInput.ForeColor = System.Drawing.Color.Yellow;
+            this.loginFnameInput.ForeColor = System.Drawing.Color.Black;
             this.loginFnameInput.Location = new System.Drawing.Point(440, 149);
             this.loginFnameInput.Name = "loginFnameInput";
             this.loginFnameInput.Size = new System.Drawing.Size(218, 27);
@@ -92,7 +92,7 @@
             // 
             // IDinput
             // 
-            this.IDinput.ForeColor = System.Drawing.Color.Yellow;
+            this.IDinput.ForeColor = System.Drawing.Color.Black;
             this.IDinput.Location = new System.Drawing.Point(440, 275);
             this.IDinput.Name = "IDinput";
             this.IDinput.Size = new System.Drawing.Size(218, 27);
@@ -100,7 +100,7 @@
             // 
             // loginLnameInput
             // 
-            this.loginLnameInput.ForeColor = System.Drawing.Color.Yellow;
+            this.loginLnameInput.ForeColor = System.Drawing.Color.Black;
             this.loginLnameInput.Location = new System.Drawing.Point(440, 213);
             this.loginLnameInput.Name = "loginLnameInput";
             this.loginLnameInput.Size = new System.Drawing.Size(218, 27);
