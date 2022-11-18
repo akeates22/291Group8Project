@@ -67,5 +67,11 @@ namespace movieRentalApp
         {
 
         }
+
+        private void rateMovie(object sender, EventArgs e)
+        {
+            var ratingMenu = new Rate_Movie();
+            ratingMenu.Show();
+        }
     }
 }
