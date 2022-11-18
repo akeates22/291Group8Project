@@ -73,5 +73,12 @@ namespace movieRentalApp
             var ratingMenu = new Rate_Movie();
             ratingMenu.Show();
         }
+
+        private void placeOrder(object sender, EventArgs e)
+        {
+            string movieName = movieRentalInput.Text;
+            MessageBox.Show(String.Format("Added {0} to rental queue\n" +
+                                          "Return date: 2 weeks from now", movieName), movieName);
+        }
     }
 }
