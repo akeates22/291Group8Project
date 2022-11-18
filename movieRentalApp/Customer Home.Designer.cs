@@ -60,6 +60,7 @@
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orderButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.movieSearchButton = new System.Windows.Forms.RadioButton();
             this.currRentalsButton = new System.Windows.Forms.RadioButton();
@@ -102,7 +103,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.orderButton = new System.Windows.Forms.RadioButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,6 +129,24 @@
             this.panel1.Size = new System.Drawing.Size(202, 460);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // orderButton
+            // 
+            this.orderButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.orderButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.orderButton.FlatAppearance.BorderSize = 2;
+            this.orderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderButton.Location = new System.Drawing.Point(10, 195);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(189, 45);
+            this.orderButton.TabIndex = 5;
+            this.orderButton.TabStop = true;
+            this.orderButton.Text = "Place Order";
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.Click += new System.EventHandler(this.orderMenu);
             // 
             // pictureBox1
             // 
@@ -628,24 +646,6 @@
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "First Name:";
-            // 
-            // orderButton
-            // 
-            this.orderButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.orderButton.BackColor = System.Drawing.Color.AliceBlue;
-            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.orderButton.FlatAppearance.BorderSize = 2;
-            this.orderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
-            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(10, 195);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(189, 45);
-            this.orderButton.TabIndex = 5;
-            this.orderButton.TabStop = true;
-            this.orderButton.Text = "Place Order";
-            this.orderButton.UseVisualStyleBackColor = false;
-            this.orderButton.Click += new System.EventHandler(this.orderMenu);
             // 
             // tabPage1
             // 
