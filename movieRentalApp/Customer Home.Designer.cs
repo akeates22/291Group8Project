@@ -29,37 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orderButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.movieSearchButton = new System.Windows.Forms.RadioButton();
             this.currRentalsButton = new System.Windows.Forms.RadioButton();
@@ -102,8 +106,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.orderButton = new System.Windows.Forms.RadioButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rateMovieButton = new System.Windows.Forms.Button();
+            this.rateActorButton = new System.Windows.Forms.Button();
+            this.ratingHeader = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actorRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -111,7 +123,9 @@
             this.movieSearch.SuspendLayout();
             this.currentRentals.SuspendLayout();
             this.rentalHistory.SuspendLayout();
+            this.ratings.SuspendLayout();
             this.accountInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,6 +143,24 @@
             this.panel1.Size = new System.Drawing.Size(202, 460);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // orderButton
+            // 
+            this.orderButton.Appearance = System.Windows.Forms.Appearance.Button;
+            this.orderButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.orderButton.FlatAppearance.BorderSize = 2;
+            this.orderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderButton.Location = new System.Drawing.Point(10, 195);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(189, 45);
+            this.orderButton.TabIndex = 5;
+            this.orderButton.TabStop = true;
+            this.orderButton.Text = "Place Order";
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.Click += new System.EventHandler(this.orderMenu);
             // 
             // pictureBox1
             // 
@@ -203,7 +235,7 @@
             this.custRatingsButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.custRatingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custRatingsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.custRatingsButton.Location = new System.Drawing.Point(10, 351);
+            this.custRatingsButton.Location = new System.Drawing.Point(10, 350);
             this.custRatingsButton.Name = "custRatingsButton";
             this.custRatingsButton.Size = new System.Drawing.Size(189, 45);
             this.custRatingsButton.TabIndex = 3;
@@ -373,11 +405,11 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.currentRentalsList.Location = new System.Drawing.Point(9, 6);
             this.currentRentalsList.Name = "currentRentalsList";
             this.currentRentalsList.Size = new System.Drawing.Size(469, 388);
@@ -419,11 +451,11 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20});
             this.listView1.Location = new System.Drawing.Point(6, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(469, 394);
@@ -447,6 +479,11 @@
             // ratings
             // 
             this.ratings.BackColor = System.Drawing.Color.AliceBlue;
+            this.ratings.Controls.Add(this.dataGridView1);
+            this.ratings.Controls.Add(this.label12);
+            this.ratings.Controls.Add(this.ratingHeader);
+            this.ratings.Controls.Add(this.rateActorButton);
+            this.ratings.Controls.Add(this.rateMovieButton);
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
             this.ratings.Padding = new System.Windows.Forms.Padding(3);
@@ -629,24 +666,6 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "First Name:";
             // 
-            // orderButton
-            // 
-            this.orderButton.Appearance = System.Windows.Forms.Appearance.Button;
-            this.orderButton.BackColor = System.Drawing.Color.AliceBlue;
-            this.orderButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.orderButton.FlatAppearance.BorderSize = 2;
-            this.orderButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
-            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.orderButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.orderButton.Location = new System.Drawing.Point(10, 195);
-            this.orderButton.Name = "orderButton";
-            this.orderButton.Size = new System.Drawing.Size(189, 45);
-            this.orderButton.TabIndex = 5;
-            this.orderButton.TabStop = true;
-            this.orderButton.Text = "Place Order";
-            this.orderButton.UseVisualStyleBackColor = false;
-            this.orderButton.Click += new System.EventHandler(this.orderMenu);
-            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
@@ -656,6 +675,127 @@
             this.tabPage1.Size = new System.Drawing.Size(481, 400);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
+            // 
+            // rateMovieButton
+            // 
+            this.rateMovieButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rateMovieButton.Location = new System.Drawing.Point(41, 70);
+            this.rateMovieButton.Name = "rateMovieButton";
+            this.rateMovieButton.Size = new System.Drawing.Size(152, 41);
+            this.rateMovieButton.TabIndex = 0;
+            this.rateMovieButton.Text = "Rate Movie";
+            this.rateMovieButton.UseVisualStyleBackColor = true;
+            this.rateMovieButton.Click += new System.EventHandler(this.rateMovie);
+            // 
+            // rateActorButton
+            // 
+            this.rateActorButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rateActorButton.Location = new System.Drawing.Point(256, 70);
+            this.rateActorButton.Name = "rateActorButton";
+            this.rateActorButton.Size = new System.Drawing.Size(152, 41);
+            this.rateActorButton.TabIndex = 1;
+            this.rateActorButton.Text = "Rate Actor";
+            this.rateActorButton.UseVisualStyleBackColor = true;
+            // 
+            // ratingHeader
+            // 
+            this.ratingHeader.AutoSize = true;
+            this.ratingHeader.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ratingHeader.Location = new System.Drawing.Point(106, 20);
+            this.ratingHeader.Name = "ratingHeader";
+            this.ratingHeader.Size = new System.Drawing.Size(241, 31);
+            this.ratingHeader.TabIndex = 2;
+            this.ratingHeader.Text = "Submit a New Rating";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(126, 154);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(193, 31);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Previous Ratings";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.actor,
+            this.movieRating,
+            this.actorRating});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.NullValue = "N/A";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 209);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 70;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.NullValue = "N/A";
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.NullValue = "N/A";
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(475, 188);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.FillWeight = 69.16221F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Movie";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // actor
+            // 
+            this.actor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.actor.FillWeight = 69.16221F;
+            this.actor.HeaderText = "Lead Actor";
+            this.actor.MinimumWidth = 6;
+            this.actor.Name = "actor";
+            this.actor.ReadOnly = true;
+            // 
+            // movieRating
+            // 
+            this.movieRating.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.movieRating.FillWeight = 192.5134F;
+            this.movieRating.HeaderText = "Movie Rating";
+            this.movieRating.MinimumWidth = 6;
+            this.movieRating.Name = "movieRating";
+            this.movieRating.ReadOnly = true;
+            this.movieRating.Width = 90;
+            // 
+            // actorRating
+            // 
+            this.actorRating.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.actorRating.FillWeight = 69.16221F;
+            this.actorRating.HeaderText = "Actor Rating";
+            this.actorRating.MinimumWidth = 6;
+            this.actorRating.Name = "actorRating";
+            this.actorRating.ReadOnly = true;
+            this.actorRating.Width = 90;
             // 
             // Customer_Home2
             // 
@@ -675,8 +815,11 @@
             this.movieSearch.PerformLayout();
             this.currentRentals.ResumeLayout(false);
             this.rentalHistory.ResumeLayout(false);
+            this.ratings.ResumeLayout(false);
+            this.ratings.PerformLayout();
             this.accountInfo.ResumeLayout(false);
             this.accountInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -728,5 +871,14 @@
         private Label label9;
         public RadioButton orderButton;
         private TabPage tabPage1;
+        private Label label12;
+        private Label ratingHeader;
+        private Button rateActorButton;
+        private Button rateMovieButton;
+        public DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn actor;
+        private DataGridViewTextBoxColumn movieRating;
+        private DataGridViewTextBoxColumn actorRating;
     }
 }

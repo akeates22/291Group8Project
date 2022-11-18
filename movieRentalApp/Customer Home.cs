@@ -54,12 +54,24 @@ namespace movieRentalApp
 
         private void getMovieResults(object sender, EventArgs e)
         {
-
+            var searchResults = new Customer_Search_Results();
+            searchResults.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void rateMovie(object sender, EventArgs e)
+        {
+            var ratingMenu = new Rate_Movie();
+            ratingMenu.Show();
         }
     }
 }
