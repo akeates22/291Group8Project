@@ -22,3 +22,6 @@ C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\ob
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Customer_Search_Results.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Rate_Movie.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Rate_Actor.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Customer_Search.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Home.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Movie_Search.resources
