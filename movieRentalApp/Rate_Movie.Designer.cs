@@ -56,7 +56,7 @@
             this.submitRating.TabIndex = 1;
             this.submitRating.Text = "Submit Rating";
             this.submitRating.UseVisualStyleBackColor = true;
-            this.submitRating.Click += new System.EventHandler(this.postRating);
+            this.submitRating.Click += new System.EventHandler(this.postMovieRating);
             // 
             // label2
             // 
@@ -120,6 +120,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Rate_Movie";
             this.Text = "Rate_Movie";
+            this.Load += new System.EventHandler(this.Rate_Movie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

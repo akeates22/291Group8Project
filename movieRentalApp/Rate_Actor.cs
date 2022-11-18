@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace movieRentalApp
 {
-    public partial class Rate_Movie : Form
+    public partial class Rate_Actor : Form
     {
-        public Rate_Movie()
+        public Rate_Actor()
         {
             InitializeComponent();
         }
 
-        private void Rate_Movie_Load(object sender, EventArgs e)
+        private void Rate_Actor_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void postMovieRating(object sender, EventArgs e)
+        private void postActorRating(object sender, EventArgs e)
         {
             MessageBox.Show("Rating added");
             this.Close();
