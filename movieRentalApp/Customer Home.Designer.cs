@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "Tom Cruise",
             "9/10",
             "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "Brad Pitt",
             "4/10",
@@ -103,14 +103,7 @@
             this.rateMovieButton = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.cityLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.rentalLimitLabel = new System.Windows.Forms.Label();
-            this.mailingAddress = new System.Windows.Forms.Label();
-            this.feesLabel = new System.Windows.Forms.Label();
-            this.lnameLabel = new System.Windows.Forms.Label();
-            this.subLabel = new System.Windows.Forms.Label();
-            this.fnameLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -130,6 +123,15 @@
             this.label15 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.custFName = new System.Windows.Forms.TextBox();
+            this.custLName = new System.Windows.Forms.TextBox();
+            this.custAddress = new System.Windows.Forms.TextBox();
+            this.custCity = new System.Windows.Forms.TextBox();
+            this.custSubPlan = new System.Windows.Forms.TextBox();
+            this.custFees = new System.Windows.Forms.TextBox();
+            this.custRentalLimit = new System.Windows.Forms.TextBox();
+            this.saveAccInfoChanges = new System.Windows.Forms.Button();
+            this.updateAccInfo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -419,11 +421,11 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem37,
-            listViewItem38,
-            listViewItem39,
-            listViewItem40,
-            listViewItem41});
+            listViewItem49,
+            listViewItem50,
+            listViewItem51,
+            listViewItem52,
+            listViewItem53});
             this.currentRentalsList.Location = new System.Drawing.Point(9, 6);
             this.currentRentalsList.Name = "currentRentalsList";
             this.currentRentalsList.Size = new System.Drawing.Size(469, 388);
@@ -465,11 +467,11 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46});
+            listViewItem54,
+            listViewItem55,
+            listViewItem56,
+            listViewItem57,
+            listViewItem58});
             this.listView1.Location = new System.Drawing.Point(6, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(469, 394);
@@ -549,15 +551,17 @@
             // accountInfo
             // 
             this.accountInfo.BackColor = System.Drawing.Color.AliceBlue;
+            this.accountInfo.Controls.Add(this.updateAccInfo);
+            this.accountInfo.Controls.Add(this.saveAccInfoChanges);
+            this.accountInfo.Controls.Add(this.custRentalLimit);
+            this.accountInfo.Controls.Add(this.custFees);
+            this.accountInfo.Controls.Add(this.custSubPlan);
+            this.accountInfo.Controls.Add(this.custCity);
+            this.accountInfo.Controls.Add(this.custAddress);
+            this.accountInfo.Controls.Add(this.custLName);
+            this.accountInfo.Controls.Add(this.custFName);
             this.accountInfo.Controls.Add(this.label1);
-            this.accountInfo.Controls.Add(this.cityLabel);
             this.accountInfo.Controls.Add(this.label8);
-            this.accountInfo.Controls.Add(this.rentalLimitLabel);
-            this.accountInfo.Controls.Add(this.mailingAddress);
-            this.accountInfo.Controls.Add(this.feesLabel);
-            this.accountInfo.Controls.Add(this.lnameLabel);
-            this.accountInfo.Controls.Add(this.subLabel);
-            this.accountInfo.Controls.Add(this.fnameLabel);
             this.accountInfo.Controls.Add(this.label7);
             this.accountInfo.Controls.Add(this.label6);
             this.accountInfo.Controls.Add(this.label5);
@@ -570,6 +574,7 @@
             this.accountInfo.Size = new System.Drawing.Size(481, 400);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
+            this.accountInfo.Click += new System.EventHandler(this.accountInfo_Click);
             // 
             // label1
             // 
@@ -581,91 +586,21 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Account Information";
             // 
-            // cityLabel
-            // 
-            this.cityLabel.AutoSize = true;
-            this.cityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cityLabel.Location = new System.Drawing.Point(280, 193);
-            this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(116, 20);
-            this.cityLabel.TabIndex = 28;
-            this.cityLabel.Text = "Edmonton, AB";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(92, 193);
+            this.label8.Location = new System.Drawing.Point(56, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 27;
             this.label8.Text = "City:";
             // 
-            // rentalLimitLabel
-            // 
-            this.rentalLimitLabel.AutoSize = true;
-            this.rentalLimitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rentalLimitLabel.Location = new System.Drawing.Point(280, 313);
-            this.rentalLimitLabel.Name = "rentalLimitLabel";
-            this.rentalLimitLabel.Size = new System.Drawing.Size(146, 20);
-            this.rentalLimitLabel.TabIndex = 26;
-            this.rentalLimitLabel.Text = "20 movies / month";
-            // 
-            // mailingAddress
-            // 
-            this.mailingAddress.AutoSize = true;
-            this.mailingAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mailingAddress.Location = new System.Drawing.Point(280, 153);
-            this.mailingAddress.Name = "mailingAddress";
-            this.mailingAddress.Size = new System.Drawing.Size(102, 20);
-            this.mailingAddress.TabIndex = 25;
-            this.mailingAddress.Text = "123 Main St.";
-            // 
-            // feesLabel
-            // 
-            this.feesLabel.AutoSize = true;
-            this.feesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.feesLabel.Location = new System.Drawing.Point(280, 273);
-            this.feesLabel.Name = "feesLabel";
-            this.feesLabel.Size = new System.Drawing.Size(97, 20);
-            this.feesLabel.TabIndex = 24;
-            this.feesLabel.Text = "$15 / month";
-            // 
-            // lnameLabel
-            // 
-            this.lnameLabel.AutoSize = true;
-            this.lnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lnameLabel.Location = new System.Drawing.Point(280, 113);
-            this.lnameLabel.Name = "lnameLabel";
-            this.lnameLabel.Size = new System.Drawing.Size(42, 20);
-            this.lnameLabel.TabIndex = 23;
-            this.lnameLabel.Text = "Test";
-            // 
-            // subLabel
-            // 
-            this.subLabel.AutoSize = true;
-            this.subLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.subLabel.Location = new System.Drawing.Point(280, 233);
-            this.subLabel.Name = "subLabel";
-            this.subLabel.Size = new System.Drawing.Size(115, 20);
-            this.subLabel.TabIndex = 22;
-            this.subLabel.Text = "Premium-Plus";
-            // 
-            // fnameLabel
-            // 
-            this.fnameLabel.AutoSize = true;
-            this.fnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fnameLabel.Location = new System.Drawing.Point(280, 73);
-            this.fnameLabel.Name = "fnameLabel";
-            this.fnameLabel.Size = new System.Drawing.Size(56, 20);
-            this.fnameLabel.TabIndex = 21;
-            this.fnameLabel.Text = "Admin";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(92, 313);
+            this.label7.Location = new System.Drawing.Point(56, 303);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 20);
             this.label7.TabIndex = 20;
@@ -675,7 +610,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(92, 153);
+            this.label6.Location = new System.Drawing.Point(56, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 19;
@@ -685,7 +620,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(92, 233);
+            this.label5.Location = new System.Drawing.Point(56, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 20);
             this.label5.TabIndex = 18;
@@ -695,17 +630,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(92, 273);
+            this.label4.Location = new System.Drawing.Point(56, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Fees:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(92, 113);
+            this.label3.Location = new System.Drawing.Point(56, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 16;
@@ -715,7 +651,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(92, 73);
+            this.label2.Location = new System.Drawing.Point(56, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 15;
@@ -784,8 +720,8 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.GridLines = true;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem47,
-            listViewItem48});
+            listViewItem59,
+            listViewItem60});
             this.listView2.Location = new System.Drawing.Point(3, 211);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(475, 186);
@@ -839,6 +775,87 @@
             this.label16.TabIndex = 14;
             this.label16.Text = "(MM/DD/YY)";
             // 
+            // custFName
+            // 
+            this.custFName.Location = new System.Drawing.Point(267, 57);
+            this.custFName.Name = "custFName";
+            this.custFName.ReadOnly = true;
+            this.custFName.Size = new System.Drawing.Size(157, 27);
+            this.custFName.TabIndex = 30;
+            this.custFName.Text = "Admin";
+            // 
+            // custLName
+            // 
+            this.custLName.Location = new System.Drawing.Point(267, 100);
+            this.custLName.Name = "custLName";
+            this.custLName.ReadOnly = true;
+            this.custLName.Size = new System.Drawing.Size(155, 27);
+            this.custLName.TabIndex = 31;
+            this.custLName.Text = "Test";
+            // 
+            // custAddress
+            // 
+            this.custAddress.Location = new System.Drawing.Point(267, 141);
+            this.custAddress.Name = "custAddress";
+            this.custAddress.ReadOnly = true;
+            this.custAddress.Size = new System.Drawing.Size(155, 27);
+            this.custAddress.TabIndex = 32;
+            this.custAddress.Text = "123 Main St";
+            // 
+            // custCity
+            // 
+            this.custCity.Location = new System.Drawing.Point(267, 180);
+            this.custCity.Name = "custCity";
+            this.custCity.ReadOnly = true;
+            this.custCity.Size = new System.Drawing.Size(155, 27);
+            this.custCity.TabIndex = 33;
+            this.custCity.Text = "Edmonton, AB";
+            // 
+            // custSubPlan
+            // 
+            this.custSubPlan.Location = new System.Drawing.Point(267, 220);
+            this.custSubPlan.Name = "custSubPlan";
+            this.custSubPlan.ReadOnly = true;
+            this.custSubPlan.Size = new System.Drawing.Size(157, 27);
+            this.custSubPlan.TabIndex = 34;
+            this.custSubPlan.Text = "Premium Plus";
+            // 
+            // custFees
+            // 
+            this.custFees.Location = new System.Drawing.Point(267, 260);
+            this.custFees.Name = "custFees";
+            this.custFees.ReadOnly = true;
+            this.custFees.Size = new System.Drawing.Size(157, 27);
+            this.custFees.TabIndex = 35;
+            this.custFees.Text = "$15 / month";
+            // 
+            // custRentalLimit
+            // 
+            this.custRentalLimit.Location = new System.Drawing.Point(267, 300);
+            this.custRentalLimit.Name = "custRentalLimit";
+            this.custRentalLimit.ReadOnly = true;
+            this.custRentalLimit.Size = new System.Drawing.Size(157, 27);
+            this.custRentalLimit.TabIndex = 36;
+            this.custRentalLimit.Text = "20 / month";
+            // 
+            // saveAccInfoChanges
+            // 
+            this.saveAccInfoChanges.Location = new System.Drawing.Point(267, 349);
+            this.saveAccInfoChanges.Name = "saveAccInfoChanges";
+            this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 42);
+            this.saveAccInfoChanges.TabIndex = 37;
+            this.saveAccInfoChanges.Text = "Save Changes";
+            this.saveAccInfoChanges.UseVisualStyleBackColor = true;
+            // 
+            // updateAccInfo
+            // 
+            this.updateAccInfo.Location = new System.Drawing.Point(45, 349);
+            this.updateAccInfo.Name = "updateAccInfo";
+            this.updateAccInfo.Size = new System.Drawing.Size(157, 42);
+            this.updateAccInfo.TabIndex = 38;
+            this.updateAccInfo.Text = "Update Information";
+            this.updateAccInfo.UseVisualStyleBackColor = true;
+            // 
             // Customer_Home2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -884,14 +901,7 @@
         private TabPage ratings;
         private TabPage accountInfo;
         private Label label1;
-        private Label cityLabel;
         private Label label8;
-        private Label rentalLimitLabel;
-        private Label mailingAddress;
-        private Label feesLabel;
-        private Label lnameLabel;
-        private Label subLabel;
-        private Label fnameLabel;
         private Label label7;
         private Label label6;
         private Label label5;
@@ -930,5 +940,14 @@
         private TextBox textBox2;
         private Label label15;
         private Label label16;
+        private Button updateAccInfo;
+        private Button saveAccInfoChanges;
+        private TextBox custRentalLimit;
+        private TextBox custFees;
+        private TextBox custSubPlan;
+        private TextBox custCity;
+        private TextBox custAddress;
+        private TextBox custLName;
+        private TextBox custFName;
     }
 }

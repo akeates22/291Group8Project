@@ -85,5 +85,15 @@ namespace movieRentalApp
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
