@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "Tom Cruise",
             "9/10",
             "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "Brad Pitt",
             "4/10",
@@ -80,6 +80,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contentBox = new System.Windows.Forms.TabControl();
             this.movieSearch = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -97,11 +100,25 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.ratings = new System.Windows.Forms.TabPage();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.movieColumn = new System.Windows.Forms.ColumnHeader();
+            this.actorColumn = new System.Windows.Forms.ColumnHeader();
+            this.mRatingColumn = new System.Windows.Forms.ColumnHeader();
+            this.aRatingColumn = new System.Windows.Forms.ColumnHeader();
             this.label12 = new System.Windows.Forms.Label();
             this.ratingHeader = new System.Windows.Forms.Label();
             this.rateActorButton = new System.Windows.Forms.Button();
             this.rateMovieButton = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.TabPage();
+            this.updateAccInfo = new System.Windows.Forms.Button();
+            this.saveAccInfoChanges = new System.Windows.Forms.Button();
+            this.custRentalLimit = new System.Windows.Forms.TextBox();
+            this.custFees = new System.Windows.Forms.TextBox();
+            this.custSubPlan = new System.Windows.Forms.TextBox();
+            this.custCity = new System.Windows.Forms.TextBox();
+            this.custAddress = new System.Windows.Forms.TextBox();
+            this.custLName = new System.Windows.Forms.TextBox();
+            this.custFName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -115,23 +132,6 @@
             this.movieRentalInput = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.movieColumn = new System.Windows.Forms.ColumnHeader();
-            this.actorColumn = new System.Windows.Forms.ColumnHeader();
-            this.mRatingColumn = new System.Windows.Forms.ColumnHeader();
-            this.aRatingColumn = new System.Windows.Forms.ColumnHeader();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.custFName = new System.Windows.Forms.TextBox();
-            this.custLName = new System.Windows.Forms.TextBox();
-            this.custAddress = new System.Windows.Forms.TextBox();
-            this.custCity = new System.Windows.Forms.TextBox();
-            this.custSubPlan = new System.Windows.Forms.TextBox();
-            this.custFees = new System.Windows.Forms.TextBox();
-            this.custRentalLimit = new System.Windows.Forms.TextBox();
-            this.saveAccInfoChanges = new System.Windows.Forms.Button();
-            this.updateAccInfo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -317,6 +317,32 @@
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(73, 292);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 20);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "(MM/DD/YY)";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(257, 268);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(151, 27);
+            this.textBox2.TabIndex = 13;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(73, 269);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(109, 23);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Rental Date:";
+            // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
@@ -421,11 +447,11 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(9, 6);
             this.currentRentalsList.Name = "currentRentalsList";
             this.currentRentalsList.Size = new System.Drawing.Size(469, 388);
@@ -467,11 +493,11 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem54,
-            listViewItem55,
-            listViewItem56,
-            listViewItem57,
-            listViewItem58});
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
             this.listView1.Location = new System.Drawing.Point(6, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(469, 394);
@@ -506,6 +532,45 @@
             this.ratings.Size = new System.Drawing.Size(481, 400);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.movieColumn,
+            this.actorColumn,
+            this.mRatingColumn,
+            this.aRatingColumn});
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView2.GridLines = true;
+            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem11,
+            listViewItem12});
+            this.listView2.Location = new System.Drawing.Point(3, 211);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(475, 186);
+            this.listView2.TabIndex = 4;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // movieColumn
+            // 
+            this.movieColumn.Text = "Movie ";
+            this.movieColumn.Width = 138;
+            // 
+            // actorColumn
+            // 
+            this.actorColumn.Text = "Lead Actor";
+            this.actorColumn.Width = 138;
+            // 
+            // mRatingColumn
+            // 
+            this.mRatingColumn.Text = "Movie Rating";
+            this.mRatingColumn.Width = 100;
+            // 
+            // aRatingColumn
+            // 
+            this.aRatingColumn.Text = "Actor Rating";
+            this.aRatingColumn.Width = 100;
             // 
             // label12
             // 
@@ -575,6 +640,89 @@
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             this.accountInfo.Click += new System.EventHandler(this.accountInfo_Click);
+            // 
+            // updateAccInfo
+            // 
+            this.updateAccInfo.Location = new System.Drawing.Point(45, 349);
+            this.updateAccInfo.Name = "updateAccInfo";
+            this.updateAccInfo.Size = new System.Drawing.Size(157, 42);
+            this.updateAccInfo.TabIndex = 38;
+            this.updateAccInfo.Text = "Update Information";
+            this.updateAccInfo.UseVisualStyleBackColor = true;
+            this.updateAccInfo.Click += new System.EventHandler(this.allowAcctEdits);
+            // 
+            // saveAccInfoChanges
+            // 
+            this.saveAccInfoChanges.Location = new System.Drawing.Point(267, 349);
+            this.saveAccInfoChanges.Name = "saveAccInfoChanges";
+            this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 42);
+            this.saveAccInfoChanges.TabIndex = 37;
+            this.saveAccInfoChanges.Text = "Save Changes";
+            this.saveAccInfoChanges.UseVisualStyleBackColor = true;
+            this.saveAccInfoChanges.Click += new System.EventHandler(this.saveAccInfoUpdates);
+            // 
+            // custRentalLimit
+            // 
+            this.custRentalLimit.Location = new System.Drawing.Point(267, 300);
+            this.custRentalLimit.Name = "custRentalLimit";
+            this.custRentalLimit.ReadOnly = true;
+            this.custRentalLimit.Size = new System.Drawing.Size(157, 27);
+            this.custRentalLimit.TabIndex = 36;
+            this.custRentalLimit.Text = "20 / month";
+            // 
+            // custFees
+            // 
+            this.custFees.Location = new System.Drawing.Point(267, 260);
+            this.custFees.Name = "custFees";
+            this.custFees.ReadOnly = true;
+            this.custFees.Size = new System.Drawing.Size(157, 27);
+            this.custFees.TabIndex = 35;
+            this.custFees.Text = "$15 / month";
+            // 
+            // custSubPlan
+            // 
+            this.custSubPlan.Location = new System.Drawing.Point(267, 220);
+            this.custSubPlan.Name = "custSubPlan";
+            this.custSubPlan.ReadOnly = true;
+            this.custSubPlan.Size = new System.Drawing.Size(157, 27);
+            this.custSubPlan.TabIndex = 34;
+            this.custSubPlan.Text = "Premium Plus";
+            // 
+            // custCity
+            // 
+            this.custCity.Location = new System.Drawing.Point(267, 180);
+            this.custCity.Name = "custCity";
+            this.custCity.ReadOnly = true;
+            this.custCity.Size = new System.Drawing.Size(155, 27);
+            this.custCity.TabIndex = 33;
+            this.custCity.Text = "Edmonton, AB";
+            // 
+            // custAddress
+            // 
+            this.custAddress.Location = new System.Drawing.Point(267, 141);
+            this.custAddress.Name = "custAddress";
+            this.custAddress.ReadOnly = true;
+            this.custAddress.Size = new System.Drawing.Size(155, 27);
+            this.custAddress.TabIndex = 32;
+            this.custAddress.Text = "123 Main St";
+            // 
+            // custLName
+            // 
+            this.custLName.Location = new System.Drawing.Point(267, 100);
+            this.custLName.Name = "custLName";
+            this.custLName.ReadOnly = true;
+            this.custLName.Size = new System.Drawing.Size(155, 27);
+            this.custLName.TabIndex = 31;
+            this.custLName.Text = "Test";
+            // 
+            // custFName
+            // 
+            this.custFName.Location = new System.Drawing.Point(267, 57);
+            this.custFName.Name = "custFName";
+            this.custFName.ReadOnly = true;
+            this.custFName.Size = new System.Drawing.Size(157, 27);
+            this.custFName.TabIndex = 30;
+            this.custFName.Text = "Admin";
             // 
             // label1
             // 
@@ -709,152 +857,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.movieColumn,
-            this.actorColumn,
-            this.mRatingColumn,
-            this.aRatingColumn});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView2.GridLines = true;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem59,
-            listViewItem60});
-            this.listView2.Location = new System.Drawing.Point(3, 211);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(475, 186);
-            this.listView2.TabIndex = 4;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // movieColumn
-            // 
-            this.movieColumn.Text = "Movie ";
-            this.movieColumn.Width = 138;
-            // 
-            // actorColumn
-            // 
-            this.actorColumn.Text = "Lead Actor";
-            this.actorColumn.Width = 138;
-            // 
-            // mRatingColumn
-            // 
-            this.mRatingColumn.Text = "Movie Rating";
-            this.mRatingColumn.Width = 100;
-            // 
-            // aRatingColumn
-            // 
-            this.aRatingColumn.Text = "Actor Rating";
-            this.aRatingColumn.Width = 100;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(73, 269);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 23);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Rental Date:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(257, 268);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 27);
-            this.textBox2.TabIndex = 13;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(73, 292);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 20);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "(MM/DD/YY)";
-            // 
-            // custFName
-            // 
-            this.custFName.Location = new System.Drawing.Point(267, 57);
-            this.custFName.Name = "custFName";
-            this.custFName.ReadOnly = true;
-            this.custFName.Size = new System.Drawing.Size(157, 27);
-            this.custFName.TabIndex = 30;
-            this.custFName.Text = "Admin";
-            // 
-            // custLName
-            // 
-            this.custLName.Location = new System.Drawing.Point(267, 100);
-            this.custLName.Name = "custLName";
-            this.custLName.ReadOnly = true;
-            this.custLName.Size = new System.Drawing.Size(155, 27);
-            this.custLName.TabIndex = 31;
-            this.custLName.Text = "Test";
-            // 
-            // custAddress
-            // 
-            this.custAddress.Location = new System.Drawing.Point(267, 141);
-            this.custAddress.Name = "custAddress";
-            this.custAddress.ReadOnly = true;
-            this.custAddress.Size = new System.Drawing.Size(155, 27);
-            this.custAddress.TabIndex = 32;
-            this.custAddress.Text = "123 Main St";
-            // 
-            // custCity
-            // 
-            this.custCity.Location = new System.Drawing.Point(267, 180);
-            this.custCity.Name = "custCity";
-            this.custCity.ReadOnly = true;
-            this.custCity.Size = new System.Drawing.Size(155, 27);
-            this.custCity.TabIndex = 33;
-            this.custCity.Text = "Edmonton, AB";
-            // 
-            // custSubPlan
-            // 
-            this.custSubPlan.Location = new System.Drawing.Point(267, 220);
-            this.custSubPlan.Name = "custSubPlan";
-            this.custSubPlan.ReadOnly = true;
-            this.custSubPlan.Size = new System.Drawing.Size(157, 27);
-            this.custSubPlan.TabIndex = 34;
-            this.custSubPlan.Text = "Premium Plus";
-            // 
-            // custFees
-            // 
-            this.custFees.Location = new System.Drawing.Point(267, 260);
-            this.custFees.Name = "custFees";
-            this.custFees.ReadOnly = true;
-            this.custFees.Size = new System.Drawing.Size(157, 27);
-            this.custFees.TabIndex = 35;
-            this.custFees.Text = "$15 / month";
-            // 
-            // custRentalLimit
-            // 
-            this.custRentalLimit.Location = new System.Drawing.Point(267, 300);
-            this.custRentalLimit.Name = "custRentalLimit";
-            this.custRentalLimit.ReadOnly = true;
-            this.custRentalLimit.Size = new System.Drawing.Size(157, 27);
-            this.custRentalLimit.TabIndex = 36;
-            this.custRentalLimit.Text = "20 / month";
-            // 
-            // saveAccInfoChanges
-            // 
-            this.saveAccInfoChanges.Location = new System.Drawing.Point(267, 349);
-            this.saveAccInfoChanges.Name = "saveAccInfoChanges";
-            this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 42);
-            this.saveAccInfoChanges.TabIndex = 37;
-            this.saveAccInfoChanges.Text = "Save Changes";
-            this.saveAccInfoChanges.UseVisualStyleBackColor = true;
-            // 
-            // updateAccInfo
-            // 
-            this.updateAccInfo.Location = new System.Drawing.Point(45, 349);
-            this.updateAccInfo.Name = "updateAccInfo";
-            this.updateAccInfo.Size = new System.Drawing.Size(157, 42);
-            this.updateAccInfo.TabIndex = 38;
-            this.updateAccInfo.Text = "Update Information";
-            this.updateAccInfo.UseVisualStyleBackColor = true;
             // 
             // Customer_Home2
             // 

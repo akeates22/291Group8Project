@@ -95,5 +95,22 @@ namespace movieRentalApp
         {
 
         }
+
+        private void allowAcctEdits(object sender, EventArgs e)
+        {
+            this.custFName.ReadOnly = false;
+            this.custLName.ReadOnly = false;
+            this.custAddress.ReadOnly = false;
+            this.custCity.ReadOnly = false;
+
+        }
+
+        private void saveAccInfoUpdates(object sender, EventArgs e)
+        {
+            this.custFName.ReadOnly = true;
+            this.custLName.ReadOnly = true;
+            this.custAddress.ReadOnly = true;
+            this.custCity.ReadOnly = true;
+        }
     }
 }
