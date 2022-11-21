@@ -15,6 +15,7 @@ namespace movieRentalApp
         public Customer_Home2()
         {
             InitializeComponent();
+
         }
 
         private void custMovieSearch(object sender, EventArgs e)
@@ -76,9 +77,46 @@ namespace movieRentalApp
 
         private void placeOrder(object sender, EventArgs e)
         {
-            string movieName = movieRentalInput.Text;
+            string movieName = rentalTitle.Text;
             MessageBox.Show(String.Format("Added {0} to rental queue\n" +
                                           "Return date: 2 weeks from now", movieName), movieName);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accountInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allowAcctEdits(object sender, EventArgs e)
+        {
+            this.custFName.ReadOnly = false;
+            this.custLName.ReadOnly = false;
+            this.custAddress.ReadOnly = false;
+            this.custCity.ReadOnly = false;
+
+        }
+
+        private void saveAccInfoUpdates(object sender, EventArgs e)
+        {
+            this.custFName.ReadOnly = true;
+            this.custLName.ReadOnly = true;
+            this.custAddress.ReadOnly = true;
+            this.custCity.ReadOnly = true;
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
