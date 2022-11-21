@@ -30,22 +30,22 @@
         {
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
-            "Available for rental now"}, -1);
+            "3 DVD, 1 VHS"}, -1);
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
-            "Available for rental now"}, -1);
+            "2 DVD, 4 VHS"}, -1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
-            "11/20/22"}, -1);
+            "1 DVD"}, -1);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
-            "11/28/22"}, -1);
+            "2 DVD, 5 VHS"}, -1);
             System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
-            "Available for rental now"}, -1);
+            "7 VHS"}, -1);
             this.listView1 = new System.Windows.Forms.ListView();
             this.movieTitle = new System.Windows.Forms.ColumnHeader();
-            this.availability = new System.Windows.Forms.ColumnHeader();
+            this.copyType = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // listView1
@@ -53,7 +53,7 @@
             this.listView1.BackColor = System.Drawing.Color.AliceBlue;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.movieTitle,
-            this.availability});
+            this.copyType});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
@@ -64,7 +64,7 @@
             listViewItem5});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(405, 386);
+            this.listView1.Size = new System.Drawing.Size(472, 386);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -72,19 +72,19 @@
             // movieTitle
             // 
             this.movieTitle.Text = "Movie Title";
-            this.movieTitle.Width = 203;
+            this.movieTitle.Width = 306;
             // 
-            // availability
+            // copyType
             // 
-            this.availability.Text = "Next available rental date";
-            this.availability.Width = 203;
+            this.copyType.Text = "Copy Types";
+            this.copyType.Width = 165;
             // 
             // Customer_Search_Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(405, 386);
+            this.ClientSize = new System.Drawing.Size(472, 386);
             this.Controls.Add(this.listView1);
             this.Name = "Customer_Search_Results";
             this.Text = "Customer_Search_Results";
@@ -96,6 +96,6 @@
 
         private ListView listView1;
         private ColumnHeader movieTitle;
-        private ColumnHeader availability;
+        private ColumnHeader copyType;
     }
 }

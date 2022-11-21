@@ -80,5 +80,10 @@ namespace movieRentalApp
             MessageBox.Show(String.Format("Added {0} to rental queue\n" +
                                           "Return date: 2 weeks from now", movieName), movieName);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

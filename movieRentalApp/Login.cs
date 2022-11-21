@@ -39,7 +39,9 @@ namespace movieRentalApp
             }
             else if (fname == "admin" && lname == "test" && ID == "123456789")
             {
-                //show employee home screen
+                var mainMenu = new Employee_Home();
+                mainMenu.Show();
+                this.Close();
             }
             else
             {
