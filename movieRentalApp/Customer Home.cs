@@ -69,10 +69,13 @@ namespace movieRentalApp
         private void placeOrder(object sender, EventArgs e)
         {
             string movieName = rentalTitle.Text;
-            MessageBox.Show(String.Format("Successfully rented {0}\n" +
-                                          "Order ID: {1}\n" +
-                                          "Head to your local BlockBuster to pick up your copy\n" +
-                                          "Return date: 2 weeks from now", movieName, 12345), "Submission Received");
+            string startDate = rentalDate.Text;
+            string returnDate = (DateTime.Parse(startDate).AddDays(14)).ToString();
+
+            MessageBox.Show(String.Format("Successfully reserved {0} for rental on {1}\n" +
+                                          "Order ID: 12345\n" +
+                                          "Return date: {2}", 
+                                          movieName, startDate, returnDate), "Submission Received");
         }
 
         private void allowAcctEdits(object sender, EventArgs e)

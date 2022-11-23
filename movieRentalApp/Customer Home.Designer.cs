@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "Tom Cruise",
             "9/10",
             "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "Brad Pitt",
             "4/10",
@@ -80,8 +80,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contentBox = new System.Windows.Forms.TabControl();
             this.movieSearch = new System.Windows.Forms.TabPage();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -132,6 +131,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.rentalDate = new System.Windows.Forms.DateTimePicker();
             this.rentalFormat = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.placeOrderButton = new System.Windows.Forms.Button();
@@ -283,9 +284,9 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, -31);
+            this.panel2.Location = new System.Drawing.Point(202, -29);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 530);
+            this.panel2.Size = new System.Drawing.Size(834, 528);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -300,14 +301,13 @@
             this.contentBox.Location = new System.Drawing.Point(0, 0);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(834, 530);
+            this.contentBox.Size = new System.Drawing.Size(834, 528);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
             // 
             this.movieSearch.BackColor = System.Drawing.Color.AliceBlue;
-            this.movieSearch.Controls.Add(this.label16);
-            this.movieSearch.Controls.Add(this.textBox2);
+            this.movieSearch.Controls.Add(this.dateTimePicker2);
             this.movieSearch.Controls.Add(this.label15);
             this.movieSearch.Controls.Add(this.searchButton);
             this.movieSearch.Controls.Add(this.comboBox1);
@@ -320,40 +320,31 @@
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
             this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.movieSearch.Size = new System.Drawing.Size(826, 454);
+            this.movieSearch.Size = new System.Drawing.Size(826, 495);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
-            // label16
+            // dateTimePicker2
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(246, 318);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 20);
-            this.label16.TabIndex = 14;
-            this.label16.Text = "(MM/DD/YY)";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(430, 294);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 27);
-            this.textBox2.TabIndex = 13;
+            this.dateTimePicker2.Location = new System.Drawing.Point(406, 342);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(190, 27);
+            this.dateTimePicker2.TabIndex = 13;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(246, 295);
+            this.label15.Location = new System.Drawing.Point(222, 342);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 23);
+            this.label15.Size = new System.Drawing.Size(132, 23);
             this.label15.TabIndex = 12;
-            this.label15.Text = "Rental Date:";
+            this.label15.Text = "Available Date:";
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(329, 363);
+            this.searchButton.Location = new System.Drawing.Point(300, 425);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(168, 45);
             this.searchButton.TabIndex = 11;
@@ -372,16 +363,16 @@
             "Romance",
             "Sci-fi",
             "Thriller"});
-            this.comboBox1.Location = new System.Drawing.Point(430, 233);
+            this.comboBox1.Location = new System.Drawing.Point(406, 280);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(190, 28);
             this.comboBox1.TabIndex = 10;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(246, 232);
+            this.label11.Location = new System.Drawing.Point(222, 279);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 25);
             this.label11.TabIndex = 9;
@@ -391,7 +382,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(246, 165);
+            this.label9.Location = new System.Drawing.Point(222, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 8;
@@ -401,7 +392,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(246, 107);
+            this.label10.Location = new System.Drawing.Point(222, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 25);
             this.label10.TabIndex = 7;
@@ -411,7 +402,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchLabel.Location = new System.Drawing.Point(329, 48);
+            this.searchLabel.Location = new System.Drawing.Point(310, 70);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(158, 31);
             this.searchLabel.TabIndex = 6;
@@ -419,16 +410,16 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(430, 166);
+            this.textBox3.Location = new System.Drawing.Point(406, 211);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 27);
+            this.textBox3.Size = new System.Drawing.Size(190, 27);
             this.textBox3.TabIndex = 2;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(430, 108);
+            this.textBox1.Location = new System.Drawing.Point(406, 148);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 27);
+            this.textBox1.Size = new System.Drawing.Size(190, 27);
             this.textBox1.TabIndex = 0;
             // 
             // currentRentals
@@ -437,7 +428,7 @@
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
             this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.currentRentals.Size = new System.Drawing.Size(826, 454);
+            this.currentRentals.Size = new System.Drawing.Size(826, 495);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
             this.currentRentals.UseVisualStyleBackColor = true;
@@ -455,14 +446,14 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
-            this.currentRentalsList.Size = new System.Drawing.Size(820, 448);
+            this.currentRentalsList.Size = new System.Drawing.Size(820, 489);
             this.currentRentalsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.currentRentalsList.TabIndex = 1;
             this.currentRentalsList.TileSize = new System.Drawing.Size(400, 44);
@@ -497,7 +488,7 @@
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
             this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistory.Size = new System.Drawing.Size(826, 497);
+            this.rentalHistory.Size = new System.Drawing.Size(826, 495);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
             this.rentalHistory.UseVisualStyleBackColor = true;
@@ -515,14 +506,14 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(820, 491);
+            this.listView1.Size = new System.Drawing.Size(820, 489);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(400, 44);
@@ -561,7 +552,7 @@
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
             this.ratings.Padding = new System.Windows.Forms.Padding(3);
-            this.ratings.Size = new System.Drawing.Size(826, 454);
+            this.ratings.Size = new System.Drawing.Size(826, 495);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
             // 
@@ -575,9 +566,9 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.GridLines = true;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12});
-            this.listView2.Location = new System.Drawing.Point(3, 194);
+            listViewItem23,
+            listViewItem24});
+            this.listView2.Location = new System.Drawing.Point(3, 235);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(820, 257);
             this.listView2.TabIndex = 4;
@@ -669,7 +660,7 @@
             this.accountInfo.Location = new System.Drawing.Point(4, 29);
             this.accountInfo.Name = "accountInfo";
             this.accountInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.accountInfo.Size = new System.Drawing.Size(826, 454);
+            this.accountInfo.Size = new System.Drawing.Size(826, 495);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             // 
@@ -839,6 +830,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.rentalDate);
             this.tabPage1.Controls.Add(this.rentalFormat);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.placeOrderButton);
@@ -848,9 +841,26 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(826, 454);
+            this.tabPage1.Size = new System.Drawing.Size(826, 495);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(222, 270);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(116, 28);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Rental Date:";
+            // 
+            // rentalDate
+            // 
+            this.rentalDate.Location = new System.Drawing.Point(402, 272);
+            this.rentalDate.Name = "rentalDate";
+            this.rentalDate.Size = new System.Drawing.Size(203, 27);
+            this.rentalDate.TabIndex = 6;
             // 
             // rentalFormat
             // 
@@ -859,7 +869,7 @@
             "Blu-ray",
             "DVD",
             "VHS"});
-            this.rentalFormat.Location = new System.Drawing.Point(395, 275);
+            this.rentalFormat.Location = new System.Drawing.Point(402, 196);
             this.rentalFormat.Name = "rentalFormat";
             this.rentalFormat.Size = new System.Drawing.Size(203, 28);
             this.rentalFormat.TabIndex = 5;
@@ -868,7 +878,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(215, 275);
+            this.label17.Location = new System.Drawing.Point(222, 196);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(139, 28);
             this.label17.TabIndex = 4;
@@ -877,7 +887,7 @@
             // placeOrderButton
             // 
             this.placeOrderButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.placeOrderButton.Location = new System.Drawing.Point(299, 352);
+            this.placeOrderButton.Location = new System.Drawing.Point(307, 341);
             this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(152, 52);
             this.placeOrderButton.TabIndex = 3;
@@ -887,7 +897,7 @@
             // 
             // rentalTitle
             // 
-            this.rentalTitle.Location = new System.Drawing.Point(395, 194);
+            this.rentalTitle.Location = new System.Drawing.Point(402, 123);
             this.rentalTitle.Name = "rentalTitle";
             this.rentalTitle.Size = new System.Drawing.Size(203, 27);
             this.rentalTitle.TabIndex = 2;
@@ -896,7 +906,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(215, 201);
+            this.label14.Location = new System.Drawing.Point(222, 119);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(113, 28);
             this.label14.TabIndex = 1;
@@ -906,7 +916,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(186, 92);
+            this.label13.Location = new System.Drawing.Point(186, 23);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(455, 56);
             this.label13.TabIndex = 0;
@@ -994,9 +1004,7 @@
         private ColumnHeader actorColumn;
         private ColumnHeader mRatingColumn;
         private ColumnHeader aRatingColumn;
-        private TextBox textBox2;
         private Label label15;
-        private Label label16;
         private Button updateAccInfo;
         private Button saveAccInfoChanges;
         private TextBox custRentalLimit;
@@ -1012,5 +1020,8 @@
         private ColumnHeader movieFormat;
         private ColumnHeader currRentCopyID;
         private ColumnHeader currRentFormat;
+        private DateTimePicker dateTimePicker2;
+        private Label label18;
+        private DateTimePicker rentalDate;
     }
 }
