@@ -48,25 +48,10 @@ namespace movieRentalApp
         }
 
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void getMovieResults(object sender, EventArgs e)
         {
             var searchResults = new Customer_Search_Results();
             searchResults.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void rateMovie(object sender, EventArgs e)
@@ -75,26 +60,19 @@ namespace movieRentalApp
             ratingMenu.Show();
         }
 
+        private void rateActor(object sender, EventArgs e)
+        {
+            var actorRating = new Rate_Actor();
+            actorRating.Show();
+        }
+
         private void placeOrder(object sender, EventArgs e)
         {
             string movieName = rentalTitle.Text;
-            MessageBox.Show(String.Format("Added {0} to rental queue\n" +
-                                          "Return date: 2 weeks from now", movieName), movieName);
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accountInfo_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(String.Format("Successfully rented {0}\n" +
+                                          "Order ID: {1}\n" +
+                                          "Head to your local BlockBuster to pick up your copy\n" +
+                                          "Return date: 2 weeks from now", movieName, 12345), "Submission Received");
         }
 
         private void allowAcctEdits(object sender, EventArgs e)
@@ -112,11 +90,6 @@ namespace movieRentalApp
             this.custLName.ReadOnly = true;
             this.custAddress.ReadOnly = true;
             this.custCity.ReadOnly = true;
-        }
-
-        private void label18_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

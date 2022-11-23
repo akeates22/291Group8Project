@@ -95,6 +95,8 @@
             this.currentRentalsList = new System.Windows.Forms.ListView();
             this.movieTitle = new System.Windows.Forms.ColumnHeader();
             this.returnDate = new System.Windows.Forms.ColumnHeader();
+            this.currRentCopyID = new System.Windows.Forms.ColumnHeader();
+            this.currRentFormat = new System.Windows.Forms.ColumnHeader();
             this.rentalHistory = new System.Windows.Forms.TabPage();
             this.listView1 = new System.Windows.Forms.ListView();
             this.titleColumn = new System.Windows.Forms.ColumnHeader();
@@ -136,8 +138,6 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.currRentCopyID = new System.Windows.Forms.ColumnHeader();
-            this.currRentFormat = new System.Windows.Forms.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,7 +164,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 499);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // orderButton
             // 
@@ -284,9 +283,9 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, -28);
+            this.panel2.Location = new System.Drawing.Point(202, -31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 527);
+            this.panel2.Size = new System.Drawing.Size(834, 530);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -301,7 +300,7 @@
             this.contentBox.Location = new System.Drawing.Point(0, 0);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(834, 527);
+            this.contentBox.Size = new System.Drawing.Size(834, 530);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
@@ -417,7 +416,6 @@
             this.searchLabel.Size = new System.Drawing.Size(158, 31);
             this.searchLabel.TabIndex = 6;
             this.searchLabel.Text = "Movie Search";
-            this.searchLabel.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBox3
             // 
@@ -432,7 +430,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 27);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // currentRentals
             // 
@@ -440,7 +437,7 @@
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
             this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.currentRentals.Size = new System.Drawing.Size(826, 494);
+            this.currentRentals.Size = new System.Drawing.Size(826, 454);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
             this.currentRentals.UseVisualStyleBackColor = true;
@@ -465,7 +462,7 @@
             listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
-            this.currentRentalsList.Size = new System.Drawing.Size(820, 488);
+            this.currentRentalsList.Size = new System.Drawing.Size(820, 448);
             this.currentRentalsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.currentRentalsList.TabIndex = 1;
             this.currentRentalsList.TileSize = new System.Drawing.Size(400, 44);
@@ -483,13 +480,24 @@
             this.returnDate.Text = "Return Date";
             this.returnDate.Width = 234;
             // 
+            // currRentCopyID
+            // 
+            this.currRentCopyID.Tag = "";
+            this.currRentCopyID.Text = "Copy ID";
+            this.currRentCopyID.Width = 120;
+            // 
+            // currRentFormat
+            // 
+            this.currRentFormat.Text = "Format";
+            this.currRentFormat.Width = 130;
+            // 
             // rentalHistory
             // 
             this.rentalHistory.Controls.Add(this.listView1);
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
             this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistory.Size = new System.Drawing.Size(826, 454);
+            this.rentalHistory.Size = new System.Drawing.Size(826, 497);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
             this.rentalHistory.UseVisualStyleBackColor = true;
@@ -514,7 +522,7 @@
             listViewItem10});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(820, 448);
+            this.listView1.Size = new System.Drawing.Size(820, 491);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(400, 44);
@@ -625,6 +633,7 @@
             this.rateActorButton.TabIndex = 1;
             this.rateActorButton.Text = "Rate Actor";
             this.rateActorButton.UseVisualStyleBackColor = true;
+            this.rateActorButton.Click += new System.EventHandler(this.rateActor);
             // 
             // rateMovieButton
             // 
@@ -663,7 +672,6 @@
             this.accountInfo.Size = new System.Drawing.Size(826, 454);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
-            this.accountInfo.Click += new System.EventHandler(this.accountInfo_Click);
             // 
             // updateAccInfo
             // 
@@ -807,7 +815,6 @@
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "Fees:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -905,17 +912,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
-            // 
-            // currRentCopyID
-            // 
-            this.currRentCopyID.Tag = "";
-            this.currRentCopyID.Text = "Copy ID";
-            this.currRentCopyID.Width = 120;
-            // 
-            // currRentFormat
-            // 
-            this.currRentFormat.Text = "Format";
-            this.currRentFormat.Width = 130;
             // 
             // Customer_Home2
             // 
