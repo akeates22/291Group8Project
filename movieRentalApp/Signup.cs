@@ -27,7 +27,17 @@ namespace movieRentalApp
             string postalCode = postalCodeInput.Text;
             string city = cityInput.Text;
             string province = provinceInput.Text;
-            int ccNumber = Int32.Parse(ccNumberInput.Text);
+
+            try
+            {
+                int ccNumber = Int32.Parse(ccNumberInput.Text);
+            }
+            
+            catch {
+                MessageBox.Show("Invalid credit card number, please try again", "Registration Failed");
+                this.Close();
+                return;
+            }
 
             // get subscription plan
             string accType = "";
