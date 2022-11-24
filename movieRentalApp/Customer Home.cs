@@ -84,6 +84,10 @@ namespace movieRentalApp
             this.custLName.ReadOnly = false;
             this.custAddress.ReadOnly = false;
             this.custCity.ReadOnly = false;
+            this.custProvince.ReadOnly = false;
+            this.custPostalCode.ReadOnly = false;
+            this.custPhone.ReadOnly = false;
+            this.custEmail.ReadOnly = false;
 
         }
 
@@ -93,6 +97,10 @@ namespace movieRentalApp
             this.custLName.ReadOnly = true;
             this.custAddress.ReadOnly = true;
             this.custCity.ReadOnly = true;
+            this.custProvince.ReadOnly = true;
+            this.custPostalCode.ReadOnly = true;
+            this.custPhone.ReadOnly = true;
+            this.custEmail.ReadOnly = true;
         }
     }
 }

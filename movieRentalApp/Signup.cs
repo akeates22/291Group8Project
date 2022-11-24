@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace movieRentalApp
 {
@@ -27,14 +28,16 @@ namespace movieRentalApp
             string postalCode = postalCodeInput.Text;
             string city = cityInput.Text;
             string province = provinceInput.Text;
+            string email = emailInput.Text;
 
             try
             {
                 int ccNumber = Int32.Parse(ccNumberInput.Text);
+                int phone = Int32.Parse(phoneInput.Text);
             }
             
             catch {
-                MessageBox.Show("Invalid credit card number, please try again", "Registration Failed");
+                MessageBox.Show("Invalid entries, please try again", "Registration Failed");
                 this.Close();
                 return;
             }
@@ -49,7 +52,7 @@ namespace movieRentalApp
                 accType = "Premium Plus";
 
             // make sure no inputs are blank
-            string[] inputs = { fname, lname, address, postalCode, city, province, accType };
+            string[] inputs = { fname, lname, address, postalCode, city, province, email, accType };
             foreach (var input in inputs)
             {
                 if (string.IsNullOrWhiteSpace(input))
@@ -61,19 +64,37 @@ namespace movieRentalApp
 
             }
 
-            // all inputs are valid
-            MessageBox.Show(String.Format("Successfully registered {0} {1} for a {2} subscription\n" +
-                         "Return to start menu to login", fname, lname, accType), "Registration Complete");
+            // look at last customer added to the database, add 1 to their ID
+            // for now, just use a hardcoded ID
+            int CID = 1;
 
-            // generate & display customer ID
-            Random newID = new Random();
-            int CID = newID.Next(1, 1000);
-            MessageBox.Show(String.Format("Your Customer id is {0}\nDONT FORGET THIS!", CID));
+            // connect to database
+            string connectionString = "Server = ANDREWS-PC; Database = 291Project; Trusted_Connection = Yes";
+            SqlConnection myConnection = new SqlConnection(connectionString);
 
-            Login newLogin = new Login(Convert.ToString(CID));
-            newLogin.Show();
+            try
+            {
+                
 
+                myConnection.Open();
 
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "";
+
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Unable to register user, try again later", "Registration Error");
+                myConnection.Close();
+                this.Close();
+                return;
+            }
+            myConnection.Close();
+
+            MessageBox.Show(String.Format("Registration successful, your Customer ID is: {0}", CID), "Registration Successful");
+            Login loginMenu = new Login(CID.ToString());
             this.Close();
 
         }
