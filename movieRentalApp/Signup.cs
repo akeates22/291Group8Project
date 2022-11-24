@@ -76,28 +76,25 @@ namespace movieRentalApp
 
             try
             {
-                // connect to database
+                // connect to database & get new user's ID (add 1 to last CID created)
                 myConnection.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = myConnection;
+                SqlCommand cmd = new SqlCommand("select ISNULL(max(accountNum), 0) from customers", myConnection);
+                int CID = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
+                
+                // add customer to database, then close connection
+                string addCustomerCommand = "insert into customers values (" + CID.ToString() + ",'" + accType + "','" + fname +
+                                            "','" + lname + "','" + address + "','" + city + "','" + province + "','" +
+                                            postalCode + "'," + phoneInput.Text + ",'" + email + "','" + creationDate + "'," +
+                                            ccNumberInput.Text + "," + "0.0" + ")";
 
-                // look at last customer added to the database, add 1 to their ID
-                // for now, just use a hardcoded ID
-                int CID = 1;
-
-                cmd.CommandText = "insert into customers values (" + CID.ToString() + ",'" + accType + "','" + fname + 
-                                  "','" + lname + "','" + address + "','" + city + "','" + province + "','" + 
-                                  postalCode + "'," + phoneInput.Text + ",'" + email + "','" + creationDate + "'," + 
-                                  ccNumberInput.Text + "," + "0.0" + ")";
-
+                cmd.CommandText = addCustomerCommand;
                 cmd.ExecuteNonQuery();
-                myConnection.Close();
+                myConnection.Close();  
 
                 MessageBox.Show(String.Format("Registration successful, your Customer ID is: {0}", CID), "Registration Successful");
                 Login loginMenu = new Login(CID.ToString());
                 loginMenu.Show();
                 this.Close();
-
                 return;
             }
             catch (Exception ex)
