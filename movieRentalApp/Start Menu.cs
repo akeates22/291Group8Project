@@ -2,10 +2,11 @@ namespace movieRentalApp
 {
     public partial class startMenu : Form
     {
+
         public startMenu()
         {
             InitializeComponent();
-        }
+        }   
 
         private void signupClick(object sender, EventArgs e)
         {
