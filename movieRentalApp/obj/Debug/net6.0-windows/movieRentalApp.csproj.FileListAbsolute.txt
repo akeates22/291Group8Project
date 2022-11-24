@@ -25,3 +25,10 @@ C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\ob
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Customer_Search.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Home.resources
 C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.Employee_Movie_Search.resources
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\17807\Downloads\school\cs291\Project\291Group8Project\movieRentalApp\obj\Debug\net6.0-windows\movieRentalApp.csproj.CopyComplete
