@@ -12,7 +12,7 @@ namespace movieRentalApp
 {
     public partial class Customer_Home2 : Form
     {
-        public Customer_Home2()
+        public Customer_Home2(string ID)
         {
             InitializeComponent();
 

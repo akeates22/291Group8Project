@@ -12,7 +12,7 @@ namespace movieRentalApp
 {
     public partial class Employee_Home : Form
     {
-        public Employee_Home()
+        public Employee_Home(string ID)
         {
             InitializeComponent();
         }
