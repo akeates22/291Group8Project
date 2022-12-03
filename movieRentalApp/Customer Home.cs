@@ -212,5 +212,22 @@ namespace movieRentalApp
             cancelChanges.Visible = false;
 
         }
+
+        private void cancelUpdates(object sender, EventArgs e)
+        {
+            showAccInfo(sender, e);
+
+            this.custFName.ReadOnly = true;
+            this.custLName.ReadOnly = true;
+            this.custAddress.ReadOnly = true;
+            this.custCity.ReadOnly = true;
+            this.custProv.ReadOnly = true;
+            this.custPostal.ReadOnly = true;
+            this.custPhone.ReadOnly = true;
+            this.custEmail.ReadOnly = true;
+
+            saveAccInfoChanges.Visible = false;
+            cancelChanges.Visible = false;
+        }
     }
 }

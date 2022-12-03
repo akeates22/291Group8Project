@@ -113,6 +113,7 @@
             this.rateActorButton = new System.Windows.Forms.Button();
             this.rateMovieButton = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.TabPage();
+            this.cancelChanges = new System.Windows.Forms.Button();
             this.custPhone = new System.Windows.Forms.TextBox();
             this.custEmail = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -147,7 +148,6 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.cancelChanges = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -682,6 +682,17 @@
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             // 
+            // cancelChanges
+            // 
+            this.cancelChanges.Location = new System.Drawing.Point(509, 397);
+            this.cancelChanges.Name = "cancelChanges";
+            this.cancelChanges.Size = new System.Drawing.Size(157, 42);
+            this.cancelChanges.TabIndex = 47;
+            this.cancelChanges.Text = "Cancel";
+            this.cancelChanges.UseVisualStyleBackColor = true;
+            this.cancelChanges.Visible = false;
+            this.cancelChanges.Click += new System.EventHandler(this.cancelUpdates);
+            // 
             // custPhone
             // 
             this.custPhone.Location = new System.Drawing.Point(224, 385);
@@ -1017,16 +1028,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
-            // 
-            // cancelChanges
-            // 
-            this.cancelChanges.Location = new System.Drawing.Point(509, 397);
-            this.cancelChanges.Name = "cancelChanges";
-            this.cancelChanges.Size = new System.Drawing.Size(157, 42);
-            this.cancelChanges.TabIndex = 47;
-            this.cancelChanges.Text = "Cancel";
-            this.cancelChanges.UseVisualStyleBackColor = true;
-            this.cancelChanges.Visible = false;
             // 
             // Customer_Home2
             // 
