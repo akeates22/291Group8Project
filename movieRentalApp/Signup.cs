@@ -17,8 +17,10 @@ namespace movieRentalApp
     {
         public SqlConnection sqlConnection;
         public SqlCommand cmd;
-        public Signup()
+        public string connectionString;
+        public Signup(string connectionString)
         {
+            this.connectionString = connectionString;
             InitializeComponent();
         }
 
@@ -71,7 +73,6 @@ namespace movieRentalApp
 
             }
 
-            string connectionString = "Server = ANDREWS-PC; Database = 291Project; Trusted_Connection = Yes";
             SqlConnection myConnection = new SqlConnection(connectionString);
 
             try
@@ -92,7 +93,7 @@ namespace movieRentalApp
                 myConnection.Close();  
 
                 MessageBox.Show(String.Format("Registration successful, your Customer ID is: {0}", CID), "Registration Successful");
-                Login loginMenu = new Login(CID.ToString());
+                Login loginMenu = new Login(connectionString, CID.ToString());
                 loginMenu.Show();
                 this.Close();
                 return;

@@ -15,9 +15,11 @@ namespace movieRentalApp
     {
         public SqlConnection sqlConnection;
         public SqlCommand cmd;
+        public string connectionString;
 
-        public Login(string ID = "")
+        public Login(string connectionString, string ID = "")
         {
+            this.connectionString = connectionString;
             InitializeComponent();
             IDinput.Text = ID;
         }
@@ -30,7 +32,6 @@ namespace movieRentalApp
             string ID = IDinput.Text;
 
             // connect to database & look for matching credentials 
-            string connectionString = "Server = ANDREWS-PC; Database = 291Project; Trusted_Connection = Yes";
             SqlConnection myConnection = new SqlConnection(connectionString);
 
             if (ID.Length < 9) { this.customerLogin(myConnection, fname, lname, ID); }
@@ -62,7 +63,7 @@ namespace movieRentalApp
                 }
                 
                 con.Close();   
-                Customer_Home2 custHome = new Customer_Home2(ID);
+                Customer_Home2 custHome = new Customer_Home2(connectionString, ID);
                 custHome.Show();
                 this.Close();
             }
