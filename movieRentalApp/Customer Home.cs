@@ -48,16 +48,13 @@ namespace movieRentalApp
         }
         private void showAccInfo(object sender, EventArgs e)
         {
-
             SqlConnection myConnection = new SqlConnection(connectionString);
-            
-
             try
             {
                 myConnection.Open();
 
                 string getInfo = "select firstName, lastName, city, [state/province], [address], " +
-                                 "[zip/postalCode], phone, email, subType, rating from customers C " +
+                                 "[zip/postalCode], phone, email, subType from customers C " +
                                  "where C.accountNum = " + this.CID + ";";
 
                 SqlCommand cmd = new SqlCommand(getInfo, myConnection);
@@ -111,7 +108,6 @@ namespace movieRentalApp
             this.contentBox.SelectTab(5);
         }
 
-
         private void getMovieResults(object sender, EventArgs e)
         {
             var searchResults = new Customer_Search_Results();
@@ -153,10 +149,56 @@ namespace movieRentalApp
             this.custPhone.ReadOnly = false;
             this.custEmail.ReadOnly = false;
 
+            saveAccInfoChanges.Visible = true;
+            cancelChanges.Visible = true;
+
         }
 
         private void saveAccInfoUpdates(object sender, EventArgs e)
         {
+            // check validity of entries
+            string fname = this.custFName.Text;
+            string lname = this.custLName.Text;
+            string city = this.custCity.Text;
+            string prov = this.custProv.Text;
+            string address = this.custAddress.Text;
+            string postal = this.custPostal.Text;
+            string email = this.custEmail.Text;
+
+            // phone must be a number
+            try { int phone = Int32.Parse(this.custPhone.Text); }
+            catch { MessageBox.Show("Invalid phone number"); return; }
+
+            // make sure no inputs are blank
+            string[] inputs = { fname, lname, city, prov, address, postal, email };
+            foreach (var input in inputs)
+            {
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    MessageBox.Show("Invalid entries, fields cannot be empty");
+                    return;
+                }
+            }
+
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+                string updateAcctInfo = "update customers set firstName = '" + fname + "', lastName = '" + lname + 
+                                        "', address = '" + address + "', city = '" + city + "', [state/province] = '" + 
+                                        prov + "', [zip/postalCode] = '" + postal + "', phone = " + custPhone.Text + 
+                                        ", email = '" + email + "' where accountNum = " + this.CID + ";";
+                SqlCommand cmd = new SqlCommand(updateAcctInfo, myConnection);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to update account information, try again later");
+                MessageBox.Show(ex.Message);
+            }
+
+            myConnection.Close();
+
             this.custFName.ReadOnly = true;
             this.custLName.ReadOnly = true;
             this.custAddress.ReadOnly = true;
@@ -165,6 +207,10 @@ namespace movieRentalApp
             this.custPostal.ReadOnly = true;
             this.custPhone.ReadOnly = true;
             this.custEmail.ReadOnly = true;
+
+            saveAccInfoChanges.Visible = false;
+            cancelChanges.Visible = false;
+
         }
     }
 }

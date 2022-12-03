@@ -147,6 +147,7 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.cancelChanges = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -648,6 +649,7 @@
             // accountInfo
             // 
             this.accountInfo.BackColor = System.Drawing.Color.AliceBlue;
+            this.accountInfo.Controls.Add(this.cancelChanges);
             this.accountInfo.Controls.Add(this.custPhone);
             this.accountInfo.Controls.Add(this.custEmail);
             this.accountInfo.Controls.Add(this.label21);
@@ -768,12 +770,13 @@
             // 
             // saveAccInfoChanges
             // 
-            this.saveAccInfoChanges.Location = new System.Drawing.Point(509, 366);
+            this.saveAccInfoChanges.Location = new System.Drawing.Point(509, 335);
             this.saveAccInfoChanges.Name = "saveAccInfoChanges";
             this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 42);
             this.saveAccInfoChanges.TabIndex = 37;
             this.saveAccInfoChanges.Text = "Save Changes";
             this.saveAccInfoChanges.UseVisualStyleBackColor = true;
+            this.saveAccInfoChanges.Visible = false;
             this.saveAccInfoChanges.Click += new System.EventHandler(this.saveAccInfoUpdates);
             // 
             // custRentalLimit
@@ -1015,6 +1018,16 @@
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
             // 
+            // cancelChanges
+            // 
+            this.cancelChanges.Location = new System.Drawing.Point(509, 397);
+            this.cancelChanges.Name = "cancelChanges";
+            this.cancelChanges.Size = new System.Drawing.Size(157, 42);
+            this.cancelChanges.TabIndex = 47;
+            this.cancelChanges.Text = "Cancel";
+            this.cancelChanges.UseVisualStyleBackColor = true;
+            this.cancelChanges.Visible = false;
+            // 
             // Customer_Home2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1123,5 +1136,6 @@
         private TextBox custEmail;
         private Label label21;
         private Label label20;
+        private Button cancelChanges;
     }
 }
