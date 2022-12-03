@@ -113,9 +113,13 @@
             this.rateActorButton = new System.Windows.Forms.Button();
             this.rateMovieButton = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.TabPage();
-            this.custPostalCode = new System.Windows.Forms.TextBox();
+            this.custPhone = new System.Windows.Forms.TextBox();
+            this.custEmail = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.custPostal = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.custProvince = new System.Windows.Forms.TextBox();
+            this.custProv = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.updateAccInfo = new System.Windows.Forms.Button();
             this.saveAccInfoChanges = new System.Windows.Forms.Button();
@@ -143,10 +147,6 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.custEmail = new System.Windows.Forms.TextBox();
-            this.custPhone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -205,6 +205,7 @@
             this.movieSearchButton.AccessibleName = "";
             this.movieSearchButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.movieSearchButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.movieSearchButton.Checked = true;
             this.movieSearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.movieSearchButton.FlatAppearance.BorderSize = 2;
             this.movieSearchButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
@@ -214,6 +215,7 @@
             this.movieSearchButton.Name = "movieSearchButton";
             this.movieSearchButton.Size = new System.Drawing.Size(189, 45);
             this.movieSearchButton.TabIndex = 2;
+            this.movieSearchButton.TabStop = true;
             this.movieSearchButton.Text = "Find a Movie";
             this.movieSearchButton.UseVisualStyleBackColor = false;
             this.movieSearchButton.Click += new System.EventHandler(this.custMovieSearch);
@@ -273,7 +275,6 @@
             // 
             this.accInfoButton.Appearance = System.Windows.Forms.Appearance.Button;
             this.accInfoButton.BackColor = System.Drawing.Color.AliceBlue;
-            this.accInfoButton.Checked = true;
             this.accInfoButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.accInfoButton.FlatAppearance.BorderSize = 2;
             this.accInfoButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
@@ -283,7 +284,6 @@
             this.accInfoButton.Name = "accInfoButton";
             this.accInfoButton.Size = new System.Drawing.Size(189, 45);
             this.accInfoButton.TabIndex = 1;
-            this.accInfoButton.TabStop = true;
             this.accInfoButton.Text = "Account Information";
             this.accInfoButton.UseVisualStyleBackColor = false;
             this.accInfoButton.Click += new System.EventHandler(this.showAccInfo);
@@ -292,9 +292,9 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, -29);
+            this.panel2.Location = new System.Drawing.Point(202, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 528);
+            this.panel2.Size = new System.Drawing.Size(834, 499);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -309,7 +309,7 @@
             this.contentBox.Location = new System.Drawing.Point(0, 0);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(834, 528);
+            this.contentBox.Size = new System.Drawing.Size(834, 499);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
@@ -328,7 +328,7 @@
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
             this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.movieSearch.Size = new System.Drawing.Size(826, 436);
+            this.movieSearch.Size = new System.Drawing.Size(826, 466);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
@@ -436,7 +436,7 @@
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
             this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.currentRentals.Size = new System.Drawing.Size(826, 436);
+            this.currentRentals.Size = new System.Drawing.Size(826, 466);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
             this.currentRentals.UseVisualStyleBackColor = true;
@@ -461,7 +461,7 @@
             listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
-            this.currentRentalsList.Size = new System.Drawing.Size(820, 430);
+            this.currentRentalsList.Size = new System.Drawing.Size(820, 460);
             this.currentRentalsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.currentRentalsList.TabIndex = 1;
             this.currentRentalsList.TileSize = new System.Drawing.Size(400, 44);
@@ -496,7 +496,7 @@
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
             this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistory.Size = new System.Drawing.Size(826, 436);
+            this.rentalHistory.Size = new System.Drawing.Size(826, 466);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
             this.rentalHistory.UseVisualStyleBackColor = true;
@@ -521,7 +521,7 @@
             listViewItem10});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(820, 430);
+            this.listView1.Size = new System.Drawing.Size(820, 460);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(400, 44);
@@ -560,7 +560,7 @@
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
             this.ratings.Padding = new System.Windows.Forms.Padding(3);
-            this.ratings.Size = new System.Drawing.Size(826, 436);
+            this.ratings.Size = new System.Drawing.Size(826, 466);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
             // 
@@ -576,7 +576,7 @@
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem11,
             listViewItem12});
-            this.listView2.Location = new System.Drawing.Point(3, 176);
+            this.listView2.Location = new System.Drawing.Point(3, 206);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(820, 257);
             this.listView2.TabIndex = 4;
@@ -652,9 +652,9 @@
             this.accountInfo.Controls.Add(this.custEmail);
             this.accountInfo.Controls.Add(this.label21);
             this.accountInfo.Controls.Add(this.label20);
-            this.accountInfo.Controls.Add(this.custPostalCode);
+            this.accountInfo.Controls.Add(this.custPostal);
             this.accountInfo.Controls.Add(this.label19);
-            this.accountInfo.Controls.Add(this.custProvince);
+            this.accountInfo.Controls.Add(this.custProv);
             this.accountInfo.Controls.Add(this.label16);
             this.accountInfo.Controls.Add(this.updateAccInfo);
             this.accountInfo.Controls.Add(this.saveAccInfoChanges);
@@ -676,18 +676,56 @@
             this.accountInfo.Location = new System.Drawing.Point(4, 29);
             this.accountInfo.Name = "accountInfo";
             this.accountInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.accountInfo.Size = new System.Drawing.Size(826, 495);
+            this.accountInfo.Size = new System.Drawing.Size(826, 466);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             // 
-            // custPostalCode
+            // custPhone
             // 
-            this.custPostalCode.Location = new System.Drawing.Point(224, 332);
-            this.custPostalCode.Name = "custPostalCode";
-            this.custPostalCode.ReadOnly = true;
-            this.custPostalCode.Size = new System.Drawing.Size(157, 27);
-            this.custPostalCode.TabIndex = 42;
-            this.custPostalCode.Text = "T5N 2J5";
+            this.custPhone.Location = new System.Drawing.Point(224, 385);
+            this.custPhone.Name = "custPhone";
+            this.custPhone.ReadOnly = true;
+            this.custPhone.Size = new System.Drawing.Size(157, 27);
+            this.custPhone.TabIndex = 46;
+            this.custPhone.Text = "7801234567";
+            // 
+            // custEmail
+            // 
+            this.custEmail.Location = new System.Drawing.Point(224, 438);
+            this.custEmail.Name = "custEmail";
+            this.custEmail.ReadOnly = true;
+            this.custEmail.Size = new System.Drawing.Size(157, 27);
+            this.custEmail.TabIndex = 45;
+            this.custEmail.Text = "email@website.com";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(37, 388);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(67, 20);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Phone:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(37, 441);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(62, 20);
+            this.label20.TabIndex = 43;
+            this.label20.Text = "Email:";
+            // 
+            // custPostal
+            // 
+            this.custPostal.Location = new System.Drawing.Point(224, 332);
+            this.custPostal.Name = "custPostal";
+            this.custPostal.ReadOnly = true;
+            this.custPostal.Size = new System.Drawing.Size(157, 27);
+            this.custPostal.TabIndex = 42;
+            this.custPostal.Text = "T5N 2J5";
             // 
             // label19
             // 
@@ -699,14 +737,14 @@
             this.label19.TabIndex = 41;
             this.label19.Text = "Postal/zip Code:";
             // 
-            // custProvince
+            // custProv
             // 
-            this.custProvince.Location = new System.Drawing.Point(224, 226);
-            this.custProvince.Name = "custProvince";
-            this.custProvince.ReadOnly = true;
-            this.custProvince.Size = new System.Drawing.Size(157, 27);
-            this.custProvince.TabIndex = 40;
-            this.custProvince.Text = "Alberta";
+            this.custProv.Location = new System.Drawing.Point(224, 226);
+            this.custProv.Name = "custProv";
+            this.custProv.ReadOnly = true;
+            this.custProv.Size = new System.Drawing.Size(157, 27);
+            this.custProv.TabIndex = 40;
+            this.custProv.Text = "Alberta";
             // 
             // label16
             // 
@@ -895,7 +933,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(826, 436);
+            this.tabPage1.Size = new System.Drawing.Size(826, 466);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
             // 
@@ -976,44 +1014,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(37, 441);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(62, 20);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "Email:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.Location = new System.Drawing.Point(37, 388);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(67, 20);
-            this.label21.TabIndex = 44;
-            this.label21.Text = "Phone:";
-            // 
-            // custEmail
-            // 
-            this.custEmail.Location = new System.Drawing.Point(224, 438);
-            this.custEmail.Name = "custEmail";
-            this.custEmail.ReadOnly = true;
-            this.custEmail.Size = new System.Drawing.Size(157, 27);
-            this.custEmail.TabIndex = 45;
-            this.custEmail.Text = "email@website.com";
-            // 
-            // custPhone
-            // 
-            this.custPhone.Location = new System.Drawing.Point(224, 385);
-            this.custPhone.Name = "custPhone";
-            this.custPhone.ReadOnly = true;
-            this.custPhone.Size = new System.Drawing.Size(157, 27);
-            this.custPhone.TabIndex = 46;
-            this.custPhone.Text = "7801234567";
             // 
             // Customer_Home2
             // 
@@ -1115,9 +1115,9 @@
         private DateTimePicker dateTimePicker2;
         private Label label18;
         private DateTimePicker rentalDate;
-        private TextBox custPostalCode;
+        private TextBox custPostal;
         private Label label19;
-        private TextBox custProvince;
+        private TextBox custProv;
         private Label label16;
         private TextBox custPhone;
         private TextBox custEmail;

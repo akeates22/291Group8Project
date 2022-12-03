@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,16 @@ namespace movieRentalApp
 {
     public partial class Customer_Home2 : Form
     {
-        public Customer_Home2(string ID)
+
+        public SqlConnection sqlConnection;
+        public SqlCommand cmd;
+        public String CID;
+        public string connectionString;
+
+        public Customer_Home2(string connectionString, string CID)
         {
+            this.CID = CID;
+            this.connectionString = connectionString;
             InitializeComponent();
 
         }
@@ -39,7 +48,62 @@ namespace movieRentalApp
         }
         private void showAccInfo(object sender, EventArgs e)
         {
+
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            
+
+            try
+            {
+                myConnection.Open();
+
+                string getInfo = "select firstName, lastName, city, [state/province], [address], " +
+                                 "[zip/postalCode], phone, email, subType, rating from customers C " +
+                                 "where C.accountNum = " + this.CID + ";";
+
+                SqlCommand cmd = new SqlCommand(getInfo, myConnection);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (!dr.Read())
+                {
+                    MessageBox.Show("Error finding your account, please try again later");
+                }
+
+                this.custFName.Text   = dr.GetString(0);
+                this.custLName.Text   = dr.GetString(1);
+                this.custCity.Text    = dr.GetString(2);
+                this.custProv.Text    = dr.GetString(3);
+                this.custAddress.Text = dr.GetString(4);
+                this.custPostal.Text  = dr.GetString(5);
+                this.custPhone.Text   = (dr.GetDecimal(6)).ToString();
+                this.custEmail.Text   = dr.GetString(7);
+                this.custSubPlan.Text = dr.GetString(8);
+
+                switch (this.custSubPlan.Text) 
+                {
+                    case "Basic":
+                        this.custFees.Text = "$5 / month";
+                        this.custRentalLimit.Text = "8 / month";
+                        break;
+                    case "Premium":
+                        this.custFees.Text = "$10 / month";
+                        this.custRentalLimit.Text = "12 / month";
+                        break;
+                    case "Premium Plus":
+                        this.custFees.Text = "$15 / month";
+                        this.custRentalLimit.Text = "20 / month";
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error retrieving information, please try again later");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
+
             this.contentBox.SelectTab(4);
+
         }
 
         private void orderMenu(object sender, EventArgs e)
@@ -84,8 +148,8 @@ namespace movieRentalApp
             this.custLName.ReadOnly = false;
             this.custAddress.ReadOnly = false;
             this.custCity.ReadOnly = false;
-            this.custProvince.ReadOnly = false;
-            this.custPostalCode.ReadOnly = false;
+            this.custProv.ReadOnly = false;
+            this.custPostal.ReadOnly = false;
             this.custPhone.ReadOnly = false;
             this.custEmail.ReadOnly = false;
 
@@ -97,8 +161,8 @@ namespace movieRentalApp
             this.custLName.ReadOnly = true;
             this.custAddress.ReadOnly = true;
             this.custCity.ReadOnly = true;
-            this.custProvince.ReadOnly = true;
-            this.custPostalCode.ReadOnly = true;
+            this.custProv.ReadOnly = true;
+            this.custPostal.ReadOnly = true;
             this.custPhone.ReadOnly = true;
             this.custEmail.ReadOnly = true;
         }
