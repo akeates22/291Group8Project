@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "Tom Cruise",
             "9/10",
             "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "Brad Pitt",
             "4/10",
@@ -80,16 +80,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contentBox = new System.Windows.Forms.TabControl();
             this.movieSearch = new System.Windows.Forms.TabPage();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.chosenDate = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.genre = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.searchLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.starring = new System.Windows.Forms.TextBox();
+            this.title = new System.Windows.Forms.TextBox();
             this.currentRentals = new System.Windows.Forms.TabPage();
             this.currentRentalsList = new System.Windows.Forms.ListView();
             this.movieTitle = new System.Windows.Forms.ColumnHeader();
@@ -316,16 +316,16 @@
             // movieSearch
             // 
             this.movieSearch.BackColor = System.Drawing.Color.AliceBlue;
-            this.movieSearch.Controls.Add(this.dateTimePicker2);
+            this.movieSearch.Controls.Add(this.chosenDate);
             this.movieSearch.Controls.Add(this.label15);
             this.movieSearch.Controls.Add(this.searchButton);
-            this.movieSearch.Controls.Add(this.comboBox1);
+            this.movieSearch.Controls.Add(this.genre);
             this.movieSearch.Controls.Add(this.label11);
             this.movieSearch.Controls.Add(this.label9);
             this.movieSearch.Controls.Add(this.label10);
             this.movieSearch.Controls.Add(this.searchLabel);
-            this.movieSearch.Controls.Add(this.textBox3);
-            this.movieSearch.Controls.Add(this.textBox1);
+            this.movieSearch.Controls.Add(this.starring);
+            this.movieSearch.Controls.Add(this.title);
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
             this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
@@ -333,12 +333,12 @@
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
-            // dateTimePicker2
+            // chosenDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(406, 342);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(190, 27);
-            this.dateTimePicker2.TabIndex = 13;
+            this.chosenDate.Location = new System.Drawing.Point(406, 342);
+            this.chosenDate.Name = "chosenDate";
+            this.chosenDate.Size = new System.Drawing.Size(190, 27);
+            this.chosenDate.TabIndex = 13;
             // 
             // label15
             // 
@@ -361,10 +361,10 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.getMovieResults);
             // 
-            // comboBox1
+            // genre
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.genre.FormattingEnabled = true;
+            this.genre.Items.AddRange(new object[] {
             "Action",
             "Comedy",
             "Drama",
@@ -372,10 +372,10 @@
             "Romance",
             "Sci-fi",
             "Thriller"});
-            this.comboBox1.Location = new System.Drawing.Point(406, 280);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 28);
-            this.comboBox1.TabIndex = 10;
+            this.genre.Location = new System.Drawing.Point(406, 280);
+            this.genre.Name = "genre";
+            this.genre.Size = new System.Drawing.Size(190, 28);
+            this.genre.TabIndex = 10;
             // 
             // label11
             // 
@@ -417,19 +417,19 @@
             this.searchLabel.TabIndex = 6;
             this.searchLabel.Text = "Movie Search";
             // 
-            // textBox3
+            // starring
             // 
-            this.textBox3.Location = new System.Drawing.Point(406, 211);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 27);
-            this.textBox3.TabIndex = 2;
+            this.starring.Location = new System.Drawing.Point(406, 211);
+            this.starring.Name = "starring";
+            this.starring.Size = new System.Drawing.Size(190, 27);
+            this.starring.TabIndex = 2;
             // 
-            // textBox1
+            // title
             // 
-            this.textBox1.Location = new System.Drawing.Point(406, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 27);
-            this.textBox1.TabIndex = 0;
+            this.title.Location = new System.Drawing.Point(406, 148);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(190, 27);
+            this.title.TabIndex = 0;
             // 
             // currentRentals
             // 
@@ -455,11 +455,11 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
             this.currentRentalsList.Size = new System.Drawing.Size(820, 460);
@@ -515,11 +515,11 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(820, 460);
@@ -575,8 +575,8 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.GridLines = true;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12});
+            listViewItem23,
+            listViewItem24});
             this.listView2.Location = new System.Drawing.Point(3, 206);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(820, 257);
@@ -1089,10 +1089,10 @@
         public ColumnHeader rentalPeriodCol;
         private Label label10;
         private Label searchLabel;
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private TextBox starring;
+        private TextBox title;
         private Button searchButton;
-        private ComboBox comboBox1;
+        private ComboBox genre;
         private Label label11;
         private Label label9;
         public RadioButton orderButton;
@@ -1126,7 +1126,7 @@
         private ColumnHeader movieFormat;
         private ColumnHeader currRentCopyID;
         private ColumnHeader currRentFormat;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker chosenDate;
         private Label label18;
         private DateTimePicker rentalDate;
         private TextBox custPostal;

@@ -46,6 +46,7 @@ namespace movieRentalApp
         {
             this.contentBox.SelectTab(3);
         }
+
         private void showAccInfo(object sender, EventArgs e)
         {
             SqlConnection myConnection = new SqlConnection(connectionString);
@@ -110,8 +111,64 @@ namespace movieRentalApp
 
         private void getMovieResults(object sender, EventArgs e)
         {
-            var searchResults = new Customer_Search_Results();
-            searchResults.Show();
+            string title = this.title.Text;
+            string starring = this.starring.Text;
+            string rentalDate = chosenDate.Value.ToString("yyyy-MM-dd");
+
+            // these are the same regardless of inputs
+            string select  = "select M.movieName, C.type, count(*), M.rating ";
+            string groupBy = "group by M.movieName, C.type, M.rating;";
+
+            // regardless of title & actor inputs, the query will need these constraints
+            string from  = " from movies M, copies C";
+            string where = " where M.movieID = C.movieID and C.availableDate <= '" + rentalDate + "' ";
+
+            if (!string.IsNullOrWhiteSpace(title))
+            {
+                where += "and M.movieName = '" + title + "' ";
+            }
+            if (!string.IsNullOrWhiteSpace(starring))
+            {
+                from += ", actors A, movies_in MI";
+                where += "and M.movieID = MI.movieID and A.actorID = MI.actorID and " + 
+                             "A.fullName = '" + starring + "' ";
+            }
+            if (this.genre.SelectedValue != null)
+            {
+                string genre = this.genre.SelectedValue.ToString();
+                where += "and M.type = '" + genre + "' ";
+
+            }
+            
+            string fullQuery = select + from + where + groupBy;
+            MessageBox.Show(fullQuery);
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+                SqlCommand cmd = new SqlCommand(fullQuery, myConnection);
+                SqlDataReader queryResults = cmd.ExecuteReader();
+
+                List<string> rowList = new List<string>();
+                while (queryResults.Read())
+                {
+                    string row = queryResults.GetString(0) + "   " + queryResults.GetString(1) + "   " + 
+                                 queryResults.GetInt32(2).ToString() + "   " +  queryResults.GetDecimal(3).ToString();
+                    rowList.Add(row);
+                }
+                var searchResults = new Customer_Search_Results(rowList.ToArray());
+                searchResults.Show();
+                searchResults.DisplayResults();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to generate search results please try again later");
+                MessageBox.Show(ex.Message);
+            }
+
+            myConnection.Close();
         }
 
         private void rateMovie(object sender, EventArgs e)

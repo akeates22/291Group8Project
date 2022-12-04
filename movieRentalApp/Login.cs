@@ -60,6 +60,7 @@ namespace movieRentalApp
                 {
                     MessageBox.Show("Unable to find user, please check your inputs and try again");
                     con.Close();
+                    return;
                 }
                 
                 con.Close();   
@@ -93,6 +94,7 @@ namespace movieRentalApp
                 {
                     MessageBox.Show("Unable to find employee, please check your inputs and try again, or contact your manager");
                     con.Close();
+                    return;
                 }
 
                 con.Close();
