@@ -115,12 +115,11 @@ namespace movieRentalApp
             string starring = this.starring.Text;
             string rentalDate = chosenDate.Value.ToString("yyyy-MM-dd");
 
-
             // these are the same regardless of inputs
-            string select  = "select M.movieName, C.type, M.rating, count(*)";
+            string select  = "select M.movieName, C.type, count(*), M.rating ";
             string groupBy = "group by M.movieName, C.type, M.rating;";
 
-            // regardless of title & actor inputs, the query will need these constraints:
+            // regardless of title & actor inputs, the query will need these constraints
             string from  = " from movies M, copies C";
             string where = " where M.movieID = C.movieID and C.availableDate <= '" + rentalDate + "' ";
 
@@ -151,25 +150,25 @@ namespace movieRentalApp
                 SqlCommand cmd = new SqlCommand(fullQuery, myConnection);
                 SqlDataReader queryResults = cmd.ExecuteReader();
 
+                List<string> rowList = new List<string>();
                 while (queryResults.Read())
                 {
-                    string row = queryResults.GetString(0) + "   " + queryResults.GetString(1) + "   " + queryResults.GetInt32(3).ToString();
-                    MessageBox.Show(row);
+                    string row = queryResults.GetString(0) + "   " + queryResults.GetString(1) + "   " + 
+                                 queryResults.GetInt32(2).ToString() + "   " +  queryResults.GetDecimal(3).ToString();
+                    rowList.Add(row);
                 }
-
+                var searchResults = new Customer_Search_Results(rowList.ToArray());
+                searchResults.Show();
+                searchResults.DisplayResults();
                 
-                myConnection.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to generate search results please try again later");
                 MessageBox.Show(ex.Message);
-                myConnection.Close();
-                return;
             }
 
-            var searchResults = new Customer_Search_Results();
-            searchResults.Show();
+            myConnection.Close();
         }
 
         private void rateMovie(object sender, EventArgs e)
