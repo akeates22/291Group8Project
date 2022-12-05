@@ -24,9 +24,9 @@ namespace movieRentalApp
             ListView table = new ListView();
             table.View = View.Details;
             table.Dock = DockStyle.Fill;
-            table.Columns.Add("Movie Title", 200);
-            table.Columns.Add("Format", 100);
-            table.Columns.Add("Count", 75);
+            table.Columns.Add("Movie Title", 250);
+            table.Columns.Add("Format", 125);
+            table.Columns.Add("Count", 80);
 
             foreach(var result in results)
             {

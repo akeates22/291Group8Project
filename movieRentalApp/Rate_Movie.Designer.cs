@@ -32,15 +32,15 @@
             this.submitRating = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.canRate = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(96, 35);
+            this.label1.Location = new System.Drawing.Point(149, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 31);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.submitRating.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.submitRating.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.submitRating.Location = new System.Drawing.Point(111, 302);
+            this.submitRating.Location = new System.Drawing.Point(164, 302);
             this.submitRating.Name = "submitRating";
             this.submitRating.Size = new System.Drawing.Size(169, 41);
             this.submitRating.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(39, 133);
+            this.label2.Location = new System.Drawing.Point(92, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 28);
             this.label2.TabIndex = 2;
@@ -74,18 +74,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Yellow;
-            this.label3.Location = new System.Drawing.Point(39, 221);
+            this.label3.Location = new System.Drawing.Point(92, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "Rating out of 10:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(226, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 27);
-            this.textBox1.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -101,26 +94,33 @@
             "8",
             "9",
             "10"});
-            this.comboBox1.Location = new System.Drawing.Point(226, 221);
+            this.comboBox1.Location = new System.Drawing.Point(279, 221);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
+            this.comboBox1.Size = new System.Drawing.Size(112, 28);
             this.comboBox1.TabIndex = 6;
+            // 
+            // canRate
+            // 
+            this.canRate.FormattingEnabled = true;
+            this.canRate.Location = new System.Drawing.Point(279, 136);
+            this.canRate.Name = "canRate";
+            this.canRate.Size = new System.Drawing.Size(203, 28);
+            this.canRate.TabIndex = 7;
             // 
             // Rate_Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(436, 382);
+            this.ClientSize = new System.Drawing.Size(574, 382);
+            this.Controls.Add(this.canRate);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.submitRating);
             this.Controls.Add(this.label1);
             this.Name = "Rate_Movie";
             this.Text = "Rate_Movie";
-            this.Load += new System.EventHandler(this.Rate_Movie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +132,7 @@
         private Button submitRating;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
         private ComboBox comboBox1;
+        private ComboBox canRate;
     }
 }

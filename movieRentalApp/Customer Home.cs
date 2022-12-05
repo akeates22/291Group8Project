@@ -44,6 +44,42 @@ namespace movieRentalApp
 
         private void showCustRatings(object sender, EventArgs e)
         {
+            this.listView2.Items.Clear();
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+                string getRatings = "select distinct M.movieName, O.rating, " +
+                                    "concat(min(O.dateFrom), '  -  ', min(O.dateTo)) " +
+                                    "from movies M, orders O, copies C " +
+                                    "where M.movieID = O.movieID and O.copyID = C.copyID and " +
+                                    "O.rating is not null and O.accountNum = " + this.CID + " and " +
+                                    "C.available = 'yes' group by M.movieName, O.rating;";
+
+                SqlCommand cmd = new SqlCommand(getRatings, myConnection);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string title = dr.GetString(0);
+                    string rating = dr.GetInt32(1).ToString();
+                    string period = dr.GetString(2);
+
+                    string[] vals = { "", title, rating, period };
+
+                    ListViewItem row = new ListViewItem(vals);
+                    this.listView2.Items.Add(row);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to load ratings, please try again later");
+                MessageBox.Show(ex.Message);   
+            }
+
+            myConnection.Close();
             this.contentBox.SelectTab(3);
         }
 
@@ -114,11 +150,12 @@ namespace movieRentalApp
             string title = this.title.Text;
             string starring = this.starring.Text;
             string rentalDate = chosenDate.Value.ToString("yyyy-MM-dd");
+            string genre = this.genre.GetItemText(this.genre.SelectedItem);
 
             // these are the same regardless of inputs
             string select  = "select M.movieName, C.type, count(*) ";
-            string from    = "from movies M, copies C, orders O ";
-            string where   = "where M.movieID = C.movieID and M.movieID = O.movieID and C.copyID = O.copyID " +
+            string from    = "from movies M, copies C, orders O";
+            string where   = " where M.movieID = C.movieID and M.movieID = O.movieID and C.copyID = O.copyID " +
                              "and ('" + rentalDate + "' not between O.dateFrom and O.dateTo) ";
             string groupBy = "group by M.movieName, C.type;";
 
@@ -132,10 +169,9 @@ namespace movieRentalApp
                 where += "and M.movieID = MI.movieID and A.actorID = MI.actorID and " + 
                              "A.fullName = '" + starring + "' ";
             }
-            if (this.genre.SelectedValue != null)
+            if (!string.IsNullOrWhiteSpace(genre))
             {
-                string genre = this.genre.SelectedValue.ToString();
-                where += "and M.type = '" + genre + "' ";
+                where += "and M.movieType = '" + genre + "' ";
 
             }
             
@@ -172,14 +208,14 @@ namespace movieRentalApp
 
         private void rateMovie(object sender, EventArgs e)
         {
-            var ratingMenu = new Rate_Movie();
+            var ratingMenu = new Rate_Movie(connectionString, CID);
+            ratingMenu.addMovies();
             ratingMenu.Show();
         }
 
-        private void rateActor(object sender, EventArgs e)
+        private void updateRatings(object sender, EventArgs e)
         {
-            var actorRating = new Rate_Actor();
-            actorRating.Show();
+
         }
 
         private void placeOrder(object sender, EventArgs e)
@@ -286,5 +322,7 @@ namespace movieRentalApp
             saveAccInfoChanges.Visible = false;
             cancelChanges.Visible = false;
         }
+
+        
     }
 }
