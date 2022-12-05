@@ -34,22 +34,18 @@ namespace movieRentalApp
             string city = cityInput.Text;
             string province = provinceInput.Text;
             string email = emailInput.Text;
-            
-            DateTime dt = DateTime.Now;
-            string creationDate = dt.ToShortDateString();
+            string phone = phoneInput.Text;
+            string ccNumber = ccNumberInput.Text;
+            string creationDate = DateTime.Now.ToShortDateString();
 
-            try
-            {
-                int ccNumber = Int32.Parse(ccNumberInput.Text);
-                int phone = Int32.Parse(phoneInput.Text);
-            }
-            
-            catch 
+            // phone and credit card should only contain numbers
+            if (!phone.All(char.IsDigit) || !ccNumber.All(char.IsDigit))
             {
                 MessageBox.Show("Invalid entries, please try again", "Registration Failed");
                 this.Close();
                 return;
             }
+
 
             // get subscription plan
             string accType = "";
@@ -85,8 +81,8 @@ namespace movieRentalApp
                 // add customer to database, then close connection
                 string addCustomerCommand = "insert into customers values (" + CID.ToString() + ",'" + accType + "','" + fname +
                                             "','" + lname + "','" + address + "','" + city + "','" + province + "','" +
-                                            postalCode + "'," + phoneInput.Text + ",'" + email + "','" + creationDate + "'," +
-                                            ccNumberInput.Text + "," + "0.0" + ")";
+                                            postalCode + "','" + phone + "','" + email + "','" + creationDate + "','" +
+                                            ccNumber + "', 0.0);";
 
                 cmd.CommandText = addCustomerCommand;
                 cmd.ExecuteNonQuery();

@@ -72,7 +72,7 @@ namespace movieRentalApp
                 this.custProv.Text    = dr.GetString(3);
                 this.custAddress.Text = dr.GetString(4);
                 this.custPostal.Text  = dr.GetString(5);
-                this.custPhone.Text   = (dr.GetDecimal(6)).ToString();
+                this.custPhone.Text   = dr.GetString(6);
                 this.custEmail.Text   = dr.GetString(7);
                 this.custSubPlan.Text = dr.GetString(8);
 
@@ -221,10 +221,11 @@ namespace movieRentalApp
             string address = this.custAddress.Text;
             string postal = this.custPostal.Text;
             string email = this.custEmail.Text;
+            string phone = this.custPhone.Text;
 
             // phone must be a number
-            try { int phone = Int32.Parse(this.custPhone.Text); }
-            catch { MessageBox.Show("Invalid phone number"); return; }
+            if (!phone.All(char.IsDigit)) { MessageBox.Show("Invalid phone number"); return; }
+
 
             // make sure no inputs are blank
             string[] inputs = { fname, lname, city, prov, address, postal, email };
@@ -243,7 +244,7 @@ namespace movieRentalApp
                 myConnection.Open();
                 string updateAcctInfo = "update customers set firstName = '" + fname + "', lastName = '" + lname + 
                                         "', address = '" + address + "', city = '" + city + "', [state/province] = '" + 
-                                        prov + "', [zip/postalCode] = '" + postal + "', phone = " + custPhone.Text + 
+                                        prov + "', [zip/postalCode] = '" + postal + "', phone = '" + phone + "' " +
                                         ", email = '" + email + "' where accountNum = " + this.CID + ";";
                 SqlCommand cmd = new SqlCommand(updateAcctInfo, myConnection);
                 cmd.ExecuteNonQuery();
