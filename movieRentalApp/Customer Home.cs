@@ -116,12 +116,11 @@ namespace movieRentalApp
             string rentalDate = chosenDate.Value.ToString("yyyy-MM-dd");
 
             // these are the same regardless of inputs
-            string select  = "select M.movieName, C.type, count(*), M.rating ";
-            string groupBy = "group by M.movieName, C.type, M.rating;";
-
-            // regardless of title & actor inputs, the query will need these constraints
-            string from  = " from movies M, copies C";
-            string where = " where M.movieID = C.movieID and C.availableDate <= '" + rentalDate + "' ";
+            string select  = "select M.movieName, C.type, count(*) ";
+            string from    = "from movies M, copies C, orders O ";
+            string where   = "where M.movieID = C.movieID and M.movieID = O.movieID and C.copyID = O.copyID " +
+                             "and ('" + rentalDate + "' not between O.dateFrom and O.dateTo) ";
+            string groupBy = "group by M.movieName, C.type;";
 
             if (!string.IsNullOrWhiteSpace(title))
             {
@@ -154,7 +153,7 @@ namespace movieRentalApp
                 while (queryResults.Read())
                 {
                     string row = queryResults.GetString(0) + "   " + queryResults.GetString(1) + "   " + 
-                                 queryResults.GetInt32(2).ToString() + "   " +  queryResults.GetDecimal(3).ToString();
+                                 queryResults.GetInt32(2).ToString();
                     rowList.Add(row);
                 }
                 var searchResults = new Customer_Search_Results(rowList.ToArray());

@@ -27,7 +27,6 @@ namespace movieRentalApp
             table.Columns.Add("Movie Title", 200);
             table.Columns.Add("Format", 100);
             table.Columns.Add("Count", 75);
-            table.Columns.Add("Rating", 75);
 
             foreach(var result in results)
             {

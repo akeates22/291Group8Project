@@ -1,0 +1,148 @@
+CREATE TABLE actors(
+actorID varchar(4) primary key,
+[fullName] varchar(40),
+gender varchar(1),
+age numeric(3, 0),
+rating numeric(2, 1) NULL,
+);
+
+CREATE TABLE movies(
+movieID varchar(4) primary key,
+movieName varchar(30),
+movieType varchar(20),
+distributionFee varchar(3),
+rating numeric(2, 1) NULL,
+);
+
+CREATE TABLE movies_in(
+movieID varchar(4) FOREIGN KEY REFERENCES movies(movieID),
+actorID varchar(4) FOREIGN KEY REFERENCES actors(actorID),
+actorRating numeric(2),
+primary key (movieID, actorID),
+);
+
+CREATE TABLE copies(
+copyID varchar(4),
+movieID varchar(4) FOREIGN KEY REFERENCES movies(movieID),
+[type] varchar(10),
+available varchar(3),
+primary key (copyID, movieID),
+);
+
+CREATE TABLE employees(
+SSN numeric(9) primary key,
+firstName varchar(20),
+lastName varchar(20),
+[address] varchar(30),
+city varchar(20),
+[state/province] varchar (20),
+[zip/postalCode] varchar (10),
+phone numeric(10),
+startDay varchar(10),
+hourlyRate numeric(4, 2),
+);
+
+CREATE TABLE subscriptions(
+[type] varchar(20) primary key,
+fee numeric(2),
+movieLimit numeric(2),
+);
+
+CREATE TABLE customers(
+accountNum varchar(4) primary key,
+subType varchar(20) FOREIGN KEY REFERENCES subscriptions([type]),
+firstName varchar(20),
+lastName varchar(20),
+[address] varchar(30),
+city varchar(20),
+[state/province] varchar (20),
+[zip/postalCode] varchar (10),
+phone varchar(10),
+email varchar(30),
+accountCreationDate varchar(10),	
+creditCardNum varchar(16),
+rating numeric(2, 1) NULL,
+);
+
+CREATE TABLE orders(
+orderID varchar(4),
+copyID varchar(4),
+movieID varchar(4),
+employee_SSN numeric(9) FOREIGN KEY REFERENCES employees(SSN),
+accountNum varchar(4) FOREIGN KEY REFERENCES customers(accountNum),
+FOREIGN KEY (copyID, movieID) REFERENCES copies(copyID, movieID),
+dateFrom DATE,
+dateTo DATE,
+rating numeric NULL
+primary key (orderID, employee_SSN, accountNum, copyID, movieID),
+);
+
+insert into actors 
+values 
+(1, 'Tom Cruise', 'M', 60, 9.1),
+(2, 'Brad Pitt', 'M', 58, 8.6), 
+(3, 'Scarlet Johansson', 'F', 38, 7.9),
+(4, 'Margot Robbie', 'F', 32, 8.7),
+(5, 'Robert Downey Jr', 'M', 57, 7.4);
+
+insert into movies 
+values 
+(1, 'Oceans 11', 'Action', '400', 8.5),
+(2, 'Once Upon a Time in Hollywood', 'Drama', '750', 9),
+(3, 'Topgun Maverick', 'Action', '900', 9.5),
+(4, 'Tropic Thunder', 'Comedy', '450', 8),
+(5, 'Avengers Infinity War', 'Action', '800', 7.5);
+
+insert into movies_in
+values 
+(1, 2, 8),
+(2, 2, 9),
+(2, 4, 7),
+(3, 1, 9),
+(4, 1, 10),
+(4, 5, 9),
+(5, 3, 6),
+(5, 5, 8);
+
+insert into copies
+values
+(1, 1, 'DVD', 'yes'),(2, 1, 'DVD', 'yes'),(3, 1, 'DVD', 'yes'),(4, 1, 'DVD', 'yes'),(5, 1, 'DVD','no'),
+(6, 1, 'Blu-ray', 'yes'),(7, 1, 'Blu-ray','2022-12-22'),(8, 1, 'Blu-ray', 'yes'),
+(9, 1, 'VHS', 'yes'),
+
+(10, 2, 'DVD', 'yes'),(11, 2, 'DVD', 'yes'),(12, 2, 'DVD', 'yes'),(13, 2, 'DVD', 'no'),
+(14, 2, 'Blu-ray', 'yes'),(15, 2, 'Blu-ray', 'yes'),(16, 2, 'Blu-ray', 'yes'),
+
+(17, 3, 'DVD', 'yes'),(18, 3, 'DVD', 'yes'),(19, 3, 'DVD', 'yes'),
+(20, 3, 'Blu-ray','no'),(21, 3, 'Blu-ray', 'no'),(22, 3, 'Blu-ray', 'yes'),(23, 3, 'Blu-ray','no'),
+
+(24, 4, 'DVD','no'),(25, 4, 'DVD', 'yes'),(26, 4, 'DVD', 'no'),(27, 4, 'DVD', 'yes'),
+(28, 4, 'DVD','no'),(29, 4, 'DVD','no'),(30, 4, 'DVD','no'),
+(31, 4, 'Blu-ray','no'),(32, 4, 'Blu-ray', 'no'),(33, 4, 'Blu-ray', 'no'),
+(34, 4, 'VHS','no'),(35, 4, 'VHS','no'),(36, 4, 'VHS','no'),
+
+(37, 5, 'DVD', 'yes'),(38, 5, 'DVD','no'),(39, 5, 'DVD', 'yes'),(40, 5, 'DVD', 'no'),(41, 5, 'DVD', 'no'),
+(42, 5, 'Blu-ray', 'yes'),(43, 5, 'Blu-ray', 'yes'),(44, 5, 'Blu-ray','yes'),(45, 5, 'DVD', 'no'),
+(46, 5, 'Blu-ray','no'),(47, 5, 'Blu-ray', 'yes'),(48, 5, 'Blu-ray', 'no'),(49, 5, 'Blu-ray', 'yes'),
+(50, 5, 'VHS', 'yes'),(51, 5, 'VHS', 'yes');
+
+insert into employees 
+values
+(123456789, 'john', 'admin', '123 Main st', 'Edmonton', 'Alberta', 'T5N 2J5', 7801234567, '19/03/2020', 22.34);
+
+insert into subscriptions
+values 
+('Basic', 5, 8),
+('Premium', 10, 12),
+('Premium Plus', 15, 20);
+
+insert into orders
+values
+(1, 1, 1, 123456789, 1, '2022-11-28', '2022-12-02', NULL), (2, 44, 5, 123456789, 1, '2022-12-05', '2022-12-12', NULL), 
+(3, 9, 1, 123456789, 1, '2022-11-28', '2022-12-03', NULL), (4, 30, 4, 123456789, 1, '2022-11-28', '2022-12-07', NULL), 
+(5, 14, 2, 123456789, 1, '2022-12-08', '2022-12-14', NULL), (6, 22, 3, 123456789, 1, '2022-11-28', '2022-12-15', NULL),
+(7, 20, 3, 123456789, 1, '2022-11-28', '2022-12-09', NULL), (8, 28, 4, 123456789, 1, '2022-12-04', '2022-12-12', NULL),
+
+(9, 16, 2, 123456789, 1, '2022-11-28', '2022-12-02', NULL), (10, 24, 4, 123456789, 1, '2022-12-03', '2022-12-12', NULL), 
+(11, 37, 5, 123456789, 1, '2022-11-28', '2022-12-03', NULL), (12, 40, 5, 123456789, 1, '2022-11-28', '2022-12-07', NULL),
+(13, 42, 5, 123456789, 1, '2022-11-28', '2022-12-02', NULL), (14, 22, 3, 123456789, 1, '2022-12-09', '2022-12-12', NULL);,;
