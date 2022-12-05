@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Home2));
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "11/20/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "11/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "11/23/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "11/25/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "11/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "06/01/22 - 06/08/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "06/11/22 - 06/16/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 3",
             "08/24/22 - 08/27/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 4",
             "08/14/22 - 08/21/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 1",
             "Tom Cruise",
             "9/10",
             "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
             "Movie 2",
             "Brad Pitt",
             "4/10",
@@ -293,9 +293,9 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, 0);
+            this.panel2.Location = new System.Drawing.Point(202, -28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 499);
+            this.panel2.Size = new System.Drawing.Size(834, 527);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -310,7 +310,7 @@
             this.contentBox.Location = new System.Drawing.Point(0, 0);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(834, 499);
+            this.contentBox.Size = new System.Drawing.Size(834, 527);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
@@ -329,7 +329,7 @@
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
             this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.movieSearch.Size = new System.Drawing.Size(826, 466);
+            this.movieSearch.Size = new System.Drawing.Size(826, 494);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
@@ -455,11 +455,11 @@
             this.currentRentalsList.GridLines = true;
             this.currentRentalsList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.currentRentalsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
             this.currentRentalsList.Size = new System.Drawing.Size(820, 460);
@@ -515,11 +515,11 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22});
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(820, 460);
@@ -575,8 +575,8 @@
             this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView2.GridLines = true;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem23,
-            listViewItem24});
+            listViewItem11,
+            listViewItem12});
             this.listView2.Location = new System.Drawing.Point(3, 206);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(820, 257);
