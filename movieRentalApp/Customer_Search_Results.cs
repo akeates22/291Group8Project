@@ -34,9 +34,6 @@ namespace movieRentalApp
                 string[] values = result.Split("   ");
                 ListViewItem row = new ListViewItem(values);
                 table.Items.Add(row);
-                //row.SubItems.Add(values[1]);
-                //row.SubItems.Add(values[2]);
-                //row.SubItems.Add(values[3]);
             }
             Controls.Add(table);
         }
