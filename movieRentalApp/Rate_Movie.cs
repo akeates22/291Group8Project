@@ -65,6 +65,8 @@ namespace movieRentalApp
             try
             {
                 myConnection.Open();
+                // sort orders by earliest date, that should be the one that has a rating applied
+
             }
             catch (Exception ex)
             {
