@@ -32,10 +32,11 @@
             // 
             // Customer_Search_Results
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(432, 386);
+            this.ClientSize = new System.Drawing.Size(414, 290);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Customer_Search_Results";
             this.Text = "Customer_Search_Results";
             this.ResumeLayout(false);

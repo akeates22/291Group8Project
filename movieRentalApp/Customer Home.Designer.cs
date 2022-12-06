@@ -60,15 +60,8 @@
             "Movie 5",
             "09/02/22 - 09/04/22"}, -1);
             System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Movie 1",
-            "Tom Cruise",
-            "9/10",
-            "3/10"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Movie 2",
-            "Brad Pitt",
-            "4/10",
-            "9/10"}, -1);
+            " ",
+            ""}, -1);
             this.panel1 = new System.Windows.Forms.Panel();
             this.orderButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -104,12 +97,10 @@
             this.movieFormat = new System.Windows.Forms.ColumnHeader();
             this.ratings = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.placeHolder = new System.Windows.Forms.ColumnHeader();
             this.movieColumn = new System.Windows.Forms.ColumnHeader();
-            this.actorColumn = new System.Windows.Forms.ColumnHeader();
-            this.mRatingColumn = new System.Windows.Forms.ColumnHeader();
-            this.aRatingColumn = new System.Windows.Forms.ColumnHeader();
+            this.ratingColumn = new System.Windows.Forms.ColumnHeader();
             this.label12 = new System.Windows.Forms.Label();
-            this.ratingHeader = new System.Windows.Forms.Label();
             this.rateActorButton = new System.Windows.Forms.Button();
             this.rateMovieButton = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.TabPage();
@@ -148,6 +139,7 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.rentalPeriodColumn = new System.Windows.Forms.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -264,7 +256,7 @@
             this.custRatingsButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.Silver;
             this.custRatingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.custRatingsButton.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.custRatingsButton.Location = new System.Drawing.Point(7, 382);
+            this.custRatingsButton.Location = new System.Drawing.Point(7, 381);
             this.custRatingsButton.Name = "custRatingsButton";
             this.custRatingsButton.Size = new System.Drawing.Size(189, 45);
             this.custRatingsButton.TabIndex = 3;
@@ -293,9 +285,9 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, -28);
+            this.panel2.Location = new System.Drawing.Point(202, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(834, 527);
+            this.panel2.Size = new System.Drawing.Size(833, 499);
             this.panel2.TabIndex = 2;
             // 
             // contentBox
@@ -310,7 +302,7 @@
             this.contentBox.Location = new System.Drawing.Point(0, 0);
             this.contentBox.Name = "contentBox";
             this.contentBox.SelectedIndex = 0;
-            this.contentBox.Size = new System.Drawing.Size(834, 527);
+            this.contentBox.Size = new System.Drawing.Size(833, 499);
             this.contentBox.TabIndex = 0;
             // 
             // movieSearch
@@ -328,14 +320,14 @@
             this.movieSearch.Controls.Add(this.title);
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
-            this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
-            this.movieSearch.Size = new System.Drawing.Size(826, 494);
+            this.movieSearch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.movieSearch.Size = new System.Drawing.Size(825, 466);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
             // 
             // chosenDate
             // 
-            this.chosenDate.Location = new System.Drawing.Point(406, 342);
+            this.chosenDate.Location = new System.Drawing.Point(406, 341);
             this.chosenDate.Name = "chosenDate";
             this.chosenDate.Size = new System.Drawing.Size(190, 27);
             this.chosenDate.TabIndex = 13;
@@ -344,7 +336,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(222, 342);
+            this.label15.Location = new System.Drawing.Point(222, 341);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(132, 23);
             this.label15.TabIndex = 12;
@@ -353,7 +345,7 @@
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchButton.Location = new System.Drawing.Point(300, 425);
+            this.searchButton.Location = new System.Drawing.Point(299, 425);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(168, 45);
             this.searchButton.TabIndex = 11;
@@ -391,7 +383,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(222, 210);
+            this.label9.Location = new System.Drawing.Point(222, 211);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 8;
@@ -411,7 +403,7 @@
             // 
             this.searchLabel.AutoSize = true;
             this.searchLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.searchLabel.Location = new System.Drawing.Point(310, 70);
+            this.searchLabel.Location = new System.Drawing.Point(310, 69);
             this.searchLabel.Name = "searchLabel";
             this.searchLabel.Size = new System.Drawing.Size(158, 31);
             this.searchLabel.TabIndex = 6;
@@ -436,8 +428,8 @@
             this.currentRentals.Controls.Add(this.currentRentalsList);
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
-            this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
-            this.currentRentals.Size = new System.Drawing.Size(826, 466);
+            this.currentRentals.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.currentRentals.Size = new System.Drawing.Size(825, 466);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
             this.currentRentals.UseVisualStyleBackColor = true;
@@ -462,7 +454,7 @@
             listViewItem5});
             this.currentRentalsList.Location = new System.Drawing.Point(3, 3);
             this.currentRentalsList.Name = "currentRentalsList";
-            this.currentRentalsList.Size = new System.Drawing.Size(820, 460);
+            this.currentRentalsList.Size = new System.Drawing.Size(819, 460);
             this.currentRentalsList.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.currentRentalsList.TabIndex = 1;
             this.currentRentalsList.TileSize = new System.Drawing.Size(400, 44);
@@ -496,8 +488,8 @@
             this.rentalHistory.Controls.Add(this.listView1);
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
-            this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.rentalHistory.Size = new System.Drawing.Size(826, 466);
+            this.rentalHistory.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rentalHistory.Size = new System.Drawing.Size(825, 466);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
             this.rentalHistory.UseVisualStyleBackColor = true;
@@ -522,7 +514,7 @@
             listViewItem10});
             this.listView1.Location = new System.Drawing.Point(3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(820, 460);
+            this.listView1.Size = new System.Drawing.Size(819, 460);
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.TileSize = new System.Drawing.Size(400, 44);
@@ -555,94 +547,78 @@
             this.ratings.BackColor = System.Drawing.Color.AliceBlue;
             this.ratings.Controls.Add(this.listView2);
             this.ratings.Controls.Add(this.label12);
-            this.ratings.Controls.Add(this.ratingHeader);
             this.ratings.Controls.Add(this.rateActorButton);
             this.ratings.Controls.Add(this.rateMovieButton);
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
-            this.ratings.Padding = new System.Windows.Forms.Padding(3);
-            this.ratings.Size = new System.Drawing.Size(826, 466);
+            this.ratings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ratings.Size = new System.Drawing.Size(825, 466);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
             // 
             // listView2
             // 
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.placeHolder,
             this.movieColumn,
-            this.actorColumn,
-            this.mRatingColumn,
-            this.aRatingColumn});
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ratingColumn,
+            this.rentalPeriodColumn});
             this.listView2.GridLines = true;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12});
-            this.listView2.Location = new System.Drawing.Point(3, 206);
+            listViewItem11});
+            this.listView2.Location = new System.Drawing.Point(51, 63);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(820, 257);
+            this.listView2.Size = new System.Drawing.Size(722, 257);
             this.listView2.TabIndex = 4;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
+            // placeHolder
+            // 
+            this.placeHolder.Text = " ";
+            this.placeHolder.Width = 0;
+            // 
             // movieColumn
             // 
-            this.movieColumn.Text = "Movie ";
-            this.movieColumn.Width = 275;
+            this.movieColumn.Text = "Movie";
+            this.movieColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.movieColumn.Width = 325;
             // 
-            // actorColumn
+            // ratingColumn
             // 
-            this.actorColumn.Text = "Lead Actor";
-            this.actorColumn.Width = 225;
-            // 
-            // mRatingColumn
-            // 
-            this.mRatingColumn.Text = "Movie Rating";
-            this.mRatingColumn.Width = 160;
-            // 
-            // aRatingColumn
-            // 
-            this.aRatingColumn.Text = "Actor Rating";
-            this.aRatingColumn.Width = 160;
+            this.ratingColumn.Text = "Rating";
+            this.ratingColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ratingColumn.Width = 100;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(315, 154);
+            this.label12.Location = new System.Drawing.Point(302, 15);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(193, 31);
+            this.label12.Size = new System.Drawing.Size(223, 31);
             this.label12.TabIndex = 3;
-            this.label12.Text = "Previous Ratings";
-            // 
-            // ratingHeader
-            // 
-            this.ratingHeader.AutoSize = true;
-            this.ratingHeader.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ratingHeader.Location = new System.Drawing.Point(295, 20);
-            this.ratingHeader.Name = "ratingHeader";
-            this.ratingHeader.Size = new System.Drawing.Size(241, 31);
-            this.ratingHeader.TabIndex = 2;
-            this.ratingHeader.Text = "Submit a New Rating";
+            this.label12.Text = "Your Movie Ratings";
             // 
             // rateActorButton
             // 
             this.rateActorButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rateActorButton.Location = new System.Drawing.Point(445, 70);
+            this.rateActorButton.Location = new System.Drawing.Point(414, 352);
             this.rateActorButton.Name = "rateActorButton";
-            this.rateActorButton.Size = new System.Drawing.Size(152, 41);
+            this.rateActorButton.Size = new System.Drawing.Size(244, 59);
             this.rateActorButton.TabIndex = 1;
-            this.rateActorButton.Text = "Rate Actor";
+            this.rateActorButton.Text = "Update Previous Rating";
             this.rateActorButton.UseVisualStyleBackColor = true;
-            this.rateActorButton.Click += new System.EventHandler(this.rateActor);
+            this.rateActorButton.Click += new System.EventHandler(this.updateRatings);
             // 
             // rateMovieButton
             // 
             this.rateMovieButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rateMovieButton.Location = new System.Drawing.Point(230, 70);
+            this.rateMovieButton.Location = new System.Drawing.Point(148, 352);
             this.rateMovieButton.Name = "rateMovieButton";
-            this.rateMovieButton.Size = new System.Drawing.Size(152, 41);
+            this.rateMovieButton.Size = new System.Drawing.Size(244, 59);
             this.rateMovieButton.TabIndex = 0;
-            this.rateMovieButton.Text = "Rate Movie";
+            this.rateMovieButton.Text = "Submit New Rating";
             this.rateMovieButton.UseVisualStyleBackColor = true;
             this.rateMovieButton.Click += new System.EventHandler(this.rateMovie);
             // 
@@ -677,8 +653,8 @@
             this.accountInfo.Controls.Add(this.label2);
             this.accountInfo.Location = new System.Drawing.Point(4, 29);
             this.accountInfo.Name = "accountInfo";
-            this.accountInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.accountInfo.Size = new System.Drawing.Size(826, 466);
+            this.accountInfo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.accountInfo.Size = new System.Drawing.Size(825, 466);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
             // 
@@ -686,7 +662,7 @@
             // 
             this.cancelChanges.Location = new System.Drawing.Point(509, 397);
             this.cancelChanges.Name = "cancelChanges";
-            this.cancelChanges.Size = new System.Drawing.Size(157, 42);
+            this.cancelChanges.Size = new System.Drawing.Size(157, 43);
             this.cancelChanges.TabIndex = 47;
             this.cancelChanges.Text = "Cancel";
             this.cancelChanges.UseVisualStyleBackColor = true;
@@ -704,7 +680,7 @@
             // 
             // custEmail
             // 
-            this.custEmail.Location = new System.Drawing.Point(224, 438);
+            this.custEmail.Location = new System.Drawing.Point(224, 437);
             this.custEmail.Name = "custEmail";
             this.custEmail.ReadOnly = true;
             this.custEmail.Size = new System.Drawing.Size(157, 27);
@@ -752,7 +728,7 @@
             // 
             // custProv
             // 
-            this.custProv.Location = new System.Drawing.Point(224, 226);
+            this.custProv.Location = new System.Drawing.Point(224, 227);
             this.custProv.Name = "custProv";
             this.custProv.ReadOnly = true;
             this.custProv.Size = new System.Drawing.Size(157, 27);
@@ -773,7 +749,7 @@
             // 
             this.updateAccInfo.Location = new System.Drawing.Point(509, 277);
             this.updateAccInfo.Name = "updateAccInfo";
-            this.updateAccInfo.Size = new System.Drawing.Size(157, 42);
+            this.updateAccInfo.Size = new System.Drawing.Size(157, 43);
             this.updateAccInfo.TabIndex = 38;
             this.updateAccInfo.Text = "Update Information";
             this.updateAccInfo.UseVisualStyleBackColor = true;
@@ -783,7 +759,7 @@
             // 
             this.saveAccInfoChanges.Location = new System.Drawing.Point(509, 335);
             this.saveAccInfoChanges.Name = "saveAccInfoChanges";
-            this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 42);
+            this.saveAccInfoChanges.Size = new System.Drawing.Size(157, 43);
             this.saveAccInfoChanges.TabIndex = 37;
             this.saveAccInfoChanges.Text = "Save Changes";
             this.saveAccInfoChanges.UseVisualStyleBackColor = true;
@@ -877,7 +853,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(426, 186);
+            this.label7.Location = new System.Drawing.Point(426, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 20);
             this.label7.TabIndex = 20;
@@ -887,7 +863,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(37, 282);
+            this.label6.Location = new System.Drawing.Point(37, 283);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 19;
@@ -897,7 +873,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(426, 70);
+            this.label5.Location = new System.Drawing.Point(426, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 20);
             this.label5.TabIndex = 18;
@@ -927,7 +903,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(37, 70);
+            this.label2.Location = new System.Drawing.Point(37, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 15;
@@ -946,8 +922,8 @@
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(826, 466);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(825, 466);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
             // 
@@ -955,7 +931,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(222, 270);
+            this.label18.Location = new System.Drawing.Point(222, 269);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(116, 28);
             this.label18.TabIndex = 7;
@@ -1029,12 +1005,18 @@
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
             // 
+            // rentalPeriodColumn
+            // 
+            this.rentalPeriodColumn.Text = "Rental Period";
+            this.rentalPeriodColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rentalPeriodColumn.Width = 300;
+            // 
             // Customer_Home2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1036, 499);
+            this.ClientSize = new System.Drawing.Size(1035, 499);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Customer_Home2";
@@ -1098,7 +1080,6 @@
         public RadioButton orderButton;
         private TabPage tabPage1;
         private Label label12;
-        private Label ratingHeader;
         private Button rateActorButton;
         private Button rateMovieButton;
         private Button placeOrderButton;
@@ -1106,10 +1087,8 @@
         private Label label14;
         private Label label13;
         private ListView listView2;
+        private ColumnHeader placeHolder;
         private ColumnHeader movieColumn;
-        private ColumnHeader actorColumn;
-        private ColumnHeader mRatingColumn;
-        private ColumnHeader aRatingColumn;
         private Label label15;
         private Button updateAccInfo;
         private Button saveAccInfoChanges;
@@ -1138,5 +1117,7 @@
         private Label label21;
         private Label label20;
         private Button cancelChanges;
+        private ColumnHeader ratingColumn;
+        private ColumnHeader rentalPeriodColumn;
     }
 }

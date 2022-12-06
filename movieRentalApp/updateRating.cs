@@ -1,45 +1,42 @@
-﻿using Microsoft.VisualBasic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace movieRentalApp
 {
-    public partial class Rate_Movie : Form
+    public partial class updateRating : Form
     {
         public SqlConnection sqlConnection;
         public SqlCommand cmd;
         public string connectionString;
         public string CID;
-        public Rate_Movie(string connectionString, string CID)
+        public updateRating(string connectionString, string CID)
         {
             this.connectionString = connectionString;
-            this.CID = CID;  
+            this.CID = CID;
             InitializeComponent();
         }
 
         public void getMovies()
         {
             SqlConnection myConnection = new SqlConnection(connectionString);
+
             try
             {
                 myConnection.Open();
-                // movies that customer has already rated
-                string subQuery = "select distinct movieID from orders where " +
-                                  "accountNum = " + this.CID + " and rating is not null";
 
-                string query = "select distinct M.movieName from movies M, orders O, copies C " +
-                               "where M.movieID = O.movieID and C.copyID = O.copyID and " +
-                               "C.available = 'yes' and O.accountNum = " + this.CID + " and " +
-                               "M.movieID not in ( " + subQuery + " );";
+                // get movies the customer has already rated
+                string query = "select distinct M.movieName from movies M, orders O " + 
+                               "where M.movieID = O.movieID and O.accountNum = " + this.CID + 
+                               " and O.rating is not null;";
 
                 SqlCommand cmd = new SqlCommand(query, myConnection);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -48,28 +45,26 @@ namespace movieRentalApp
 
                 if (dt.Tables[0].Rows.Count > 0)
                 {
-                    this.canRate.DataSource = dt.Tables[0];
-                    this.canRate.DisplayMember = "movieName";
+                    this.movie.DataSource = dt.Tables[0];
+                    this.movie.DisplayMember = "movieName";
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to get movies, please try again later");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);  
             }
             myConnection.Close();
-            
-
         }
-        private void postMovieRating(object sender, EventArgs e)
-        {
-            
 
+        private void postUpdatedRating(object sender, EventArgs e)
+        {
             SqlConnection myConnection = new SqlConnection(connectionString);
+
             try
             {
-                string selectedMovie = this.canRate.GetItemText(this.canRate.SelectedItem);
-                int newRating = Int32.Parse(this.ratingChoice.Text);
+                string selectedMovie = this.movie.GetItemText(this.movie.SelectedItem);
+                int newRating = Int32.Parse(this.rating.Text);
 
                 myConnection.Open();
 
@@ -82,17 +77,17 @@ namespace movieRentalApp
                 SqlCommand cmd = new SqlCommand(updateCmd, myConnection);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Rating added!");
-
+                MessageBox.Show("Rating updated!");
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to add rating, please try again later");
+                MessageBox.Show("Unable to update ratings, please try again later");
                 MessageBox.Show(ex.Message);
             }
             myConnection.Close();
-
             this.Close();
+
         }
     }
 }
