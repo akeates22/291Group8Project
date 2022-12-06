@@ -209,13 +209,15 @@ namespace movieRentalApp
         private void rateMovie(object sender, EventArgs e)
         {
             var ratingMenu = new Rate_Movie(connectionString, CID);
-            ratingMenu.addMovies();
+            ratingMenu.getMovies();
             ratingMenu.Show();
         }
 
         private void updateRatings(object sender, EventArgs e)
         {
-
+            var updateMenu = new updateRating(connectionString, CID);
+            updateMenu.getMovies();
+            updateMenu.Show();  
         }
 
         private void placeOrder(object sender, EventArgs e)
