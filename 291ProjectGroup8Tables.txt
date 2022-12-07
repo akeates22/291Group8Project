@@ -1,29 +1,28 @@
 CREATE TABLE actors(
-actorID varchar(4) primary key,
+actorID numeric(5) primary key,
 [fullName] varchar(40),
 gender varchar(1),
-age numeric(3, 0),
-rating numeric(2, 1) NULL,
+age numeric(3),
+rating numeric(2) NULL,
 );
 
 CREATE TABLE movies(
-movieID varchar(4) primary key,
+movieID numeric(5) primary key,
 movieName varchar(30),
 movieType varchar(20),
 distributionFee varchar(3),
-rating numeric(2, 1) NULL,
+rating numeric(2) NULL,
 );
 
 CREATE TABLE movies_in(
-movieID varchar(4) FOREIGN KEY REFERENCES movies(movieID),
-actorID varchar(4) FOREIGN KEY REFERENCES actors(actorID),
-actorRating numeric(2),
+movieID numeric(5) FOREIGN KEY REFERENCES movies(movieID),
+actorID numeric(5) FOREIGN KEY REFERENCES actors(actorID),
 primary key (movieID, actorID),
 );
 
 CREATE TABLE copies(
-copyID varchar(4),
-movieID varchar(4) FOREIGN KEY REFERENCES movies(movieID),
+copyID numeric(5),
+movieID numeric(5) FOREIGN KEY REFERENCES movies(movieID),
 [type] varchar(10),
 available varchar(3),
 primary key (copyID, movieID),
@@ -49,7 +48,7 @@ movieLimit numeric(2),
 );
 
 CREATE TABLE customers(
-accountNum varchar(4) primary key,
+accountNum numeric(5) primary key,
 subType varchar(20) FOREIGN KEY REFERENCES subscriptions([type]),
 firstName varchar(20),
 lastName varchar(20),
@@ -61,48 +60,48 @@ phone varchar(10),
 email varchar(30),
 accountCreationDate varchar(10),	
 creditCardNum varchar(16),
-rating numeric(2, 1) NULL,
+rating numeric(2) NULL,
 );
 
 CREATE TABLE orders(
-orderID varchar(4),
-copyID varchar(4),
-movieID varchar(4),
-employee_SSN numeric(9) FOREIGN KEY REFERENCES employees(SSN),
-accountNum varchar(4) FOREIGN KEY REFERENCES customers(accountNum),
+orderID numeric(5),
+copyID numeric(5),
+movieID numeric(5),
+employeeVerify varchar(9) NULL,
+accountNum numeric(5) FOREIGN KEY REFERENCES customers(accountNum),
 FOREIGN KEY (copyID, movieID) REFERENCES copies(copyID, movieID),
 dateFrom DATE,
 dateTo DATE,
-rating int NULL
-primary key (orderID, employee_SSN, accountNum, copyID, movieID),
+rating numeric(2) NULL
+primary key (orderID),
 );
 
 insert into actors 
 values 
-(1, 'Tom Cruise', 'M', 60, 9.1),
-(2, 'Brad Pitt', 'M', 58, 8.6), 
-(3, 'Scarlet Johansson', 'F', 38, 7.9),
-(4, 'Margot Robbie', 'F', 32, 8.7),
-(5, 'Robert Downey Jr', 'M', 57, 7.4);
+(1, 'Tom Cruise', 'M', 60, 8),
+(2, 'Brad Pitt', 'M', 58, 9), 
+(3, 'Scarlet Johansson', 'F', 38, 9),
+(4, 'Margot Robbie', 'F', 32, 7),
+(5, 'Robert Downey Jr', 'M', 57, 7);
 
 insert into movies 
 values 
-(1, 'Oceans 11', 'Action', '400', 8.5),
-(2, 'Once Upon a Time in Hollywood', 'Drama', '750', 9),
-(3, 'Topgun Maverick', 'Action', '900', 9.5),
-(4, 'Tropic Thunder', 'Comedy', '450', 8),
-(5, 'Avengers Infinity War', 'Action', '800', 7.5);
+(1, 'Oceans 11', 'Action', '400', 9),
+(2, 'Once Upon a Time in Hollywood', 'Drama', '750', 8),
+(3, 'Topgun Maverick', 'Action', '900', 10),
+(4, 'Tropic Thunder', 'Comedy', '450', 9),
+(5, 'Avengers Infinity War', 'Action', '800', 7);
 
 insert into movies_in
 values 
-(1, 2, 8),
-(2, 2, 9),
-(2, 4, 7),
-(3, 1, 9),
-(4, 1, 10),
-(4, 5, 9),
-(5, 3, 6),
-(5, 5, 8);
+(1, 2),
+(2, 2),
+(2, 4),
+(3, 1),
+(4, 1),
+(4, 5),
+(5, 3),
+(5, 5);
 
 insert into copies
 values
@@ -139,10 +138,16 @@ values
 insert into orders
 values
 (1, 1, 1, 123456789, 1, '2022-11-28', '2022-12-03', 9), (2, 44, 5, 123456789, 1, '2022-12-05', '2022-12-17', NULL), 
-(3, 9, 1, 123456789, 1, '2022-11-28', '2022-12-04', NULL), (4, 30, 4, 123456789, 1, '2022-11-28', '2022-12-05', NULL), 
-(5, 14, 2, 123456789, 1, '2022-12-08', '2022-12-14', NULL), (6, 22, 3, 123456789, 1, '2022-11-28', '2022-12-12', 10),
-(7, 20, 3, 123456789, 1, '2022-11-28', '2022-12-02', NULL), (8, 28, 4, 123456789, 1, '2022-12-04', '2022-12-18', NULL),
+(3, 9, 1, 123456789, 1, '2022-11-28', '2022-12-04', NULL), (4, 30, 4, 123456789, 1, '2022-11-28', '2022-12-05', 3), 
+(5, 14, 2, 123456789, 1, '2022-12-08', '2022-12-14', NULL), (6, 22, 3, 123456789, 1, '2022-11-28', '2022-12-01', 10),
+(7, 20, 3, 123456789, 1, '2022-11-28', '2022-12-09', NULL), (8, 28, 4, 123456789, 1, '2022-12-04', '2022-12-18', NULL),
 
-(9, 16, 2, 123456789, 1, '2022-11-28', '2022-12-12', NULL), (10, 24, 4, 123456789, 1, '2022-12-03', '2022-12-12', NULL), 
+(9, 16, 2, 123456789, 1, '2022-11-28', '2022-12-03', NULL), (10, 24, 4, 123456789, 1, '2022-12-03', '2022-12-12', NULL), 
 (11, 37, 5, 123456789, 1, '2022-11-28', '2022-12-03', 7), (12, 40, 5, 123456789, 1, '2022-11-28', '2022-12-07', NULL),
-(13, 42, 5, 123456789, 1, '2022-11-28', '2022-12-12', 7), (14, 22, 3, 123456789, 1, '2022-12-09', '2022-12-12', 10);
+(13, 42, 5, 123456789, 1, '2022-11-28', '2022-12-12', NULL), (14, 22, 3, 123456789, 1, '2022-12-09', '2022-12-12', NULL);
+
+
+TODO:
+update ratings for actors & movies after customer rates them
+(use total number of ratings to calculate this)
+
