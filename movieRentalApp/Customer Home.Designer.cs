@@ -164,7 +164,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(202, 538);
+            this.panel1.Size = new System.Drawing.Size(202, 493);
             this.panel1.TabIndex = 0;
             // 
             // orderButton
@@ -285,7 +285,7 @@
             // 
             this.panel2.Controls.Add(this.contentBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(202, 10);
+            this.panel2.Location = new System.Drawing.Point(202, -35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(833, 528);
             this.panel2.TabIndex = 2;
@@ -1015,7 +1015,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1035, 538);
+            this.ClientSize = new System.Drawing.Size(1035, 493);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Customer_Home2";
