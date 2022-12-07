@@ -105,24 +105,24 @@ values
 
 insert into copies
 values
-(1, 1, 'DVD', 'yes'),(2, 1, 'DVD', 'yes'),(3, 1, 'DVD', 'yes'),(4, 1, 'DVD', 'yes'),(5, 1, 'DVD','no'),
-(6, 1, 'Blu-ray', 'yes'),(7, 1, 'Blu-ray','2022-12-22'),(8, 1, 'Blu-ray', 'yes'),
+(1, 1, 'DVD', 'yes'),(2, 1, 'DVD', 'yes'),(3, 1, 'DVD', 'yes'),(4, 1, 'DVD', 'yes'),(5, 1, 'DVD','yes'),
+(6, 1, 'Blu-ray', 'yes'),(7, 1, 'Blu-ray','yes'),(8, 1, 'Blu-ray', 'yes'),
 (9, 1, 'VHS', 'yes'),
 
-(10, 2, 'DVD', 'yes'),(11, 2, 'DVD', 'yes'),(12, 2, 'DVD', 'yes'),(13, 2, 'DVD', 'no'),
+(10, 2, 'DVD', 'yes'),(11, 2, 'DVD', 'yes'),(12, 2, 'DVD', 'yes'),(13, 2, 'DVD', 'yes'),
 (14, 2, 'Blu-ray', 'yes'),(15, 2, 'Blu-ray', 'yes'),(16, 2, 'Blu-ray', 'yes'),
 
 (17, 3, 'DVD', 'yes'),(18, 3, 'DVD', 'yes'),(19, 3, 'DVD', 'yes'),
-(20, 3, 'Blu-ray','no'),(21, 3, 'Blu-ray', 'no'),(22, 3, 'Blu-ray', 'yes'),(23, 3, 'Blu-ray','no'),
+(20, 3, 'Blu-ray','yes'),(21, 3, 'Blu-ray', 'yes'),(22, 3, 'Blu-ray', 'yes'),(23, 3, 'Blu-ray','yes'),
 
-(24, 4, 'DVD','no'),(25, 4, 'DVD', 'yes'),(26, 4, 'DVD', 'no'),(27, 4, 'DVD', 'yes'),
-(28, 4, 'DVD','no'),(29, 4, 'DVD','no'),(30, 4, 'DVD','no'),
-(31, 4, 'Blu-ray','no'),(32, 4, 'Blu-ray', 'no'),(33, 4, 'Blu-ray', 'no'),
-(34, 4, 'VHS','no'),(35, 4, 'VHS','no'),(36, 4, 'VHS','no'),
+(24, 4, 'DVD','yes'),(25, 4, 'DVD', 'yes'),(26, 4, 'DVD', 'yes'),(27, 4, 'DVD', 'yes'),
+(28, 4, 'DVD','yes'),(29, 4, 'DVD','yes'),(30, 4, 'DVD','yes'),
+(31, 4, 'Blu-ray','yes'),(32, 4, 'Blu-ray', 'yes'),(33, 4, 'Blu-ray', 'yes'),
+(34, 4, 'VHS','yes'),(35, 4, 'VHS','yes'),(36, 4, 'VHS','yes'),
 
-(37, 5, 'DVD', 'yes'),(38, 5, 'DVD','no'),(39, 5, 'DVD', 'yes'),(40, 5, 'DVD', 'no'),(41, 5, 'DVD', 'no'),
-(42, 5, 'Blu-ray', 'yes'),(43, 5, 'Blu-ray', 'yes'),(44, 5, 'Blu-ray','yes'),(45, 5, 'DVD', 'no'),
-(46, 5, 'Blu-ray','no'),(47, 5, 'Blu-ray', 'yes'),(48, 5, 'Blu-ray', 'no'),(49, 5, 'Blu-ray', 'yes'),
+(37, 5, 'DVD', 'yes'),(38, 5, 'DVD','yes'),(39, 5, 'DVD', 'yes'),(40, 5, 'DVD', 'yes'),(41, 5, 'DVD', 'yes'),
+(42, 5, 'Blu-ray', 'yes'),(43, 5, 'Blu-ray', 'yes'),(44, 5, 'Blu-ray','yes'),(45, 5, 'DVD', 'yes'),
+(46, 5, 'Blu-ray','yes'),(47, 5, 'Blu-ray', 'yes'),(48, 5, 'Blu-ray', 'yes'),(49, 5, 'Blu-ray', 'yes'),
 (50, 5, 'VHS', 'yes'),(51, 5, 'VHS', 'yes');
 
 insert into employees 
@@ -135,19 +135,4 @@ values
 ('Premium', 10, 12),
 ('Premium Plus', 15, 20);
 
-insert into orders
-values
-(1, 1, 1, 123456789, 1, '2022-11-28', '2022-12-03', 9), (2, 44, 5, 123456789, 1, '2022-12-05', '2022-12-17', NULL), 
-(3, 9, 1, 123456789, 1, '2022-11-28', '2022-12-04', NULL), (4, 30, 4, 123456789, 1, '2022-11-28', '2022-12-05', 3), 
-(5, 14, 2, 123456789, 1, '2022-12-08', '2022-12-14', NULL), (6, 22, 3, 123456789, 1, '2022-11-28', '2022-12-01', 10),
-(7, 20, 3, 123456789, 1, '2022-11-28', '2022-12-09', NULL), (8, 28, 4, 123456789, 1, '2022-12-04', '2022-12-18', NULL),
-
-(9, 16, 2, 123456789, 1, '2022-11-28', '2022-12-03', NULL), (10, 24, 4, 123456789, 1, '2022-12-03', '2022-12-12', NULL), 
-(11, 37, 5, 123456789, 1, '2022-11-28', '2022-12-03', 7), (12, 40, 5, 123456789, 1, '2022-11-28', '2022-12-07', NULL),
-(13, 42, 5, 123456789, 1, '2022-11-28', '2022-12-12', NULL), (14, 22, 3, 123456789, 1, '2022-12-09', '2022-12-12', NULL);
-
-
-TODO:
-update ratings for actors & movies after customer rates them
-(use total number of ratings to calculate this)
 

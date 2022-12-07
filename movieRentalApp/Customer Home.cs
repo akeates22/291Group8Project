@@ -332,6 +332,10 @@ namespace movieRentalApp
                                   ", " + movieID.ToString() + ", null," + this.CID + ", '" + startDate + 
                                   "', '" + returnDate + "', null);";
                 cmd.ExecuteNonQuery();
+
+                // set ordered movie to unavailable
+                cmd.CommandText = "update copies set availability = 'no' where copyID = " + copyID + ";";
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -340,7 +344,7 @@ namespace movieRentalApp
                 return;
             }
             MessageBox.Show("Order has been submitted, please pick up your copy on " + startDate + 
-                            ".\nYour return date is: " + returnDate);
+                            "\nYour return date is: " + returnDate);
             myConnection.Close();
         }
 
