@@ -41,8 +41,8 @@ namespace movieRentalApp
                 myConnection.Open();
                 string getRentals = "select M.movieName, O.dateTo, C.copyID, C.type " +
                                     "from movies M, orders O, copies C where M.movieID = O.movieID " +
-                                    "and O.copyID = C.copyID and O.accountNum = '" + this.CID + 
-                                    "' and C.available = 'no';";
+                                    "and O.copyID = C.copyID and O.accountNum = " + this.CID + 
+                                    " and C.available = 'no';";
 
                 SqlCommand cmd = new SqlCommand(getRentals, myConnection);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -51,7 +51,7 @@ namespace movieRentalApp
                 {
                     string title = dr.GetString(0);
                     string date  = dr.GetDateTime(1).ToString("yyyy-MM-dd");
-                    string ID    = dr.GetString(2);
+                    string ID    = dr.GetDecimal(2).ToString();
                     string type  = dr.GetString(3);
 
                     string[] vals = { title, date, ID, type };
@@ -88,7 +88,7 @@ namespace movieRentalApp
                 {
                     string title = dr.GetString(0);
                     string date  = dr.GetDateTime(1).ToString("yyyy-MM-dd");
-                    string ID    = dr.GetString(2);
+                    string ID    = dr.GetDecimal(2).ToString();
                     string type  = dr.GetString(3);
 
                     string[] vals = { title, date, ID, type };
@@ -125,7 +125,7 @@ namespace movieRentalApp
                 while (dr.Read())
                 {
                     string title = dr.GetString(0);
-                    string rating = dr.GetInt32(1).ToString();
+                    string rating = dr.GetDecimal(1).ToString();
                     string date = dr.GetDateTime(2).ToString("yyyy-MM-dd"); ;
 
                     string[] vals = { "", title, rating, date };
@@ -292,9 +292,56 @@ namespace movieRentalApp
             // check that customer hasnt reached rental limit
             if (!this.checkRentalLimit()) { return; }
 
-            //check that movie is available in specified format & on specified date
-            if (!this.isAvailable(title, format, startDate)) { return; }
-    
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+
+                // get next order ID
+                SqlCommand cmd = new SqlCommand("select max(orderID) from orders", myConnection);
+                string newOrderID = (Convert.ToInt32(cmd.ExecuteScalar()) + 1).ToString();
+
+                // get copy ID 
+                string baseCopyIDQuery = "select min(C.copyID) from movies M, copies C, orders O " +
+                                         "where M.movieID = O.movieID and O.CopyID = C.copyID and " +
+                                         "M.movieName = '" + title + "' and C.type = '" + format + "' and ";
+
+                // requesting rental today or in the future requires slightly different queries
+                if (startDate == DateTime.Today.ToString("yyyy-MM-dd"))
+                {
+                    cmd.CommandText = (baseCopyIDQuery + "C.available = 'yes';");
+                } else
+                {
+                    cmd.CommandText = (baseCopyIDQuery + "('" + startDate + "' not between O.dateFrom and O.dateTo); ");
+                }
+                object copyID = cmd.ExecuteScalar();
+
+                // get movie ID 
+                cmd.CommandText = "select movieID from movies where movieName = '" + title + "';";
+                object movieID = cmd.ExecuteScalar();
+
+                if (copyID.Equals(DBNull.Value) || movieID.Equals(DBNull.Value))
+                {
+                    MessageBox.Show("Unable to find requested movie, try using a different format or rental date");
+                    myConnection.Close();
+                    return;
+                }
+
+                // update orders table
+                cmd.CommandText = "insert into orders values (" + newOrderID + ", " + copyID.ToString() + 
+                                  ", " + movieID.ToString() + ", null," + this.CID + ", '" + startDate + 
+                                  "', '" + returnDate + "', null);";
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("unexpected error occured, please try again later");
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            MessageBox.Show("Order has been submitted, please pick up your copy on " + startDate + 
+                            ".\nYour return date is: " + returnDate);
+            myConnection.Close();
         }
 
         private void allowAcctEdits(object sender, EventArgs e)
@@ -423,24 +470,6 @@ namespace movieRentalApp
             return true;
         }
 
-        private Boolean isAvailable(string title, string format, string date)
-        {
-            SqlConnection myConnection = new SqlConnection(connectionString);
-            try
-            {
-                string searchQuery = "select * from movies M, copies C, orders O " + 
-                                     " "
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to find movie, are you sure this is available?");
-                MessageBox.Show(ex.Message);
-                myConnection.Close();
-                return false;
-            }
-            myConnection.Close();
-            return true;
-        }
     }
 
 }
