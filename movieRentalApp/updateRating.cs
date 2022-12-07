@@ -70,7 +70,7 @@ namespace movieRentalApp
 
                 string subQuery = "select Top 1 O.orderID from Orders O, movies M " +
                                   "where O.movieID = M.movieID and O.accountNum = " + this.CID +
-                                  " and M.movieName = '" + selectedMovie + "' order by O.dateFrom asc";
+                                  " and M.movieName = '" + selectedMovie + "' order by dateTo asc";
                 string updateCmd = "update orders set rating = " + newRating + " where accountNum = " + this.CID +
                                    " and orderID in (" + subQuery + ");";
 
