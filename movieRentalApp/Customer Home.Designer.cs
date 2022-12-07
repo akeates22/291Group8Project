@@ -132,6 +132,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.rentalDate = new System.Windows.Forms.DateTimePicker();
             this.rentalFormat = new System.Windows.Forms.ComboBox();
@@ -139,7 +140,6 @@
             this.placeOrderButton = new System.Windows.Forms.Button();
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -918,6 +918,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.rentalDate);
             this.tabPage1.Controls.Add(this.rentalFormat);
@@ -925,7 +926,6 @@
             this.tabPage1.Controls.Add(this.placeOrderButton);
             this.tabPage1.Controls.Add(this.rentalTitle);
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -933,11 +933,21 @@
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(242, 30);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(341, 38);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Rental Order Submission";
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(222, 269);
+            this.label18.Location = new System.Drawing.Point(221, 313);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(116, 28);
             this.label18.TabIndex = 7;
@@ -945,7 +955,7 @@
             // 
             // rentalDate
             // 
-            this.rentalDate.Location = new System.Drawing.Point(402, 272);
+            this.rentalDate.Location = new System.Drawing.Point(401, 314);
             this.rentalDate.Name = "rentalDate";
             this.rentalDate.Size = new System.Drawing.Size(203, 27);
             this.rentalDate.TabIndex = 6;
@@ -957,7 +967,7 @@
             "Blu-ray",
             "DVD",
             "VHS"});
-            this.rentalFormat.Location = new System.Drawing.Point(402, 196);
+            this.rentalFormat.Location = new System.Drawing.Point(401, 224);
             this.rentalFormat.Name = "rentalFormat";
             this.rentalFormat.Size = new System.Drawing.Size(203, 28);
             this.rentalFormat.TabIndex = 5;
@@ -966,7 +976,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(222, 196);
+            this.label17.Location = new System.Drawing.Point(221, 224);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(139, 28);
             this.label17.TabIndex = 4;
@@ -975,7 +985,7 @@
             // placeOrderButton
             // 
             this.placeOrderButton.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.placeOrderButton.Location = new System.Drawing.Point(307, 341);
+            this.placeOrderButton.Location = new System.Drawing.Point(336, 392);
             this.placeOrderButton.Name = "placeOrderButton";
             this.placeOrderButton.Size = new System.Drawing.Size(152, 52);
             this.placeOrderButton.TabIndex = 3;
@@ -985,7 +995,7 @@
             // 
             // rentalTitle
             // 
-            this.rentalTitle.Location = new System.Drawing.Point(402, 123);
+            this.rentalTitle.Location = new System.Drawing.Point(401, 132);
             this.rentalTitle.Name = "rentalTitle";
             this.rentalTitle.Size = new System.Drawing.Size(203, 27);
             this.rentalTitle.TabIndex = 2;
@@ -994,22 +1004,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(222, 119);
+            this.label14.Location = new System.Drawing.Point(221, 131);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(113, 28);
             this.label14.TabIndex = 1;
             this.label14.Text = "Movie Title:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(186, 23);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(455, 56);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
-    "";
             // 
             // Customer_Home2
             // 
@@ -1085,7 +1084,6 @@
         private Button placeOrderButton;
         private TextBox rentalTitle;
         private Label label14;
-        private Label label13;
         private ListView listView2;
         private ColumnHeader placeHolder;
         private ColumnHeader movieColumn;
@@ -1119,5 +1117,6 @@
         private Button cancelChanges;
         private ColumnHeader ratingColumn;
         private ColumnHeader rentalPeriodColumn;
+        private Label label13;
     }
 }

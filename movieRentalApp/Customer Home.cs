@@ -24,7 +24,6 @@ namespace movieRentalApp
             this.CID = CID;
             this.connectionString = connectionString;
             InitializeComponent();
-
         }
 
         private void custMovieSearch(object sender, EventArgs e)
@@ -135,7 +134,6 @@ namespace movieRentalApp
                     this.listView2.Items.Add(row);
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to load ratings, please try again later");
@@ -190,7 +188,6 @@ namespace movieRentalApp
                         this.custRentalLimit.Text = "20 / month";
                         break;
                 }
-
             }
             catch (Exception ex)
             {
@@ -198,9 +195,7 @@ namespace movieRentalApp
                 MessageBox.Show(ex.Message);
             }
             myConnection.Close();
-
             this.contentBox.SelectTab(4);
-
         }
 
         private void orderMenu(object sender, EventArgs e)
@@ -235,7 +230,6 @@ namespace movieRentalApp
             if (!string.IsNullOrWhiteSpace(genre))
             {
                 where += "and M.movieType = '" + genre + "' ";
-
             }
             
             string fullQuery = select + from + where + groupBy;
@@ -264,7 +258,6 @@ namespace movieRentalApp
                 MessageBox.Show("Unable to generate search results please try again later");
                 MessageBox.Show(ex.Message);
             }
-
             myConnection.Close();
         }
 
@@ -284,14 +277,24 @@ namespace movieRentalApp
 
         private void placeOrder(object sender, EventArgs e)
         {
-            string movieName = rentalTitle.Text;
-            string startDate = rentalDate.Text;
-            string returnDate = (DateTime.Parse(startDate).AddDays(14)).ToString();
+            string title = rentalTitle.Text;
+            string format = this.rentalFormat.GetItemText(this.rentalFormat.SelectedItem);
+            string startDate = rentalDate.Value.ToString("yyyy-MM-dd");
+            string returnDate = (DateTime.Parse(startDate).AddDays(14)).ToString("yyyy-MM-dd");
 
-            MessageBox.Show(String.Format("Successfully reserved {0} for rental on {1}\n" +
-                                          "Order ID: 12345\n" +
-                                          "Return date: {2}", 
-                                          movieName, startDate, returnDate), "Submission Received");
+            // check that no fields are blank
+            if (String.IsNullOrWhiteSpace(title) || String.IsNullOrWhiteSpace(format))
+            {
+                MessageBox.Show("Invalid entry, please fill out all fields and try again");
+                return;
+            }
+
+            // check that customer hasnt reached rental limit
+            if (!this.checkRentalLimit()) { return; }
+
+            //check that movie is available in specified format & on specified date
+
+    
         }
 
         private void allowAcctEdits(object sender, EventArgs e)
@@ -385,6 +388,42 @@ namespace movieRentalApp
             cancelChanges.Visible = false;
         }
 
-        
+
+        private Boolean checkRentalLimit()
+        {
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+                string getLimit = "select S.movieLimit from subscriptions S, customers C " +
+                                "where S.type = C.subType and C.accountNum = '" + this.CID + "';";
+                SqlCommand cmd = new SqlCommand(getLimit, myConnection);
+                int limit = Convert.ToInt32(cmd.ExecuteScalar());
+                MessageBox.Show(limit.ToString());
+
+                int currMonth = DateTime.Now.Month;
+                cmd.CommandText = "select count(*) from orders where " + "accountNum = '" + this.CID + "';"; 
+                                  //"' and month(dateFrom) = " + currMonth + ";";
+                int monthRentals = Convert.ToInt32(cmd.ExecuteScalar()); 
+                MessageBox.Show(monthRentals.ToString());
+
+                if (monthRentals >= limit)
+                {
+                    MessageBox.Show("Unable to place order, you've reached your rental limit for this month");
+                    myConnection.Close();
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to place order, please try again later");
+                MessageBox.Show(ex.Message);
+                myConnection.Close();
+                return false;
+            }
+            MessageBox.Show("DONE!");
+            myConnection.Close();
+            return true;
+        }
     }
 }
