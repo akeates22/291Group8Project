@@ -34,11 +34,75 @@ namespace movieRentalApp
 
         private void showCurrentRentals(object sender, EventArgs e)
         {
+            this.currentRentalsList.Items.Clear();
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+                string getRentals = "select M.movieName, O.dateTo, C.copyID, C.type " +
+                                    "from movies M, orders O, copies C where M.movieID = O.movieID " +
+                                    "and O.copyID = C.copyID and O.accountNum = '" + this.CID + 
+                                    "' and C.available = 'no';";
+
+                SqlCommand cmd = new SqlCommand(getRentals, myConnection);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string title = dr.GetString(0);
+                    string date  = dr.GetDateTime(1).ToString("yyyy-MM-dd");
+                    string ID    = dr.GetString(2);
+                    string type  = dr.GetString(3);
+
+                    string[] vals = { title, date, ID, type };
+                    ListViewItem row = new ListViewItem(vals);
+                    this.currentRentalsList.Items.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to get current rentals, please try again later");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
             this.contentBox.SelectTab(1);
         }
 
         private void showRentalHistory(object sender, EventArgs e)
         {
+            this.listView1.Items.Clear();
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+                string getHistory = "select M.movieName, O.dateFrom, O.copyID, C.type " +
+                                    "from movies M, orders O, copies C " +
+                                    "where M.movieID = O.movieID and O.copyID = C.copyID and " +
+                                    "O.accountNum = " + this.CID + ";";
+
+                SqlCommand cmd = new SqlCommand(getHistory, myConnection);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string title = dr.GetString(0);
+                    string date  = dr.GetDateTime(1).ToString("yyyy-MM-dd");
+                    string ID    = dr.GetString(2);
+                    string type  = dr.GetString(3);
+
+                    string[] vals = { title, date, ID, type };
+                    ListViewItem row = new ListViewItem(vals);
+                    this.listView1.Items.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to get rental history, please try again later");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
             this.contentBox.SelectTab(2);
         }
 
@@ -50,8 +114,7 @@ namespace movieRentalApp
             try
             {
                 myConnection.Open();
-                string getRatings = "select distinct M.movieName, O.rating, " +
-                                    "concat(min(O.dateFrom), '  -  ', min(O.dateTo)) " +
+                string getRatings = "select distinct M.movieName, O.rating, min(O.dateFrom) " +
                                     "from movies M, orders O, copies C " +
                                     "where M.movieID = O.movieID and O.copyID = C.copyID and " +
                                     "O.rating is not null and O.accountNum = " + this.CID + " and " +
@@ -64,9 +127,9 @@ namespace movieRentalApp
                 {
                     string title = dr.GetString(0);
                     string rating = dr.GetInt32(1).ToString();
-                    string period = dr.GetString(2);
+                    string date = dr.GetDateTime(2).ToString("yyyy-MM-dd"); ;
 
-                    string[] vals = { "", title, rating, period };
+                    string[] vals = { "", title, rating, date };
 
                     ListViewItem row = new ListViewItem(vals);
                     this.listView2.Items.Add(row);
@@ -176,7 +239,6 @@ namespace movieRentalApp
             }
             
             string fullQuery = select + from + where + groupBy;
-            MessageBox.Show(fullQuery);
             SqlConnection myConnection = new SqlConnection(connectionString);
 
             try
@@ -250,7 +312,6 @@ namespace movieRentalApp
 
         private void saveAccInfoUpdates(object sender, EventArgs e)
         {
-            // check validity of entries
             string fname = this.custFName.Text;
             string lname = this.custLName.Text;
             string city = this.custCity.Text;
@@ -262,7 +323,6 @@ namespace movieRentalApp
 
             // phone must be a number
             if (!phone.All(char.IsDigit)) { MessageBox.Show("Invalid phone number"); return; }
-
 
             // make sure no inputs are blank
             string[] inputs = { fname, lname, city, prov, address, postal, email };
