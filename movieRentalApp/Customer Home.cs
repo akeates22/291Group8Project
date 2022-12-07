@@ -212,9 +212,10 @@ namespace movieRentalApp
 
             // these are the same regardless of inputs
             string select  = "select M.movieName, C.type, count(*) ";
-            string from    = "from movies M, copies C, orders O";
-            string where   = " where M.movieID = C.movieID and M.movieID = O.movieID and C.copyID = O.copyID " +
-                             "and ('" + rentalDate + "' not between O.dateFrom and O.dateTo) ";
+            string from    = "from movies M, copies C ";
+            string where   = "where M.movieID = C.movieID and " +
+                             "not exists (select * from orders where movieID = M.movieID and " +
+                             "copyID = C.copyID and ('" + rentalDate + "' between dateFrom and dateTo)) ";
             string groupBy = "group by M.movieName, C.type;";
 
             if (!string.IsNullOrWhiteSpace(title))
@@ -298,27 +299,29 @@ namespace movieRentalApp
                 myConnection.Open();
 
                 // get next order ID
-                SqlCommand cmd = new SqlCommand("select max(orderID) from orders", myConnection);
+                SqlCommand cmd = new SqlCommand("select ISNULL(max(orderID), 0) from orders", myConnection);
                 string newOrderID = (Convert.ToInt32(cmd.ExecuteScalar()) + 1).ToString();
 
                 // get copy ID 
-                string baseCopyIDQuery = "select min(C.copyID) from movies M, copies C, orders O " +
-                                         "where M.movieID = O.movieID and O.CopyID = C.copyID and " +
+                string baseCopyIDQuery = "select min(C.copyID) from movies M, copies C " +
+                                         "where M.movieID = C.movieID and " +
                                          "M.movieName = '" + title + "' and C.type = '" + format + "' and ";
 
-                // requesting rental today or in the future requires slightly different queries
+                // requesting rental today or in the future requires different queries
                 if (startDate == DateTime.Today.ToString("yyyy-MM-dd"))
                 {
                     cmd.CommandText = (baseCopyIDQuery + "C.available = 'yes';");
-                } else
-                {
-                    cmd.CommandText = (baseCopyIDQuery + "('" + startDate + "' not between O.dateFrom and O.dateTo); ");
+                } else {
+                    string checkDate = "not exists (select * from orders where movieID = M.movieID and copyID = C.copyID " +
+                                       "and ('" + startDate + "' between dateFrom and dateTo));";
+                    cmd.CommandText = (baseCopyIDQuery + checkDate);
                 }
                 object copyID = cmd.ExecuteScalar();
 
                 // get movie ID 
                 cmd.CommandText = "select movieID from movies where movieName = '" + title + "';";
                 object movieID = cmd.ExecuteScalar();
+
 
                 if (copyID.Equals(DBNull.Value) || movieID.Equals(DBNull.Value))
                 {
@@ -327,15 +330,27 @@ namespace movieRentalApp
                     return;
                 }
 
+                // movie needs to be returned before next reserved rental date, up to maximum of 2 weeks
+                cmd.CommandText = "select min(dateFrom) from Orders where copyID = " + copyID + " and " +
+                                  "datediff(day, dateFrom, '" + startDate + "') < 14;";
+                object nextRental = cmd.ExecuteScalar();
+                if (!nextRental.Equals(DBNull.Value))
+                {
+                    returnDate = ((DateTime)nextRental).ToString("yyyy-MM-dd");
+                }
+
                 // update orders table
                 cmd.CommandText = "insert into orders values (" + newOrderID + ", " + copyID.ToString() + 
                                   ", " + movieID.ToString() + ", null," + this.CID + ", '" + startDate + 
                                   "', '" + returnDate + "', null);";
                 cmd.ExecuteNonQuery();
 
-                // set ordered movie to unavailable
-                cmd.CommandText = "update copies set availability = 'no' where copyID = " + copyID + ";";
-                cmd.ExecuteNonQuery();
+                // set ordered movie to unavailable if rental date was today
+                if (startDate == DateTime.Today.ToString("yyyy-MM-dd"))
+                {
+                    cmd.CommandText = "update copies set available = 'no' where copyID = " + copyID + ";";
+                    cmd.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -438,7 +453,6 @@ namespace movieRentalApp
             saveAccInfoChanges.Visible = false;
             cancelChanges.Visible = false;
         }
-
 
         private Boolean checkRentalLimit()
         {
