@@ -293,7 +293,7 @@ namespace movieRentalApp
             if (!this.checkRentalLimit()) { return; }
 
             //check that movie is available in specified format & on specified date
-
+            if (!this.isAvailable(title, format, startDate)) { return; }
     
         }
 
@@ -399,13 +399,11 @@ namespace movieRentalApp
                                 "where S.type = C.subType and C.accountNum = '" + this.CID + "';";
                 SqlCommand cmd = new SqlCommand(getLimit, myConnection);
                 int limit = Convert.ToInt32(cmd.ExecuteScalar());
-                MessageBox.Show(limit.ToString());
 
                 int currMonth = DateTime.Now.Month;
-                cmd.CommandText = "select count(*) from orders where " + "accountNum = '" + this.CID + "';"; 
-                                  //"' and month(dateFrom) = " + currMonth + ";";
+                cmd.CommandText = "select count(*) from orders where " + "accountNum = '" + this.CID + 
+                                  "' and month(dateFrom) = " + currMonth + ";";
                 int monthRentals = Convert.ToInt32(cmd.ExecuteScalar()); 
-                MessageBox.Show(monthRentals.ToString());
 
                 if (monthRentals >= limit)
                 {
@@ -421,9 +419,28 @@ namespace movieRentalApp
                 myConnection.Close();
                 return false;
             }
-            MessageBox.Show("DONE!");
+            myConnection.Close();
+            return true;
+        }
+
+        private Boolean isAvailable(string title, string format, string date)
+        {
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                string searchQuery = "select * from movies M, copies C, orders O " + 
+                                     " "
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to find movie, are you sure this is available?");
+                MessageBox.Show(ex.Message);
+                myConnection.Close();
+                return false;
+            }
             myConnection.Close();
             return true;
         }
     }
+
 }
