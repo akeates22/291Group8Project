@@ -63,7 +63,6 @@ namespace movieRentalApp
         }
         private void postMovieRating(object sender, EventArgs e)
         {
-            
 
             SqlConnection myConnection = new SqlConnection(connectionString);
             try

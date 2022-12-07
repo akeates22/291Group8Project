@@ -100,6 +100,7 @@
             this.placeHolder = new System.Windows.Forms.ColumnHeader();
             this.movieColumn = new System.Windows.Forms.ColumnHeader();
             this.ratingColumn = new System.Windows.Forms.ColumnHeader();
+            this.rentalPeriodColumn = new System.Windows.Forms.ColumnHeader();
             this.label12 = new System.Windows.Forms.Label();
             this.rateActorButton = new System.Windows.Forms.Button();
             this.rateMovieButton = new System.Windows.Forms.Button();
@@ -139,7 +140,6 @@
             this.rentalTitle = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.rentalPeriodColumn = new System.Windows.Forms.ColumnHeader();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -320,7 +320,7 @@
             this.movieSearch.Controls.Add(this.title);
             this.movieSearch.Location = new System.Drawing.Point(4, 29);
             this.movieSearch.Name = "movieSearch";
-            this.movieSearch.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.movieSearch.Padding = new System.Windows.Forms.Padding(3);
             this.movieSearch.Size = new System.Drawing.Size(825, 466);
             this.movieSearch.TabIndex = 0;
             this.movieSearch.Text = "movie search";
@@ -428,7 +428,7 @@
             this.currentRentals.Controls.Add(this.currentRentalsList);
             this.currentRentals.Location = new System.Drawing.Point(4, 29);
             this.currentRentals.Name = "currentRentals";
-            this.currentRentals.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.currentRentals.Padding = new System.Windows.Forms.Padding(3);
             this.currentRentals.Size = new System.Drawing.Size(825, 466);
             this.currentRentals.TabIndex = 1;
             this.currentRentals.Text = "current rentals";
@@ -469,7 +469,7 @@
             // 
             // returnDate
             // 
-            this.returnDate.Text = "Return Date";
+            this.returnDate.Text = "Due By";
             this.returnDate.Width = 234;
             // 
             // currRentCopyID
@@ -488,7 +488,7 @@
             this.rentalHistory.Controls.Add(this.listView1);
             this.rentalHistory.Location = new System.Drawing.Point(4, 29);
             this.rentalHistory.Name = "rentalHistory";
-            this.rentalHistory.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rentalHistory.Padding = new System.Windows.Forms.Padding(3);
             this.rentalHistory.Size = new System.Drawing.Size(825, 466);
             this.rentalHistory.TabIndex = 2;
             this.rentalHistory.Text = "rental history";
@@ -529,7 +529,7 @@
             // 
             // rentalPeriodCol
             // 
-            this.rentalPeriodCol.Text = "Rental Period";
+            this.rentalPeriodCol.Text = "Rental Date";
             this.rentalPeriodCol.Width = 234;
             // 
             // copyID
@@ -551,7 +551,7 @@
             this.ratings.Controls.Add(this.rateMovieButton);
             this.ratings.Location = new System.Drawing.Point(4, 29);
             this.ratings.Name = "ratings";
-            this.ratings.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ratings.Padding = new System.Windows.Forms.Padding(3);
             this.ratings.Size = new System.Drawing.Size(825, 466);
             this.ratings.TabIndex = 3;
             this.ratings.Text = "ratings";
@@ -589,6 +589,12 @@
             this.ratingColumn.Text = "Rating";
             this.ratingColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ratingColumn.Width = 100;
+            // 
+            // rentalPeriodColumn
+            // 
+            this.rentalPeriodColumn.Text = "Rental Period";
+            this.rentalPeriodColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rentalPeriodColumn.Width = 300;
             // 
             // label12
             // 
@@ -653,7 +659,7 @@
             this.accountInfo.Controls.Add(this.label2);
             this.accountInfo.Location = new System.Drawing.Point(4, 29);
             this.accountInfo.Name = "accountInfo";
-            this.accountInfo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.accountInfo.Padding = new System.Windows.Forms.Padding(3);
             this.accountInfo.Size = new System.Drawing.Size(825, 466);
             this.accountInfo.TabIndex = 4;
             this.accountInfo.Text = "acc info";
@@ -922,7 +928,7 @@
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(825, 466);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Place Order";
@@ -1004,12 +1010,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "You\'ve rented 5 movies this month.\r\nYou have 15 rentals remaining until December." +
     "";
-            // 
-            // rentalPeriodColumn
-            // 
-            this.rentalPeriodColumn.Text = "Rental Period";
-            this.rentalPeriodColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.rentalPeriodColumn.Width = 300;
             // 
             // Customer_Home2
             // 
