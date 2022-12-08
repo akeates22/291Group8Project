@@ -76,18 +76,22 @@ namespace movieRentalApp
 
                 SqlCommand cmd = new SqlCommand(updateCmd, myConnection);
                 cmd.ExecuteNonQuery();
+                myConnection.Close();
 
                 MessageBox.Show("Rating updated!");
+
+                var ratingHandler = new Rate_Movie(connectionString, CID);
+                ratingHandler.updateMovieAvg(selectedMovie, newRating);
+                ratingHandler.updateActorAvg(selectedMovie, newRating);
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to update ratings, please try again later");
                 MessageBox.Show(ex.Message);
+                myConnection.Close();
             }
-            myConnection.Close();
             this.Close();
-
         }
     }
 }
