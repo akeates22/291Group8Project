@@ -5,7 +5,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,19 +19,20 @@ namespace movieRentalApp
         public string connectionString;
         public Employee_Home(string connectionString, string ID)
         {
-            this.ID = ID;
             this.connectionString = connectionString;
+            this.ID = ID;
             InitializeComponent();
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void re(object sender, EventArgs e)
         {
-
+            Signup register = new Signup(connectionString);
+            register.Show();
         }
 
         private void approveRentals(object sender, EventArgs e)
         {
-            MessageBox.Show("Rentals Approved!");
+
         }
 
         private void showEmpInfo(object sender, EventArgs e)
@@ -55,14 +55,24 @@ namespace movieRentalApp
             this.contentBox.SelectTab(1);
         }
 
-        private void customerSearchButton_CheckedChanged(object sender, EventArgs e)
+        private void manageMoviesMain_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void employeeMovieSearch_CheckedChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.contentBox.SelectTab(0);
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

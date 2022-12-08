@@ -56,7 +56,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(475, 413);
+            this.listView1.Size = new System.Drawing.Size(745, 264);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 413);
+            this.ClientSize = new System.Drawing.Size(745, 264);
             this.Controls.Add(this.listView1);
             this.Name = "Employee_Customer_Search";
             this.Text = "Employee_Customer_Search";
