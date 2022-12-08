@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\17807\\Downloads\\school\\cs291\\Project\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj": {}
+    "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\17807\\Downloads\\school\\cs291\\Project\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj": {
+    "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\17807\\Downloads\\school\\cs291\\Project\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj",
+        "projectUniqueName": "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj",
         "projectName": "movieRentalApp",
-        "projectPath": "C:\\Users\\17807\\Downloads\\school\\cs291\\Project\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj",
-        "packagesPath": "C:\\Users\\17807\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\17807\\Downloads\\school\\cs291\\Project\\291Group8Project\\movieRentalApp\\obj\\",
+        "projectPath": "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp\\movieRentalApp.csproj",
+        "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\17807\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

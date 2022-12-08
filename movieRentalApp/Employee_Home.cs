@@ -46,5 +46,15 @@ namespace movieRentalApp
         {
             this.contentBox.SelectTab(1);
         }
+
+        private void customerSearchButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeeMovieSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            this.contentBox.SelectTab(0);
+        }
     }
 }

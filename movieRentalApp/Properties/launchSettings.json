@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "movieRentalApp": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\David\\Documents\\GitHub\\291Group8Project\\movieRentalApp"
+    }
+  }
+}

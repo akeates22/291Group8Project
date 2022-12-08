@@ -40,6 +40,7 @@ namespace movieRentalApp
             else if (fname == "admin" && lname == "test" && ID == "123456789")
             {
                 //show employee home screen
+                var employeeMenu = new Employee_Home();
             }
             else
             {
