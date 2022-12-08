@@ -98,7 +98,7 @@ namespace movieRentalApp
                 }
 
                 con.Close();
-                Employee_Home empHome = new Employee_Home(ID);
+                Employee_Home empHome = new Employee_Home(connectionString, ID);
                 empHome.Show();
                 this.Close();
             }

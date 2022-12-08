@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,8 +14,14 @@ namespace movieRentalApp
 {
     public partial class Employee_Home : Form
     {
-        public Employee_Home(string ID)
+        public SqlConnection sqlConnection;
+        public SqlCommand cmd;
+        public String ID;
+        public string connectionString;
+        public Employee_Home(string connectionString, string ID)
         {
+            this.ID = ID;
+            this.connectionString = connectionString;
             InitializeComponent();
         }
 
@@ -45,6 +53,16 @@ namespace movieRentalApp
         private void showApproveRentals(object sender, EventArgs e)
         {
             this.contentBox.SelectTab(1);
+        }
+
+        private void customerSearchButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeeMovieSearch_CheckedChanged(object sender, EventArgs e)
+        {
+            this.contentBox.SelectTab(0);
         }
     }
 }
