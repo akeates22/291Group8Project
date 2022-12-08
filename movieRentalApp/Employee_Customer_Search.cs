@@ -33,6 +33,11 @@ namespace movieRentalApp
                 myConnection.Open();
                 SqlCommand cmd = new SqlCommand(query, myConnection);
                 SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    // add customer info to listview
+                }
             }
             catch (Exception ex)
             {
