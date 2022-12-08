@@ -78,19 +78,19 @@ primary key (orderID),
 
 insert into actors 
 values 
-(1, 'Tom Cruise', 'M', 60, 8),
-(2, 'Brad Pitt', 'M', 58, 9), 
-(3, 'Scarlet Johansson', 'F', 38, 9),
-(4, 'Margot Robbie', 'F', 32, 7),
-(5, 'Robert Downey Jr', 'M', 57, 7);
+(1, 'Tom Cruise', 'M', 60, NULL),
+(2, 'Brad Pitt', 'M', 58, NULL), 
+(3, 'Scarlet Johansson', 'F', 38, NULL),
+(4, 'Margot Robbie', 'F', 32, NULL),
+(5, 'Robert Downey Jr', 'M', 57, NULL);
 
 insert into movies 
 values 
-(1, 'Oceans 11', 'Action', '400', 9),
-(2, 'Once Upon a Time in Hollywood', 'Drama', '750', 8),
-(3, 'Topgun Maverick', 'Action', '900', 10),
-(4, 'Tropic Thunder', 'Comedy', '450', 9),
-(5, 'Avengers Infinity War', 'Action', '800', 7);
+(1, 'Oceans 11', 'Action', '400', NULL),
+(2, 'Once Upon a Time in Hollywood', 'Drama', '750', NULL),
+(3, 'Topgun Maverick', 'Action', '900', NULL),
+(4, 'Tropic Thunder', 'Comedy', '450', NULL),
+(5, 'Avengers Infinity War', 'Action', '800', NULL);
 
 insert into movies_in
 values 
@@ -134,5 +134,26 @@ values
 ('Basic', 5, 8),
 ('Premium', 10, 12),
 ('Premium Plus', 15, 20);
+
+insert into customers 
+values
+(1, 'Premium', 'c', '1', 'address', 'city', 'province', 'postalCode', 7801234567, 'email', 000000000000, NULL);
+
+insert into orders 
+values 
+(1, 1, 1, '123456789', 1, '2022-01-01', '2022-01-15', NULL),
+(2, 2, 1, '123456789', 1, '2022-01-15', '2022-01-29', NULL),
+
+(3, 10, 2, '123456789', 1, '2022-01-15', '2022-01-29', NULL),
+(4, 10, 2, '123456789', 1, '2022-03-01', '2022-03-15', 8),
+
+(5, 17, 3, '123456789', 1, '2022-04-07', '2022-04-22', NULL),
+(6, 22, 3, '123456789', 1, '2022-05-03', '2022-05-18', NULL),
+
+(7, 24, 4, '123456789', 1, '2022-05-05', '2022-05-20', 9),
+(8, 24, 4, '123456789', 1, '2022-05-10', '2022-05-25', NULL),
+
+(5, 17, 5, '123456789', 1, '2022-08-07', '2022-08-21', NULL),
+(6, 22, 5, '123456789', 1, '2022-05-06', '2022-05-20', NULL);
 
 

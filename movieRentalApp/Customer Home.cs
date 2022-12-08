@@ -58,6 +58,7 @@ namespace movieRentalApp
                     ListViewItem row = new ListViewItem(vals);
                     this.currentRentalsList.Items.Add(row);
                 }
+                dr.Close();
             }
             catch (Exception ex)
             {
@@ -95,6 +96,7 @@ namespace movieRentalApp
                     ListViewItem row = new ListViewItem(vals);
                     this.listView1.Items.Add(row);
                 }
+                dr.Close();
             }
             catch (Exception ex)
             {
@@ -133,6 +135,7 @@ namespace movieRentalApp
                     ListViewItem row = new ListViewItem(vals);
                     this.listView2.Items.Add(row);
                 }
+                dr.Close();
             }
             catch (Exception ex)
             {
@@ -188,6 +191,7 @@ namespace movieRentalApp
                         this.custRentalLimit.Text = "20 / month";
                         break;
                 }
+                dr.Close();
             }
             catch (Exception ex)
             {

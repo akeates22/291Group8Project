@@ -81,6 +81,7 @@ namespace movieRentalApp
 
                 SqlCommand cmd = new SqlCommand(updateCmd, myConnection);
                 cmd.ExecuteNonQuery();
+                myConnection.Close();
 
                 MessageBox.Show("Rating added!");
 
@@ -92,8 +93,8 @@ namespace movieRentalApp
             {
                 MessageBox.Show("Unable to add rating, please try again later");
                 MessageBox.Show(ex.Message);
+                myConnection.Close();
             }
-            myConnection.Close();
             this.Close();
         }
 
@@ -114,11 +115,12 @@ namespace movieRentalApp
                 decimal newAvgExact = ((newRating + (totalRatings * currAvg)) / (totalRatings + 1));
                 int newAvg = (int)Math.Round(newAvgExact, 0);
 
-                cmd.CommandText = "update movies set rating = " + newRating + " where movieName = '" + movie + "';";
+                cmd.CommandText = "update movies set rating = " + newAvg + " where movieName = '" + movie + "';";
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unexpected error occured, unable to add rating to total average");
+                MessageBox.Show("Unexpected error 1 occured, unable to add rating to total average");
                 MessageBox.Show(ex.Message);
             }
             myConnection.Close();
@@ -132,14 +134,44 @@ namespace movieRentalApp
                 myConnection.Open();
                 string movieCast = "select A.actorID from actors A, movies_in MI, movies M where " +
                                    "A.actorID = MI.actorID and M.movieID = MI.movieID and " +
-                                   "M.movieName = '" + movie + "';";
+                                   "M.movieName = '" + movie + "'";
 
-                string movieCounts = "select A.actorID, count(*) from actors A, movies M, movies_in MI where " +
-                                     "A.actorID = MI.actorID and M.movieID = MI.movieID and " +
-                                     "A.actorID in (" + movieCast + ") group by A.actorID";
+                // get number of times an actor has had a movie of theirs rated
+                string temp = "select A.actorID as ID, ISNULL(count(*),0) as count from actors A, " + 
+                              "orders O, movies_in MI where O.movieID = MI.movieID and A.actorID = MI.actorID " +
+                              "and O.rating is not null group by A.actorID";
 
-                // read query rows into list (use sqlDataReader)
-                // while(dr.Read()) { update ratings using given rating & the actor's movie Count }
+
+                // get actor ID, their rating, and the number of times their movie(s) has been rated
+                string actorData = "select A.actorID, ISNULL(A.rating,0), temp.count from actors A, movies_in MI, " +
+                                   "( " + temp + ") as temp where A.actorID = temp.ID and A.actorID in (" + movieCast + ");";
+
+                SqlCommand cmd = new SqlCommand(actorData, myConnection);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<string> updates = new List<string>();
+
+                while (reader.Read())
+                {
+                    int actorID = Convert.ToInt32(reader.GetDecimal(0));
+                    int currAvg = Convert.ToInt32(reader.GetDecimal(1));
+                    int ratingCount = reader.GetInt32(2);
+                    decimal newAvgExact = ((rating + (ratingCount * currAvg)) / (ratingCount + 1));
+                    
+                    int newAvg = (int)Math.Round(newAvgExact, 0);
+
+                    MessageBox.Show("current movie count: " + ratingCount.ToString());
+                    MessageBox.Show("decimal new average:" + newAvgExact.ToString() + "\nrounded avg: " + newAvg.ToString());
+
+                    string updateStr = "update actors set rating = " + newAvg + " where actorID = " + actorID + ";";
+                    updates.Add(updateStr);
+                }
+                reader.Close();
+                foreach (string update in updates)
+                {
+                    cmd.CommandText = update;
+                    cmd.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
