@@ -32,6 +32,8 @@ namespace movieRentalApp
             try
             {
                 myConnection.Open();
+
+                string currDate = DateTime.Today.ToString("yyyy-MM-dd");
                 // movies that customer has already rated
                 string subQuery = "select distinct movieID from orders where " +
                                   "accountNum = " + this.CID + " and rating is not null";
@@ -39,7 +41,7 @@ namespace movieRentalApp
                 string query = "select distinct M.movieName from movies M, orders O, copies C " +
                                "where M.movieID = O.movieID and C.copyID = O.copyID and " +
                                "C.available = 'yes' and O.accountNum = " + this.CID + " and " +
-                               "M.movieID not in ( " + subQuery + " );";
+                               "O.dateFrom <= '" + currDate + "' and M.movieID not in ( " + subQuery + " );";
 
                 SqlCommand cmd = new SqlCommand(query, myConnection);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
