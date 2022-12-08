@@ -60,7 +60,6 @@ namespace movieRentalApp
                 MessageBox.Show(ex.Message);
             }
             myConnection.Close();
-            
 
         }
         private void postMovieRating(object sender, EventArgs e)
@@ -85,6 +84,9 @@ namespace movieRentalApp
 
                 MessageBox.Show("Rating added!");
 
+                this.updateMovieAvg(selectedMovie, newRating);
+                this.updateActorAvg(selectedMovie, newRating);
+
             }
             catch (Exception ex)
             {
@@ -92,8 +94,59 @@ namespace movieRentalApp
                 MessageBox.Show(ex.Message);
             }
             myConnection.Close();
-
             this.Close();
+        }
+
+        private void updateMovieAvg(string movie, int newRating)
+        {
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+                string getRatingCount = "select count(*) from orders O, movies M where M.movieId = O.movieID and " +
+                                        "O.rating is not null;";
+                SqlCommand cmd = new SqlCommand(getRatingCount, myConnection);
+                int totalRatings = Convert.ToInt32(cmd.ExecuteScalar());
+
+                cmd.CommandText = "select rating from movies where movieName = '" + movie + "';";
+                int currAvg = Convert.ToInt32(cmd.ExecuteScalar());
+
+                decimal newAvgExact = ((newRating + (totalRatings * currAvg)) / (totalRatings + 1));
+                int newAvg = (int)Math.Round(newAvgExact, 0);
+
+                cmd.CommandText = "update movies set rating = " + newRating + " where movieName = '" + movie + "';";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error occured, unable to add rating to total average");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
+        }
+
+        private void updateActorAvg(string movie, int rating)
+        {
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+                string movieCast = "select A.actorID from actors A, movies_in MI, movies M where " +
+                                   "A.actorID = MI.actorID and M.movieID = MI.movieID and " +
+                                   "M.movieName = '" + movie + "';";
+
+                string movieCounts = "select A.actorID, count(*) from actors A, movies M, movies_in MI where " +
+                                     "A.actorID = MI.actorID and M.movieID = MI.movieID and " +
+                                     "A.actorID in (" + movieCast + ") group by A.actorID";
+
+                // read query rows into list (use sqlDataReader)
+                // while(dr.Read()) { update ratings using given rating & the actor's movie Count }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error occured, unable to add rating to total average");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
         }
     }
 }
