@@ -115,9 +115,9 @@ namespace movieRentalApp
                 decimal newAvgExact = ((newRating + ((totalRatings - 1) * currAvg)) / totalRatings);
                 int newAvg = (int)Math.Round(newAvgExact, 0);
 
-                MessageBox.Show(movie + " has been rated " + totalRatings.ToString() + " times\n" +
-                                "It's current average rating is " + currAvg.ToString() + "\n" +
-                                " It's new average rating is " + newAvg.ToString());
+                //MessageBox.Show(movie + " has been rated " + totalRatings.ToString() + " times\n" +
+                                //"It's current average rating is " + currAvg.ToString() + "\n" +
+                                //" It's new average rating is " + newAvg.ToString());
 
                 cmd.CommandText = "update movies set rating = " + newAvg + " where movieName = '" + movie + "';";
                 cmd.ExecuteNonQuery();

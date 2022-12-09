@@ -82,7 +82,7 @@ namespace movieRentalApp
                 string addCustomerCommand = "insert into customers values (" + CID.ToString() + ",'" + accType + "','" + fname +
                                             "','" + lname + "','" + address + "','" + city + "','" + province + "','" +
                                             postalCode + "','" + phone + "','" + email + "','" + creationDate + "','" +
-                                            ccNumber + "', 0.0);";
+                                            ccNumber + "');";
 
                 cmd.CommandText = addCustomerCommand;
                 cmd.ExecuteNonQuery();
