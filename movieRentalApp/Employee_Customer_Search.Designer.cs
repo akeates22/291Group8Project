@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.subPlan = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ccNum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cancelChanges
@@ -65,6 +67,7 @@
             this.cancelChanges.Text = "Cancel";
             this.cancelChanges.UseVisualStyleBackColor = true;
             this.cancelChanges.Visible = false;
+            this.cancelChanges.Click += new System.EventHandler(this.cancelUpdates);
             // 
             // phone
             // 
@@ -157,10 +160,11 @@
             this.saveAccInfoChanges.Text = "Save Changes";
             this.saveAccInfoChanges.UseVisualStyleBackColor = true;
             this.saveAccInfoChanges.Visible = false;
+            this.saveAccInfoChanges.Click += new System.EventHandler(this.saveAcctChanges);
             // 
             // rentalLimit
             // 
-            this.rentalLimit.Location = new System.Drawing.Point(584, 193);
+            this.rentalLimit.Location = new System.Drawing.Point(585, 241);
             this.rentalLimit.Name = "rentalLimit";
             this.rentalLimit.ReadOnly = true;
             this.rentalLimit.Size = new System.Drawing.Size(157, 27);
@@ -168,7 +172,7 @@
             // 
             // fees
             // 
-            this.fees.Location = new System.Drawing.Point(584, 138);
+            this.fees.Location = new System.Drawing.Point(585, 188);
             this.fees.Name = "fees";
             this.fees.ReadOnly = true;
             this.fees.Size = new System.Drawing.Size(157, 27);
@@ -230,7 +234,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(405, 200);
+            this.label7.Location = new System.Drawing.Point(406, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 20);
             this.label7.TabIndex = 53;
@@ -250,7 +254,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(405, 82);
+            this.label5.Location = new System.Drawing.Point(406, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(163, 20);
             this.label5.TabIndex = 51;
@@ -260,7 +264,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(405, 141);
+            this.label4.Location = new System.Drawing.Point(406, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 50;
@@ -295,10 +299,28 @@
             "Basic",
             "Premium",
             "Premium Plus"});
-            this.subPlan.Location = new System.Drawing.Point(584, 81);
+            this.subPlan.Location = new System.Drawing.Point(585, 135);
             this.subPlan.Name = "subPlan";
             this.subPlan.Size = new System.Drawing.Size(157, 28);
             this.subPlan.TabIndex = 74;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(408, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(141, 20);
+            this.label9.TabIndex = 75;
+            this.label9.Text = "Credit Card No:";
+            // 
+            // ccNum
+            // 
+            this.ccNum.Location = new System.Drawing.Point(585, 81);
+            this.ccNum.Name = "ccNum";
+            this.ccNum.ReadOnly = true;
+            this.ccNum.Size = new System.Drawing.Size(157, 27);
+            this.ccNum.TabIndex = 76;
             // 
             // Employee_Customer_Search
             // 
@@ -306,6 +328,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(770, 516);
+            this.Controls.Add(this.ccNum);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.subPlan);
             this.Controls.Add(this.cancelChanges);
             this.Controls.Add(this.phone);
@@ -367,5 +391,7 @@
         private Label label3;
         private Label label2;
         private ComboBox subPlan;
+        private Label label9;
+        private TextBox ccNum;
     }
 }
