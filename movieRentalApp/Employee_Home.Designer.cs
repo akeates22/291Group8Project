@@ -119,7 +119,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(202, 547);
+            this.panel1.Size = new System.Drawing.Size(202, 443);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -239,7 +239,7 @@
             this.manageMovies.Controls.Add(this.titleInputBox);
             this.manageMovies.Location = new System.Drawing.Point(4, 29);
             this.manageMovies.Name = "manageMovies";
-            this.manageMovies.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.manageMovies.Padding = new System.Windows.Forms.Padding(3);
             this.manageMovies.Size = new System.Drawing.Size(590, 437);
             this.manageMovies.TabIndex = 0;
             this.manageMovies.Text = "manageMovies";
@@ -247,7 +247,7 @@
             // addMovie
             // 
             this.addMovie.Location = new System.Drawing.Point(234, 362);
-            this.addMovie.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addMovie.Margin = new System.Windows.Forms.Padding(1);
             this.addMovie.Name = "addMovie";
             this.addMovie.Size = new System.Drawing.Size(179, 33);
             this.addMovie.TabIndex = 14;
@@ -258,7 +258,7 @@
             // 
             this.deletedSelectedMovies.BackColor = System.Drawing.Color.AliceBlue;
             this.deletedSelectedMovies.Location = new System.Drawing.Point(415, 362);
-            this.deletedSelectedMovies.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.deletedSelectedMovies.Margin = new System.Windows.Forms.Padding(1);
             this.deletedSelectedMovies.Name = "deletedSelectedMovies";
             this.deletedSelectedMovies.Size = new System.Drawing.Size(169, 33);
             this.deletedSelectedMovies.TabIndex = 13;
@@ -276,7 +276,7 @@
             this.deleteCheck,
             this.editButtons});
             this.dataGridView1.Location = new System.Drawing.Point(4, 180);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 123;
             this.dataGridView1.RowTemplate.Height = 57;
@@ -427,7 +427,7 @@
             this.employeeInfo.Controls.Add(this.employeeFNameLabel);
             this.employeeInfo.Location = new System.Drawing.Point(4, 29);
             this.employeeInfo.Name = "employeeInfo";
-            this.employeeInfo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.employeeInfo.Padding = new System.Windows.Forms.Padding(3);
             this.employeeInfo.Size = new System.Drawing.Size(590, 437);
             this.employeeInfo.TabIndex = 4;
             this.employeeInfo.Text = "acc info";
@@ -594,7 +594,7 @@
             this.manageCustomers.Controls.Add(this.manageCustomersTitle);
             this.manageCustomers.Location = new System.Drawing.Point(4, 29);
             this.manageCustomers.Name = "manageCustomers";
-            this.manageCustomers.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.manageCustomers.Padding = new System.Windows.Forms.Padding(3);
             this.manageCustomers.Size = new System.Drawing.Size(590, 437);
             this.manageCustomers.TabIndex = 6;
             this.manageCustomers.Text = "cust Search";
@@ -602,7 +602,7 @@
             // addCustomerButton
             // 
             this.addCustomerButton.Location = new System.Drawing.Point(231, 344);
-            this.addCustomerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addCustomerButton.Margin = new System.Windows.Forms.Padding(1);
             this.addCustomerButton.Name = "addCustomerButton";
             this.addCustomerButton.Size = new System.Drawing.Size(179, 33);
             this.addCustomerButton.TabIndex = 25;
@@ -613,7 +613,7 @@
             // 
             this.deleteCustmerButton.BackColor = System.Drawing.Color.AliceBlue;
             this.deleteCustmerButton.Location = new System.Drawing.Point(412, 344);
-            this.deleteCustmerButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.deleteCustmerButton.Margin = new System.Windows.Forms.Padding(1);
             this.deleteCustmerButton.Name = "deleteCustmerButton";
             this.deleteCustmerButton.Size = new System.Drawing.Size(169, 33);
             this.deleteCustmerButton.TabIndex = 24;
@@ -632,7 +632,7 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewButtonColumn1});
             this.dataGridView2.Location = new System.Drawing.Point(1, 162);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 123;
             this.dataGridView2.RowTemplate.Height = 57;
@@ -735,7 +735,7 @@
             this.rentalApproval.Controls.Add(this.approveRentalsTitle);
             this.rentalApproval.Location = new System.Drawing.Point(4, 29);
             this.rentalApproval.Name = "rentalApproval";
-            this.rentalApproval.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rentalApproval.Padding = new System.Windows.Forms.Padding(3);
             this.rentalApproval.Size = new System.Drawing.Size(590, 437);
             this.rentalApproval.TabIndex = 7;
             this.rentalApproval.Text = "rentalApproval";
@@ -751,7 +751,7 @@
             this.approveButton,
             this.declineButton});
             this.dataGridView3.Location = new System.Drawing.Point(4, 71);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 123;
             this.dataGridView3.RowTemplate.Height = 57;
