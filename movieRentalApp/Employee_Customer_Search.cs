@@ -56,9 +56,9 @@ namespace movieRentalApp
                 phone.Text = dr.GetString(6);
                 email.Text = dr.GetString(7);
                 ccNum.Text = dr.GetString(8);
-                subPlan.SelectedIndex = subPlan.FindStringExact(dr.GetString(9));
 
-                //subPlan.Text = dr.GetString(8);
+                // set combo box selected value to specified string
+                subPlan.SelectedIndex = subPlan.FindStringExact(dr.GetString(9));
 
                 switch (subPlan.Text)
                 {
@@ -95,6 +95,7 @@ namespace movieRentalApp
             phone.ReadOnly = false;
             email.ReadOnly = false;
             ccNum.ReadOnly = false;
+            subPlan.Enabled = true;
 
             saveAccInfoChanges.Visible = true;
             cancelChanges.Visible = true;
@@ -113,6 +114,7 @@ namespace movieRentalApp
             phone.ReadOnly = true;
             email.ReadOnly = true;
             ccNum.ReadOnly = true;
+            subPlan.Enabled = false;
 
             saveAccInfoChanges.Visible = false;
             cancelChanges.Visible = false;
@@ -168,6 +170,7 @@ namespace movieRentalApp
             }
             myConnection.Close();
 
+            // change text boxes back to starting properties
             this.fName.ReadOnly = true;
             this.lName.ReadOnly = true;
             this.address.ReadOnly = true;
@@ -177,10 +180,40 @@ namespace movieRentalApp
             this.phone.ReadOnly = true;
             this.email.ReadOnly = true;
             this.ccNum.ReadOnly = true;
+            this.subPlan.Enabled = false;
 
             saveAccInfoChanges.Visible = false;
             cancelChanges.Visible = false;
+
+            this.getResults();
         }
 
+        private void deleteAccount(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this account?\n" +
+                                                  "This action cannot be undone", "delete account", buttons);
+            
+            if (result == DialogResult.No) { return; }
+
+            string delete = "delete from customers where accountNum = " + CID + ";";
+            SqlConnection myConnection = new SqlConnection(connectionString);
+
+            try
+            {
+                myConnection.Open();
+                SqlCommand cmd = new SqlCommand(delete, myConnection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Account has been deleted");
+                myConnection.Close();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unexpected error occured, unable to delete account");
+                MessageBox.Show(ex.Message);
+                myConnection.Close();
+            }
+        }
     }
 }
