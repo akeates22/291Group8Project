@@ -137,7 +137,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 391);
+            this.panel1.Size = new System.Drawing.Size(186, 366);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
@@ -229,10 +229,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Controls.Add(this.contentBox);
-            this.panel2.Location = new System.Drawing.Point(173, 0);
+            this.panel2.Location = new System.Drawing.Point(173, -27);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(668, 429);
+            this.panel2.Size = new System.Drawing.Size(668, 456);
             this.panel2.TabIndex = 4;
             // 
             // contentBox
@@ -1032,7 +1032,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 391);
+            this.ClientSize = new System.Drawing.Size(839, 366);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

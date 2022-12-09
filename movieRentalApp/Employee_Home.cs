@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace movieRentalApp
@@ -154,6 +155,35 @@ namespace movieRentalApp
             this.contentBox.SelectTab(2);
         }
 
+        private void employeeMovieData(object sender, EventArgs e)
+        {
+            SqlConnection myConnection = new SqlConnection(connectionString);
+            try
+            {
+                myConnection.Open();
+                string query1 = "select M.movieName, C.copyID, C.type from movies M, copies C" +
+                                " where M.movieID = C.movieID";
+
+                SqlCommand cmd = new SqlCommand(query1, myConnection);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dataGridView1.Rows.Add(
+                    dr["movieName"].ToString(),
+                    dr["copyID"].ToString(),
+                    dr["type"].ToString());
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to get rental history, please try again later");
+                MessageBox.Show(ex.Message);
+            }
+            myConnection.Close();
+            this.contentBox.SelectTab(0);
+        }
         private void updateCustTable(string query)
         {
             SqlConnection myConnection = new SqlConnection(connectionString);
@@ -248,35 +278,6 @@ namespace movieRentalApp
             searchResults.getResults();
         }
 
-        private void employeeMovieData(object sender, EventArgs e)
-        {
-            SqlConnection myConnection = new SqlConnection(connectionString);
-            try
-            {
-                myConnection.Open();
-                string query1 = "select M.movieName, C.copyID, C.type from movies M, copies C" +
-                                " where M.movieID = C.movieID";
-
-                SqlCommand cmd = new SqlCommand(query1, myConnection);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    dataGridView1.Rows.Add(
-                    dr["movieName"].ToString(),
-                    dr["copyID"].ToString(),
-                    dr["type"].ToString());
-                }
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to get rental history, please try again later");
-                MessageBox.Show(ex.Message);
-            }
-            myConnection.Close();
-            this.contentBox.SelectTab(0);
-        }
 
         private void showApproveRentals(object sender, EventArgs e)
         {
@@ -297,7 +298,11 @@ namespace movieRentalApp
                     string copy = dr.GetDecimal(1).ToString();
                     string num = dr.GetDecimal(2).ToString();
 
-                    string row = name + "\t\t" + copy + "\t" + num;
+
+                    string gap1 = "";
+                    for (int i = 0; i < (50 - name.Length); i++) { gap1 += " "; }
+
+                    string row = name + gap1 + copy + "\t\t" + num;
 
                     checkedListBox1.Items.AddRange(new object[] { row });
                 }
